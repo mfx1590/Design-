@@ -17,7 +17,8 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "whatsapp": "Chat on WhatsApp"
+    "whatsapp": "Chat on WhatsApp",
+    "furniture": "Furniture"
   },
   "cta": {
     "quote": "Request a quote on WhatsApp",
@@ -29,7 +30,9 @@
     "whatsapp": "Chat on WhatsApp",
     "inquiry": "Add to inquiry list",
     "priceOnRequest": "Price on request",
-    "send": "Send request"
+    "send": "Send request",
+    "inquiryRemove": "Remove from inquiry list",
+    "seeService": "See the service"
   },
   "card": {
     "before": "Before",
@@ -230,9 +233,263 @@
     "services": "Services",
     "languages": "Languages",
     "legal": "Privacy · Cookies · Terms",
-    "rights": "© {year} Design Package. All rights reserved."
+    "rights": "© {year} Design Package. All rights reserved.",
+    "more": "More",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "terms": "Terms of use",
+    "inquiry": "Inquiry list",
+    "guides": "Guides",
+    "process": "How it works",
+    "reviews": "Reviews",
+    "areas": "Where we work"
   },
   "whatsapp": {
     "prefill": "Hello, I would like to ask about furnishing my apartment in Northern Cyprus."
+  },
+  "pages": {
+    "packages": {
+      "eyebrow": "Packages",
+      "title": "One price for the whole apartment.",
+      "lead": "A turnkey furniture package in Northern Cyprus furnishes every room of an apartment, delivered and installed, for one price by apartment type: Studio from £10,000, 1+1 from £12,000, 2+1 from £14,000.",
+      "metaTitle": "Furniture packages: Studio, 1+1, 2+1 — Design Package",
+      "metaDescription": "Turnkey furniture packages for apartments in Northern Cyprus. Studio from £10,000, 1+1 from £12,000, 2+1 from £14,000, delivered and installed.",
+      "compareEyebrow": "Compare",
+      "compareTitle": "The three packages, side by side.",
+      "compareLead": "Packages follow the apartment type. Every one includes delivery and installation.",
+      "finderEyebrow": "Which package fits me?",
+      "finderTitle": "Three questions, one answer.",
+      "faqEyebrow": "Questions",
+      "faqTitle": "About the packages."
+    },
+    "package": {
+      "eyebrow": "Package",
+      "metaTitle": "{name} furniture package from {price} — Design Package",
+      "metaDescription": "The {name} package furnishes every room of a {name} apartment in Northern Cyprus, delivered and installed, from {price}.",
+      "lead": "Every room of a {name} apartment, delivered and installed, from {price}. Choose the standard package to live in, or the rental version for tenants and guests.",
+      "roomsEyebrow": "Room by room",
+      "roomsTitle": "What arrives.",
+      "roomsNote": "Room lists are indicative until the owner confirms the package contents.",
+      "photosEyebrow": "From the studio project",
+      "photosTitle": "How it looks when it is done.",
+      "othersEyebrow": "Other packages",
+      "othersTitle": "Different apartment?",
+      "prefill": "Hello, I am interested in the {name} package. Please send a proposal."
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "Three more doors.",
+      "lead": "Beyond the standard packages we stage homes for sale, furnish rental apartments for tenants or guests, and take on individual design projects across Northern Cyprus.",
+      "metaTitle": "Home staging, rental furnishing and custom projects — Design Package",
+      "metaDescription": "Home staging for sellers and agents, rental furnishing for owners, and custom design projects in Northern Cyprus."
+    },
+    "service": {
+      "eyebrow": "Service",
+      "forEyebrow": "For",
+      "howEyebrow": "How it works",
+      "howTitle": "Four steps.",
+      "pricingEyebrow": "Pricing",
+      "faqEyebrow": "Questions",
+      "faqTitle": "About this service.",
+      "othersEyebrow": "Other services",
+      "othersTitle": "Two more doors.",
+      "photosEyebrow": "From the studio project"
+    },
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Before and after.",
+      "lead": "Real projects, photographed before and after. Hover or tap a project to see the empty apartment. More arrive as they complete.",
+      "metaTitle": "Portfolio: before and after — Design Package",
+      "metaDescription": "Completed furniture packages in Northern Cyprus, photographed before and after.",
+      "count": "{count, plural, one {# project} other {# projects}}",
+      "more": "More projects are added as they complete."
+    },
+    "project": {
+      "eyebrow": "Project",
+      "typeLabel": "Apartment type",
+      "packageLabel": "Package",
+      "cityLabel": "City",
+      "cityToConfirm": "to be confirmed",
+      "summaryEyebrow": "The brief",
+      "scopeEyebrow": "Scope",
+      "galleryEyebrow": "Gallery",
+      "galleryTitle": "Room by room.",
+      "furnitureEyebrow": "Furniture used",
+      "furnitureTitle": "Pieces from this project.",
+      "videoNote": "A walkthrough video will appear here when the owner provides it.",
+      "backToPortfolio": "All projects",
+      "prefill": "Hello, I saw the project {title} and would like a similar package."
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "Six steps between the keys and the first night.",
+      "lead": "From the first call to handover, one team and one price. Most of it can happen while you are abroad.",
+      "metaTitle": "How it works: from consultation to handover — Design Package",
+      "metaDescription": "The six steps of a furniture package in Northern Cyprus: consultation, concept, selection, delivery, installation, handover.",
+      "remoteEyebrow": "Buying from abroad",
+      "remoteTitle": "You do not need to be here.",
+      "remoteBody": "We work from the floor plan and photos, share the concept and the piece list online, you approve on WhatsApp, and we install before you arrive. Handover photos come the same day."
+    },
+    "about": {
+      "eyebrow": "About",
+      "title": "A furniture company for people who bought walls.",
+      "lead": "Design Package furnishes apartments in Northern Cyprus for owners who are often far away. One team handles concept, furniture, delivery and installation.",
+      "metaTitle": "About Design Package — furniture packages in Northern Cyprus",
+      "metaDescription": "Who we are: interior design packages and furniture in Northern Cyprus, delivered and installed.",
+      "teamTitle": "Team",
+      "showroomTitle": "Showroom",
+      "warrantyTitle": "Warranty",
+      "partnersTitle": "Partners",
+      "toConfirm": "To be confirmed by the owner."
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Write to us on WhatsApp.",
+      "lead": "The fastest way to a proposal: send your floor plan, the handover date and how you will use the apartment.",
+      "metaTitle": "Contact Design Package on WhatsApp",
+      "metaDescription": "Contact Design Package in Northern Cyprus on WhatsApp for a furniture package proposal.",
+      "addressLabel": "Address",
+      "emailLabel": "Email",
+      "hoursLabel": "Opening hours",
+      "toConfirm": "to be confirmed by the owner"
+    },
+    "reviews": {
+      "eyebrow": "Reviews",
+      "title": "What clients say.",
+      "lead": "Reviews from completed projects appear here with each client's permission.",
+      "metaTitle": "Client reviews — Design Package",
+      "metaDescription": "Reviews from clients of Design Package in Northern Cyprus.",
+      "empty": "We are collecting reviews from completed projects. The first ones will appear here soon."
+    },
+    "furniture": {
+      "eyebrow": "Furniture",
+      "title": "Pieces from our projects.",
+      "lead": "Every piece here was delivered and installed in a real apartment. Save the ones you like to your inquiry list and send it to us on WhatsApp for prices and availability.",
+      "inquiryLink": "Open your inquiry list",
+      "note": "Catalogue, prices and stock to be confirmed by the owner.",
+      "metaTitle": "Furniture in Northern Cyprus — Design Package",
+      "metaDescription": "Sofas, beds, dining sets, lighting and outdoor furniture from Design Package projects in Northern Cyprus. Prices on request; send an inquiry list on WhatsApp."
+    },
+    "furnitureItem": {
+      "eyebrow": "Furniture",
+      "categoryLabel": "Category",
+      "materialsLabel": "Materials",
+      "priceLabel": "Price",
+      "usedInEyebrow": "Seen in",
+      "usedInTitle": "Where it was used.",
+      "relatedEyebrow": "Related pieces",
+      "relatedTitle": "From the same room.",
+      "back": "All furniture",
+      "prefill": "Hello, I am interested in the piece {name}. Please send the price and availability.",
+      "metaTitle": "{name} — Design Package"
+    },
+    "inquiry": {
+      "eyebrow": "Inquiry list",
+      "title": "Your inquiry list.",
+      "lead": "Pieces you saved while browsing. Send the list to us on WhatsApp and we reply with prices and availability.",
+      "empty": "Your list is empty.",
+      "browse": "Browse the furniture",
+      "remove": "Remove",
+      "clear": "Clear the list",
+      "send": "Send the list on WhatsApp",
+      "noteLabel": "Anything to add? (optional)",
+      "notePlaceholder": "Apartment type, city, handover date",
+      "stored": "The list is saved in this browser only. Nothing is sent until you tap the button.",
+      "messageIntro": "Hello, I am interested in these pieces:",
+      "messageNote": "Note:",
+      "metaTitle": "Inquiry list — Design Package",
+      "metaDescription": "Send the furniture pieces you saved to Design Package on WhatsApp for prices and availability."
+    },
+    "guides": {
+      "eyebrow": "Guides",
+      "title": "Before you furnish.",
+      "lead": "Short, practical reading for buyers in Northern Cyprus: what a package includes, and how to furnish from abroad.",
+      "read": "Read the guide",
+      "updated": "Updated {date}",
+      "metaTitle": "Guides: furnishing an apartment in Northern Cyprus — Design Package",
+      "metaDescription": "Practical guides from Design Package: what a furniture package includes for a Studio, 1+1 or 2+1, and how to furnish an apartment in Northern Cyprus from abroad."
+    },
+    "guide": {
+      "eyebrow": "Guide",
+      "back": "All guides",
+      "moreEyebrow": "More reading",
+      "moreTitle": "Another guide."
+    },
+    "areas": {
+      "eyebrow": "Where we work",
+      "title": "Furniture packages in {city}.",
+      "lead": "Studio from {studio}, 1+1 from {one}, 2+1 from {two}. Every room delivered and installed in {city}, with selection and approval from anywhere.",
+      "note": "City list to be confirmed by the owner.",
+      "packagesEyebrow": "Packages",
+      "packagesTitle": "One price for the whole apartment.",
+      "faqEyebrow": "Questions",
+      "faqTitle": "Buying in {city}?",
+      "otherEyebrow": "Elsewhere",
+      "otherTitle": "Other areas.",
+      "prefill": "Hello, I have an apartment in {city}. Please send a proposal.",
+      "metaTitle": "Furniture packages in {city} — Design Package",
+      "metaDescription": "Interior design packages in {city}, Northern Cyprus: Studio from {studio}, 1+1 from {one}, 2+1 from {two}. Delivered and installed."
+    },
+    "legal": {
+      "eyebrow": "Legal",
+      "updated": "Last updated {date}",
+      "template": "Template prepared for the owner's review. It applies only once the details in square brackets are confirmed and, where needed, checked by a lawyer.",
+      "metaTitle": "{title} — Design Package"
+    }
+  },
+  "comparison": {
+    "caption": "Package comparison",
+    "rowLiving": "Living room",
+    "rowKitchen": "Kitchen and dining",
+    "rowBedrooms": "Bedrooms",
+    "rowBathroom": "Bathroom",
+    "rowTerrace": "Terrace",
+    "rowDelivery": "Delivery and installation",
+    "rowTimeline": "Timeline",
+    "toConfirm": "to confirm",
+    "one": "one",
+    "two": "two"
+  },
+  "finder": {
+    "q1": "What is your apartment?",
+    "q2": "How will you use it?",
+    "q2a": "I will live in it",
+    "q2b": "Long-term rental",
+    "q2c": "Holiday let",
+    "q3": "When is the handover?",
+    "q3a": "I already have the keys",
+    "q3b": "Within three months",
+    "q3c": "Later",
+    "result": "Your package",
+    "resultRental": "{name}, rental version",
+    "noteLive": "Chosen for you: colours, comfort and storage for daily life.",
+    "noteLongTerm": "Durable and neutral, easy to maintain between tenants.",
+    "noteHoliday": "Guest-ready down to kitchenware and linen, photogenic for listings.",
+    "empty": "Answer the three questions and the package appears here.",
+    "send": "Send this to WhatsApp",
+    "prefill": "Hello, I have a {type} apartment. Use: {use}. Handover: {when}. Please send a proposal.",
+    "reset": "Start again"
+  },
+  "faqPackages": {
+    "q1": "Can I change pieces in a package?",
+    "a1": "Yes. The package sets the scope and the starting price; you approve every piece before delivery.",
+    "q2": "Do prices include delivery and installation?",
+    "a2": "Yes. Every package price includes delivery to the apartment and installation by our team.",
+    "q3": "What if my apartment does not fit these three types?",
+    "a3": "Larger homes and villas are handled as custom projects, priced individually."
+  },
+  "furniture": {
+    "all": "All",
+    "categories": {
+      "living": "Living",
+      "dining": "Dining",
+      "bedroom": "Bedroom",
+      "bathroom": "Bathroom",
+      "outdoor": "Outdoor",
+      "lighting": "Lighting",
+      "decor": "Decor"
+    },
+    "count": "{count, plural, one {# piece} other {# pieces}}",
+    "empty": "No pieces in this category yet."
   }
 }

@@ -126,7 +126,7 @@ export default async function StyleguidePage({ params }: Props) {
           <Price amount={14000} size="xl" from={false} />
         </div>
         <div className="mt-10">
-          <WhatsAppButton placement="inline" demoHref="https://wa.me/" />
+          <WhatsAppButton placement="inline" />
         </div>
       </Section>
 

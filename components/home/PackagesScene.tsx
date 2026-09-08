@@ -174,7 +174,15 @@ export function PackagesScene({ packages, labels, cta, className }: PackagesScen
 }
 
 /** Static cards for small screens and reduced motion. */
-export function PackageCards({ packages, cta, className }: { packages: PackageState[]; cta: string; className?: string }) {
+interface PackageCardsProps {
+  packages: PackageState[];
+  cta: string;
+  /** Package slugs by key; when given, each card links to its detail page. */
+  slugs?: Record<string, string>;
+  className?: string;
+}
+
+export function PackageCards({ packages, cta, slugs, className }: PackageCardsProps) {
   const locale = useLocale();
   const t = useTranslations("packages");
   return (
@@ -197,7 +205,7 @@ export function PackageCards({ packages, cta, className }: { packages: PackageSt
             ))}
           </ul>
           <div className="mt-6">
-            <Button href="/packages" variant="secondary" size="sm">
+            <Button href={slugs?.[pkg.key] ? { pathname: "/packages/[slug]", params: { slug: slugs[pkg.key] } } : "/packages"} variant="secondary" size="sm">
               {cta}
             </Button>
           </div>

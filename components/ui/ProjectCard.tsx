@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { cx } from "@/lib/cx";
 
 interface ProjectCardProps {
@@ -16,11 +17,12 @@ interface ProjectCardProps {
   /** Image ratio. Cards use 3:2, the featured project uses 16:9 or 21:9. */
   ratio?: "3/2" | "16/9" | "21/9" | "4/3";
   sizes?: string;
-  /** Rendered around the title (a Link in real pages). */
-  titleWrap?: (title: string) => React.ReactNode;
+  /** Project slug; when given, the title links to the project page. */
+  slug?: string;
   /** Hide title and meta (the featured block renders its own). */
   imageOnly?: boolean;
   priority?: boolean;
+  className?: string;
 }
 
 const ratioClass = { "3/2": "aspect-[3/2]", "16/9": "aspect-video", "21/9": "aspect-[21/9]", "4/3": "aspect-[4/3]" };
@@ -31,13 +33,13 @@ const chip = "pointer-events-none absolute bg-surface/75 px-2.5 py-1 text-micro 
  * Aperture with the finished room; hover or tap wipes the empty room in from the inline-start edge
  * (mirrored in RTL). Reduced motion: no transition, the toggle still works.
  */
-export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, ratio = "3/2", sizes, titleWrap, imageOnly, priority }: ProjectCardProps) {
+export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, ratio = "3/2", sizes, slug, imageOnly, priority, className }: ProjectCardProps) {
   const [showBefore, setShowBefore] = useState(false);
   const t = useTranslations("card");
   const imgSizes = sizes ?? "(min-width: 1024px) 33vw, 100vw";
 
   return (
-    <article className="group">
+    <article className={cx("group", className)}>
       <div className={cx("aperture overflow-hidden bg-surface-alt", ratioClass[ratio])}>
         <Image src={afterSrc} alt={alt} fill sizes={imgSizes} priority={priority} className="object-cover" />
         <div
@@ -76,7 +78,15 @@ export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, r
 
       {imageOnly ? null : (
         <>
-          <h3 className="type-display mt-4 text-h3 text-ink">{titleWrap ? titleWrap(title) : title}</h3>
+          <h3 className="type-display mt-4 text-h3 text-ink">
+            {slug ? (
+              <Link href={{ pathname: "/portfolio/[slug]", params: { slug } }} className="transition-colors hover:text-brass">
+                {title}
+              </Link>
+            ) : (
+              title
+            )}
+          </h3>
           <p className="mt-1.5 text-small text-ink-soft">{meta}</p>
         </>
       )}

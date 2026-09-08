@@ -1,11 +1,12 @@
-import type { AppPathname } from "@/i18n/routing";
+import type { StaticPathname } from "@/i18n/routing";
 
-export type NavKey = "packages" | "portfolio" | "services" | "about" | "contact";
+export type NavKey = "packages" | "portfolio" | "furniture" | "services" | "about" | "contact";
 
 /** Main navigation, in order. Labels come from messages under nav.* */
-export const navItems: Array<{ href: AppPathname; key: NavKey }> = [
+export const navItems: Array<{ href: StaticPathname; key: NavKey }> = [
   { href: "/packages", key: "packages" },
   { href: "/portfolio", key: "portfolio" },
+  { href: "/furniture", key: "furniture" },
   { href: "/services", key: "services" },
   { href: "/about", key: "about" },
   { href: "/contact", key: "contact" },

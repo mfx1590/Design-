@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
-import type { AppPathname } from "@/i18n/routing";
+import type { StaticPathname } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 
 interface MobileMenuProps {
-  items: Array<{ href: AppPathname; label: string }>;
+  items: Array<{ href: StaticPathname; label: string }>;
   whatsappHref: string | null;
   labels: { menu: string; close: string; whatsapp: string };
 }

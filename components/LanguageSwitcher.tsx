@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import { localeMeta } from "@/i18n/locales";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -19,14 +20,17 @@ interface LanguageSwitcherProps {
 export function LanguageSwitcher({ variant = "list", className }: LanguageSwitcherProps) {
   const locale = useLocale();
   const pathname = usePathname();
+  const params = useParams();
   const t = useTranslations("nav");
+  // On dynamic routes the same page in another locale needs the current params.
+  const href = (pathname.includes("[") ? { pathname, params } : pathname) as Parameters<typeof Link>[0]["href"];
 
   const items = routing.locales.map((code) => {
     const current = code === locale;
     return (
       <li key={code}>
         <Link
-          href={pathname}
+          href={href}
           locale={code}
           lang={code}
           hrefLang={code}
