@@ -1,0 +1,27 @@
+{
+  "project": "project-01-studio",
+  "fps": 24,
+  "generatedAt": "2026-09-07T20:19:52.678Z",
+  "sets": {
+    "desktop": {
+      "basePath": "/sequences/project-01-studio",
+      "width": 1600,
+      "height": 900,
+      "frameCount": 158,
+      "pad": 3
+    },
+    "mobile": {
+      "basePath": "/sequences/project-01-studio",
+      "width": 900,
+      "height": 1600,
+      "frameCount": 158,
+      "pad": 3
+    }
+  },
+  "poster": "/sequences/project-01-studio/poster.jpg",
+  "end": "/sequences/project-01-studio/end.jpg",
+  "video": {
+    "mp4": "/sequences/project-01-studio/scene.mp4",
+    "webm": "/sequences/project-01-studio/scene.webm"
+  }
+}

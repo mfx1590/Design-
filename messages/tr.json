@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Kuzey Kıbrıs'ta mobilya paketleri — Design Package",
+    "description": "Kuzey Kıbrıs'ta iç mekân tasarım paketleri ve mobilya: Stüdyo başlangıç fiyatı 10.000 £, 1+1 12.000 £, 2+1 14.000 £."
+  },
+  "brand": {
+    "name": "Design Package",
+    "placeholder": "Marka adı onaylanacak"
+  },
+  "nav": {
+    "language": "Dil",
+    "skip": "İçeriğe geç",
+    "menu": "Menü",
+    "close": "Kapat",
+    "packages": "Paketler",
+    "portfolio": "Projeler",
+    "services": "Hizmetler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "whatsapp": "WhatsApp'tan yazın"
+  },
+  "cta": {
+    "quote": "Teklif isteyin",
+    "package": "Paketin tamamını görün",
+    "packages": "Paketleri görün",
+    "whatsapp": "WhatsApp'tan yazın",
+    "inquiry": "Talep listesine ekle",
+    "priceOnRequest": "Fiyat için sorun"
+  },
+  "card": {
+    "before": "Önce",
+    "after": "Sonra",
+    "realVideo": "Gerçek video",
+    "showBefore": "Öncesini göster",
+    "showAfter": "Sonrasını göster"
+  },
+  "hero": {
+    "before": "Duvarlar sizde.",
+    "after": "Evi biz getiriyoruz.",
+    "lead": "Kuzey Kıbrıs'taki daireler için teslimat ve montaj dahil mobilya paketleri. Stüdyo başlangıç fiyatı 10.000 £.",
+    "visualisation": "Tamamlanmış bir stüdyo projesine dayanan görselleştirme.",
+    "altBefore": "Havuza açılan sürgülü kapılı boş stüdyo daire, mobilyalanmadan önce",
+    "altAfter": "Aynı stüdyo mobilyalandıktan sonra: kahvaltı barı, yatak, koltuk ve perdeler"
+  },
+  "phase0": {
+    "eyebrow": "Aşama 0 · temeller",
+    "title": "Duvarlar sizde.",
+    "lead": "Kuzey Kıbrıs'taki daireleri boş duvarlardan hazır bir eve dönüştürüyoruz.",
+    "direction": "Bu sayfa {locale} dili için {dir, select, rtl {sağdan sola} other {soldan sağa}} görüntülenir.",
+    "scriptCheck": "Karakter testi: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "İleri"
+  },
+  "packages": {
+    "heading": "Paketler",
+    "from": "başlangıç fiyatı <b>{price}</b>",
+    "studio": "Stüdyo",
+    "studioNote": "tek oda",
+    "onePlusOne": "1+1",
+    "onePlusOneNote": "bir yatak odası",
+    "twoPlusOne": "2+1",
+    "twoPlusOneNote": "iki yatak odası"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "body": "Bu sayfa mevcut değil ya da taşınmış.",
+    "home": "Ana sayfaya dön"
+  },
+  "footer": {
+    "nap": "İsim, adres ve telefon numarası mal sahibi tarafından onaylanacak.",
+    "pages": "Sayfalar",
+    "services": "Hizmetler",
+    "languages": "Diller",
+    "legal": "Gizlilik · Çerezler · Koşullar",
+    "rights": "© {year} Design Package. Tüm hakları saklıdır."
+  },
+  "whatsapp": {
+    "prefill": "Merhaba, Kuzey Kıbrıs'taki dairemin mobilyalanması hakkında bilgi almak istiyorum."
+  },
+  "services": {
+    "staging": "Home staging",
+    "rental": "Kiralık için mobilya",
+    "custom": "Özel projeler"
+  }
+}

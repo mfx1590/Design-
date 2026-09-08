@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Möbelpakete in Nordzypern — Design Package",
+    "description": "Einrichtungspakete und Möbel in Nordzypern: Studio ab 10.000 £, 1+1 ab 12.000 £, 2+1 ab 14.000 £."
+  },
+  "brand": {
+    "name": "Design Package",
+    "placeholder": "Markenname wird noch bestätigt"
+  },
+  "nav": {
+    "language": "Sprache",
+    "skip": "Zum Inhalt springen",
+    "menu": "Menü",
+    "close": "Schließen",
+    "packages": "Pakete",
+    "portfolio": "Projekte",
+    "services": "Leistungen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "whatsapp": "Per WhatsApp schreiben"
+  },
+  "cta": {
+    "quote": "Angebot anfragen",
+    "package": "Das ganze Paket ansehen",
+    "packages": "Pakete ansehen",
+    "whatsapp": "Per WhatsApp schreiben",
+    "inquiry": "Zur Anfrageliste hinzufügen",
+    "priceOnRequest": "Preis auf Anfrage"
+  },
+  "card": {
+    "before": "Vorher",
+    "after": "Nachher",
+    "realVideo": "Echtes Video",
+    "showBefore": "Vorher zeigen",
+    "showAfter": "Nachher zeigen"
+  },
+  "hero": {
+    "before": "Die Wände haben Sie schon.",
+    "after": "Das Zuhause bringen wir.",
+    "lead": "Möbelpakete für Wohnungen in Nordzypern, geliefert und montiert. Studio ab 10.000 £.",
+    "visualisation": "Visualisierung auf Basis eines fertiggestellten Studio-Projekts.",
+    "altBefore": "Leeres Studio-Apartment mit Schiebetür zum Pool, vor der Einrichtung",
+    "altAfter": "Dasselbe Studio eingerichtet: Frühstücksbar, Bett, Sofa und Vorhänge"
+  },
+  "phase0": {
+    "eyebrow": "Phase 0 · Grundlagen",
+    "title": "Die Wände haben Sie schon.",
+    "lead": "Wir richten Wohnungen in Nordzypern ein – von leeren Wänden bis zum fertigen Zuhause.",
+    "direction": "Diese Seite wird für {locale} {dir, select, rtl {von rechts nach links} other {von links nach rechts}} dargestellt.",
+    "scriptCheck": "Zeichentest: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "Weiter"
+  },
+  "packages": {
+    "heading": "Pakete",
+    "from": "ab <b>{price}</b>",
+    "studio": "Studio",
+    "studioNote": "ein Zimmer",
+    "onePlusOne": "1+1",
+    "onePlusOneNote": "ein Schlafzimmer",
+    "twoPlusOne": "2+1",
+    "twoPlusOneNote": "zwei Schlafzimmer"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "body": "Diese Seite existiert nicht oder wurde verschoben.",
+    "home": "Zurück zur Startseite"
+  },
+  "footer": {
+    "nap": "Name, Adresse und Telefonnummer werden vom Inhaber bestätigt.",
+    "pages": "Seiten",
+    "services": "Leistungen",
+    "languages": "Sprachen",
+    "legal": "Datenschutz · Cookies · AGB",
+    "rights": "© {year} Design Package. Alle Rechte vorbehalten."
+  },
+  "whatsapp": {
+    "prefill": "Hallo, ich möchte mich über die Einrichtung meiner Wohnung in Nordzypern informieren."
+  },
+  "services": {
+    "staging": "Home Staging",
+    "rental": "Einrichtung für Vermietung",
+    "custom": "Individuelle Projekte"
+  }
+}

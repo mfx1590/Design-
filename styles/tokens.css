@@ -1,0 +1,71 @@
+/*
+ * Design tokens. Source of truth: docs/design-plan.md §3.
+ * Five colours, one type family (plus a Persian face), a 4px space scale,
+ * zero radius, no shadows. Semantic names below are what components use.
+ */
+:root {
+  /* palette (sampled from the project photos, lifted to daylight) */
+  --plaster: #efe9e1;
+  --porcelain: #e2dcd5;
+  --frame: #15171b;
+  --walnut: #5a4a40;
+  --kyrenia: #1b5f80;
+  --whatsapp: #25d366; /* functional only: the WhatsApp glyph */
+
+  /* semantic */
+  --surface: var(--plaster);
+  --surface-alt: var(--porcelain);
+  --ink: var(--frame);
+  --ink-soft: var(--walnut);
+  --ink-muted: color-mix(in oklab, var(--frame) 45%, var(--plaster));
+  --rule: color-mix(in oklab, var(--frame) 18%, transparent);
+  --rule-strong: var(--frame);
+  --link: var(--kyrenia);
+  --focus: var(--kyrenia);
+  --scrim: color-mix(in oklab, var(--frame) 38%, transparent);
+
+  /* type: Commissioner text + display cuts, Vazirmatn for Farsi */
+  --font-latin-stack: var(--font-latin), system-ui, "Segoe UI", sans-serif;
+  --font-persian-stack: var(--font-persian), var(--font-latin), "Segoe UI", Tahoma, sans-serif;
+  --font-body: var(--font-latin-stack);
+  --text-display-xl: clamp(2.75rem, 1.5rem + 5vw, 6.5rem);
+  --text-display: clamp(2.125rem, 1.3rem + 3vw, 3.75rem);
+  --text-h2: clamp(1.5rem, 1.15rem + 1.6vw, 2.25rem);
+  --text-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  --text-lead: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
+  --text-body: 1.0625rem;
+  --text-small: 0.9375rem;
+  --text-micro: 0.8125rem;
+  --leading-display: 1.02;
+  --leading-tight: 1.15;
+  --leading-body: 1.5;
+  --tracking-display: -0.02em;
+  --weight-display: 420;
+  --settings-display: "VOLM" 100, "FLAR" 100, "slnt" 0;
+  --settings-text: "VOLM" 0, "FLAR" 0, "slnt" 0;
+
+  /* space and shape */
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --section: clamp(4rem, 9vw, 8rem);
+  --content-max: 85rem;
+  --measure: 62ch;
+  --frame-width: 1.5px;
+  --header-height: 4rem;
+
+  /* motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-ui: 180ms;
+  --dur-text: 320ms;
+}
+
+/* Farsi: Persian face first, looser leading, no flare axis, lighter display weight. */
+html[lang="fa"] {
+  --font-body: var(--font-persian-stack);
+  --leading-body: 1.75;
+  --leading-display: 1.25;
+  --leading-tight: 1.35;
+  --tracking-display: 0;
+  --weight-display: 300;
+  --settings-display: normal;
+  --settings-text: normal;
+}

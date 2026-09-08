@@ -1,0 +1,64 @@
+import type { InputHTMLAttributes, ReactNode, SelectHTMLAttributes, TextareaHTMLAttributes } from "react";
+import { cx } from "@/lib/cx";
+
+const control =
+  "w-full border-[1.5px] border-frame bg-porcelain px-3.5 py-3 text-body text-ink placeholder:text-ink-muted aria-[invalid=true]:border-2 disabled:opacity-40";
+
+interface FieldProps {
+  label: string;
+  htmlFor: string;
+  hint?: string;
+  error?: string;
+  children: ReactNode;
+  className?: string;
+}
+
+/** Label above, control, then hint or error below. Labels are always visible (no placeholder-only labels). */
+export function Field({ label, htmlFor, hint, error, children, className }: FieldProps) {
+  return (
+    <div className={cx("flex flex-col gap-1.5", className)}>
+      <label htmlFor={htmlFor} className="text-small font-medium">
+        {label}
+      </label>
+      {children}
+      {error ? (
+        <p id={`${htmlFor}-error`} role="alert" className="text-small text-walnut">
+          {error}
+        </p>
+      ) : hint ? (
+        <p id={`${htmlFor}-hint`} className="text-small text-ink-soft">
+          {hint}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElement>) {
+  return <input {...props} className={cx(control, className)} />;
+}
+
+export function Textarea({ className, ...props }: TextareaHTMLAttributes<HTMLTextAreaElement>) {
+  return <textarea {...props} className={cx(control, "min-h-32 resize-y", className)} />;
+}
+
+export function Select({ className, children, ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
+  return (
+    <select {...props} className={cx(control, "control-select appearance-none", className)}>
+      {children}
+    </select>
+  );
+}
+
+interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
+  label: ReactNode;
+}
+
+export function Checkbox({ label, className, id, ...props }: CheckboxProps) {
+  return (
+    <label htmlFor={id} className={cx("inline-flex cursor-pointer items-start gap-3 text-small", className)}>
+      <input id={id} type="checkbox" {...props} className="control-checkbox mt-0.5 shrink-0" />
+      <span>{label}</span>
+    </label>
+  );
+}

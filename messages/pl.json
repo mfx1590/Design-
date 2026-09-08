@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Pakiety meblowe na Cyprze Północnym — Design Package",
+    "description": "Pakiety wyposażenia wnętrz i meble na Cyprze Północnym: Studio od 10 000 £, 1+1 od 12 000 £, 2+1 od 14 000 £."
+  },
+  "brand": {
+    "name": "Design Package",
+    "placeholder": "Nazwa marki do potwierdzenia"
+  },
+  "nav": {
+    "language": "Język",
+    "skip": "Przejdź do treści",
+    "menu": "Menu",
+    "close": "Zamknij",
+    "packages": "Pakiety",
+    "portfolio": "Realizacje",
+    "services": "Usługi",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "whatsapp": "Napisz na WhatsApp"
+  },
+  "cta": {
+    "quote": "Poproś o wycenę",
+    "package": "Zobacz cały pakiet",
+    "packages": "Zobacz pakiety",
+    "whatsapp": "Napisz na WhatsApp",
+    "inquiry": "Dodaj do zapytania",
+    "priceOnRequest": "Cena na zapytanie"
+  },
+  "card": {
+    "before": "Przed",
+    "after": "Po",
+    "realVideo": "Prawdziwe wideo",
+    "showBefore": "Pokaż przed",
+    "showAfter": "Pokaż po"
+  },
+  "hero": {
+    "before": "Ściany już masz.",
+    "after": "My wnosimy dom.",
+    "lead": "Pakiety meblowe do mieszkań na Cyprze Północnym, z dostawą i montażem. Studio od 10 000 £.",
+    "visualisation": "Wizualizacja na podstawie zrealizowanego projektu studia.",
+    "altBefore": "Puste studio z przesuwnymi drzwiami na basen, przed umeblowaniem",
+    "altAfter": "To samo studio po umeblowaniu: bar śniadaniowy, łóżko, sofa i zasłony"
+  },
+  "phase0": {
+    "eyebrow": "Faza 0 · fundamenty",
+    "title": "Ściany już masz.",
+    "lead": "Urządzamy mieszkania na Cyprze Północnym — od pustych ścian po gotowy dom.",
+    "direction": "Ta strona wyświetla się {dir, select, rtl {od prawej do lewej} other {od lewej do prawej}} dla języka {locale}.",
+    "scriptCheck": "Test znaków: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "Dalej"
+  },
+  "packages": {
+    "heading": "Pakiety",
+    "from": "od <b>{price}</b>",
+    "studio": "Studio",
+    "studioNote": "jeden pokój",
+    "onePlusOne": "1+1",
+    "onePlusOneNote": "jedna sypialnia",
+    "twoPlusOne": "2+1",
+    "twoPlusOneNote": "dwie sypialnie"
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "body": "Ta strona nie istnieje lub została przeniesiona.",
+    "home": "Wróć na stronę główną"
+  },
+  "footer": {
+    "nap": "Nazwa, adres i numer telefonu do potwierdzenia przez właściciela.",
+    "pages": "Strony",
+    "services": "Usługi",
+    "languages": "Języki",
+    "legal": "Prywatność · Cookies · Regulamin",
+    "rights": "© {year} Design Package. Wszelkie prawa zastrzeżone."
+  },
+  "whatsapp": {
+    "prefill": "Dzień dobry, mam pytanie o umeblowanie mieszkania na Cyprze Północnym."
+  },
+  "services": {
+    "staging": "Home staging",
+    "rental": "Wyposażenie pod wynajem",
+    "custom": "Projekty indywidualne"
+  }
+}
