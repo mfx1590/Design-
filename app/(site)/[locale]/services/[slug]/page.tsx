@@ -56,16 +56,16 @@ export default async function ServicePage({ params }: Props) {
         lead={service.lead}
         aside={
           <div className="card p-7">
-            <p className="text-micro uppercase tracking-[0.18em] text-ink-soft/70">{t("pages.service.forEyebrow")}</p>
+            <p className="text-micro uppercase tracking-[0.18em] text-ink-muted">{t("pages.service.forEyebrow")}</p>
             <p className="type-display mt-2 text-h3 text-ink">{service.audience}</p>
-            <p className="mt-5 text-micro uppercase tracking-[0.18em] text-ink-soft/70">{t("pages.service.pricingEyebrow")}</p>
+            <p className="mt-5 text-micro uppercase tracking-[0.18em] text-ink-muted">{t("pages.service.pricingEyebrow")}</p>
             <p className="mt-2 text-ink-soft">{service.pricing}</p>
-            {service.pricingNote ? <p className="mt-1 text-micro text-ink-soft/60">{service.pricingNote}</p> : null}
+            {service.pricingNote ? <p className="mt-1 text-micro text-ink-muted">{service.pricingNote}</p> : null}
             <a
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-night transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-surface transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body"
             >
               <WhatsAppGlyph className="size-5" />
               {t("cta.quote")}

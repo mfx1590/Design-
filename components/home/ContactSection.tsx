@@ -24,7 +24,7 @@ export async function ContactSection() {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 border border-brass bg-brass px-7 py-4 text-body font-medium tracking-[0.04em] text-night transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep"
+              className="inline-flex items-center justify-center gap-3 border border-brass bg-brass px-7 py-4 text-body font-medium tracking-[0.04em] text-surface transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep"
             >
               <WhatsAppGlyph className="size-5" />
               {t("contact.openWhatsApp")}
@@ -38,7 +38,7 @@ export async function ContactSection() {
           </div>
 
           <p className="mt-8 max-w-(--measure) text-small text-ink-soft">{t("contact.areasLine", { cities })}</p>
-          <p className="mt-1 text-micro text-ink-soft/60">{t("home.areasNote")}</p>
+          <p className="mt-1 text-micro text-ink-muted">{t("home.areasNote")}</p>
         </div>
 
         <a
@@ -46,7 +46,6 @@ export async function ContactSection() {
           target="_blank"
           rel="noopener noreferrer"
           className="card block p-7 sm:p-9"
-          aria-label={t("contact.openWhatsApp")}
         >
           <p className="inline-flex items-center gap-2 text-micro font-medium uppercase tracking-[0.18em] text-ink-soft">
             <WhatsAppGlyph className="size-4 text-whatsapp" />
@@ -56,7 +55,7 @@ export async function ContactSection() {
             {whatsappDisplay}
           </p>
           <p className="mt-4 text-small text-ink-soft">{t("trust.languages")}</p>
-          <p className="mt-1 text-micro text-ink-soft/60">{t("contact.hoursNote")}</p>
+          <p className="mt-1 text-micro text-ink-muted">{t("contact.hoursNote")}</p>
         </a>
       </div>
     </Section>

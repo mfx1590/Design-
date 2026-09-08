@@ -49,7 +49,7 @@ export default async function GuidePage({ params }: Props) {
         lead={guide.lead}
         aside={<Aperture src={guide.cover.src} alt={guide.cover.alt} ratio="4/3" sizes="(min-width: 1024px) 40vw, 100vw" priority />}
       >
-        <p className="text-micro text-ink-soft/70">{t("pages.guides.updated", { date: format.dateTime(new Date(guide.updated), { dateStyle: "long" }) })}</p>
+        <p className="text-micro text-ink-muted">{t("pages.guides.updated", { date: format.dateTime(new Date(guide.updated), { dateStyle: "long" }) })}</p>
       </PageIntro>
 
       <Section className="pt-0">

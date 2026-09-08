@@ -51,7 +51,7 @@ export default async function GuidesPage({ params }: Props) {
                     className="object-cover transition-transform duration-700 ease-soft group-hover:scale-[1.03] motion-reduce:transition-none"
                   />
                 </div>
-                <p className="mt-5 text-micro text-ink-soft/70">{t("pages.guides.updated", { date: format.dateTime(new Date(guide.updated), { dateStyle: "long" }) })}</p>
+                <p className="mt-5 text-micro text-ink-muted">{t("pages.guides.updated", { date: format.dateTime(new Date(guide.updated), { dateStyle: "long" }) })}</p>
                 <h2 className="type-display mt-2 text-h3 text-ink transition-colors group-hover:text-brass">{guide.title}</h2>
                 <p className="mt-3 max-w-(--measure) text-ink-soft">{guide.lead}</p>
                 <span className="link mt-4 inline-block text-small">{t("pages.guides.read")}</span>

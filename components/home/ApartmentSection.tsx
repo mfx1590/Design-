@@ -32,7 +32,7 @@ export async function ApartmentSection() {
       </Container>
       <ApartmentWalk types={types} rooms={rooms} labels={labels} />
       <Container className="pb-10 pt-6">
-        <p className="text-micro text-ink-soft/60">{t("apartment.scopeNote")}</p>
+        <p className="text-micro text-ink-muted">{t("apartment.scopeNote")}</p>
       </Container>
     </section>
   );

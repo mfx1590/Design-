@@ -165,7 +165,7 @@ export function PackagesScene({ packages, labels, cta, className }: PackagesScen
                 ))}
               </span>
             </div>
-            <p className="mt-6 text-micro uppercase tracking-[0.18em] text-ink-soft/60">{labels.scroll}</p>
+            <p className="mt-6 text-micro uppercase tracking-[0.18em] text-ink-muted">{labels.scroll}</p>
           </div>
         </div>
       </div>

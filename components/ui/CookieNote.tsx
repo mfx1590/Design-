@@ -1,22 +1,33 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useEffect, useSyncExternalStore } from "react";
 import { Link } from "@/i18n/navigation";
 
 const KEY = "dp-cookie-note";
 const EVENT = "dp-cookie-note-change";
+/** Shown once the visitor has scrolled past the hero, or after this delay, so it never covers the first call to action. */
+const SHOW_AFTER_MS = 6000;
+const SHOW_AFTER_SCROLL = 240;
 
-function readDismissed() {
+let visible = false;
+
+function readState() {
   try {
-    return window.localStorage.getItem(KEY) === "1";
+    return window.localStorage.getItem(KEY) === "1" ? "dismissed" : visible ? "visible" : "waiting";
   } catch {
-    return false;
+    return visible ? "visible" : "waiting";
   }
 }
 
 function subscribe(onChange: () => void) {
   window.addEventListener(EVENT, onChange);
   return () => window.removeEventListener(EVENT, onChange);
+}
+
+function reveal() {
+  if (visible) return;
+  visible = true;
+  window.dispatchEvent(new Event(EVENT));
 }
 
 interface CookieNoteProps {
@@ -28,12 +39,25 @@ interface CookieNoteProps {
 /**
  * One-line notice (PLAN.md §11 Phase 5). The site sets a single strictly necessary cookie (the
  * language) and no trackers, so there is nothing to consent to; the note informs and goes away.
- * The server snapshot counts as dismissed, so the HTML is identical for every visitor and the
- * note appears only after hydration for visitors who have not closed it.
+ * The server snapshot counts as dismissed, so the HTML is identical for every visitor.
  */
 export function CookieNote({ text, more, dismiss }: CookieNoteProps) {
-  const dismissed = useSyncExternalStore(subscribe, readDismissed, () => true);
-  if (dismissed) return null;
+  const state = useSyncExternalStore(subscribe, readState, () => "dismissed" as const);
+
+  useEffect(() => {
+    if (state !== "waiting") return;
+    const timer = window.setTimeout(reveal, SHOW_AFTER_MS);
+    const onScroll = () => {
+      if (window.scrollY > SHOW_AFTER_SCROLL) reveal();
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [state]);
+
+  if (state !== "visible") return null;
 
   const close = () => {
     try {
@@ -45,19 +69,19 @@ export function CookieNote({ text, more, dismiss }: CookieNoteProps) {
   };
 
   return (
-    <aside
+    <div
       role="status"
-      className="fixed bottom-4 start-4 z-30 max-w-[calc(100%-6.5rem)] border border-rule bg-surface-alt p-4 text-small text-ink-soft sm:max-w-sm lg:bottom-6 lg:start-6"
+      className="fixed bottom-4 start-4 z-30 flex max-w-[calc(100%-6.5rem)] flex-wrap items-center gap-x-4 gap-y-2 border border-rule bg-surface-alt px-4 py-3 text-micro text-ink-soft sm:max-w-md lg:bottom-6 lg:start-6"
     >
-      <p>
+      <p className="min-w-0 flex-1">
         {text}{" "}
-        <Link href="/cookies" className="link">
+        <Link href="/cookies" className="link whitespace-nowrap">
           {more}
         </Link>
       </p>
-      <button type="button" onClick={close} className="mt-3 border border-ink/60 px-3 py-1.5 text-micro font-medium tracking-[0.04em] text-ink transition-colors hover:bg-ink hover:text-surface">
+      <button type="button" onClick={close} className="border border-ink/60 px-3 py-1 font-medium tracking-[0.04em] text-ink transition-colors hover:bg-ink hover:text-surface">
         {dismiss}
       </button>
-    </aside>
+    </div>
   );
 }

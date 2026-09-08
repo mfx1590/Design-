@@ -85,7 +85,7 @@ export default async function PackagePage({ params }: Props) {
         lead={t("pages.package.lead", { name: current.name, price })}
         aside={
           <div className="card p-7">
-            <p className="text-micro uppercase tracking-[0.18em] text-ink-soft/70">{current.note}</p>
+            <p className="text-micro uppercase tracking-[0.18em] text-ink-muted">{current.note}</p>
             <p className="mt-3">
               <Price amount={pkg.priceFromGBP} size="xl" />
             </p>
@@ -94,7 +94,7 @@ export default async function PackagePage({ params }: Props) {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-night transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body"
+              className="mt-6 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-surface transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body"
             >
               <WhatsAppGlyph className="size-5" />
               {t("cta.quote")}
@@ -124,7 +124,7 @@ export default async function PackagePage({ params }: Props) {
             </li>
           ))}
         </ol>
-        <p className="mt-4 text-micro text-ink-soft/60">{t("pages.package.roomsNote")}</p>
+        <p className="mt-4 text-micro text-ink-muted">{t("pages.package.roomsNote")}</p>
       </Section>
 
       <Section surface="espresso" labelledBy="photos-title">

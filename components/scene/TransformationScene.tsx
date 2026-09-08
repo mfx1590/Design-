@@ -171,7 +171,11 @@ export function TransformationScene(props: TransformationSceneProps) {
         };
         render = (p) => { latest = p; draw(p); };
 
-        const order = loadOrder(set.frameCount);
+        // Phones load every other frame (every fourth with Save-Data); the nearest loaded frame is drawn.
+        const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
+        const step = isMobile ? (saveData ? 4 : 2) : 1;
+        const order = loadOrder(set.frameCount).filter((i) => i % step === 0 || i === set.frameCount - 1);
+        const needed = Math.ceil(order.length / 5);
         let cursor = 0;
         const worker = async () => {
           while (cursor < order.length && !abort.signal.aborted) {
@@ -188,7 +192,7 @@ export function TransformationScene(props: TransformationSceneProps) {
             frames[i] = img;
             loaded++;
             // Inert until the ends and a fifth of the frames are in (PLAN.md §5 rules).
-            if (!isReady && frames[0] && frames[set.frameCount - 1] && loaded >= Math.ceil(set.frameCount / 5)) {
+            if (!isReady && frames[0] && frames[set.frameCount - 1] && loaded >= needed) {
               isReady = true;
               setReady(true);
               draw(latest);
@@ -197,7 +201,14 @@ export function TransformationScene(props: TransformationSceneProps) {
             }
           }
         };
-        Promise.all(Array.from({ length: 6 }, worker)).catch(() => {});
+        // Start after the page has loaded and the main thread is idle, so the poster (the LCP image) paints first.
+        const start = () => {
+          if (abort.signal.aborted) return;
+          Promise.all(Array.from({ length: isMobile ? 3 : 4 }, worker)).catch(() => {});
+        };
+        const whenIdle = () => (typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(start, { timeout: 1500 }) : window.setTimeout(start, 300));
+        if (document.readyState === "complete") whenIdle();
+        else window.addEventListener("load", whenIdle, { once: true, signal: abort.signal });
       }
     } else if (tier === "video" && video) {
       const el = videoRef.current;
@@ -334,7 +345,7 @@ export function TransformationScene(props: TransformationSceneProps) {
       <div className="sticky top-(--header-height) h-[calc(100dvh-var(--header-height))] w-full overflow-hidden" data-ready={ready}>
         {/* Poster: the empty room, shown until the tier is ready. Also the LCP image. */}
         <div className={cx("absolute inset-0 transition-opacity duration-500 ease-soft", ready && tier !== "wipe" && "opacity-0")}>
-          <Image src={before.src} alt={before.alt} fill sizes="100vw" priority={priority} className="object-cover" />
+          <Image src={before.src} alt={before.alt} fill sizes="100vw" priority={priority} fetchPriority={priority ? "high" : undefined} className="object-cover" />
         </div>
 
         {tier === "sequence" ? (

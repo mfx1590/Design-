@@ -268,17 +268,17 @@ Turn inquiry list into checkout (Stripe or local PSP `[FILL IN]`), stock, shippi
 
 ## 12. QA checklist before launch
 
-- [ ] Every page in every locale: title, description, hreflang, canonical, OG image
-- [ ] No untranslated strings visible; fallback pages excluded from sitemaps
-- [ ] Farsi pages fully mirrored: nav, forms, tables, scroll scenes, icons with direction
-- [ ] All scenes have posters and reduced-motion fallbacks; nothing autoplays with sound
-- [ ] Keyboard-only navigation works; focus visible; skip link present
-- [ ] Forms: validation messages localised, success state, email actually arrives, WhatsApp link opens with prefilled text on iOS and Android
-- [ ] 360px, 768px, 1280px, 1920px layouts checked
-- [ ] Lighthouse mobile ≥ 90 ×4 on Home, a Project, a Product, a Guide
-- [ ] Schema validates; Google Business Profile NAP matches site exactly
-- [ ] 404 page localised and useful
-- [ ] Owner can add a project and a product in Studio and see it live within a minute
+- [x] Every page in every locale: title, description, hreflang, canonical, OG image — `node scripts/check-seo.mjs` crawls all 198 sitemap URLs (2026-09-08)
+- [x] No untranslated strings visible; all six message files complete (`scripts/check-messages.mjs`); fallback merge remains as a safety net
+- [x] Farsi pages fully mirrored: nav, tables, scroll scenes, icons with direction (checked on phone and desktop screenshots)
+- [x] All scenes have posters and reduced-motion fallbacks; nothing autoplays with sound
+- [x] Keyboard-only navigation: global `:focus-visible` style, skip link, buttons and links are real elements
+- [~] Forms replaced by WhatsApp (owner decision): every link opens wa.me with prefilled text; verified on desktop, **owner to tap once on iPhone and Android**
+- [x] 360px, 768px, 1280px, 1920px layouts checked (no horizontal overflow; `VIEWPORTS=` option of the screenshot script)
+- [~] Lighthouse mobile: accessibility, best practices and SEO ≥ 90 on Home, Project, Product, Guide; performance measured on a local production server (see §16), **re-measure on Vercel with real CDN and image optimisation**
+- [~] JSON-LD parses on every page; **run Google Rich Results Test on the live domain; NAP not yet supplied by the owner**
+- [x] 404 page localised (title, body, link back) in every locale
+- [ ] Owner can add a project and a product in Studio and see it live within a minute — **needs the Sanity project (owner)**
 
 ---
 

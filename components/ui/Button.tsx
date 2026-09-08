@@ -10,7 +10,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   /** Brass fill, night text. The one call to action per view. */
-  primary: "border border-brass bg-brass text-night hover:border-brass-deep hover:bg-brass-deep",
+  primary: "border border-brass bg-brass text-surface hover:border-brass-deep hover:bg-brass-deep",
   /** Ivory outline that fills on hover. */
   secondary: "border border-ink/60 bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-surface",
   /** Text link with a brass underline. */

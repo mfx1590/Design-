@@ -11,8 +11,8 @@
   --umber: #3b2e24;
   --ivory: #f4ebdd;
   --sand: #cdbba4;
-  --brass: #c9a35f;
-  --brass-deep: #a88240;
+  --brass-dusk: #c9a35f;
+  --brass-deep-dusk: #a88240;
   --terracotta: #c4562e;
   --terracotta-text: #e8865f;
   --whatsapp: #25d366; /* functional only: the WhatsApp glyph */
@@ -21,18 +21,22 @@
   --plaster: #efe9e1;
   --porcelain: #e2dcd5;
   --frame: #15171b;
-  --walnut: #5a4a40;
+  --walnut: #3a2e27;
+  --brass-day: #75561c; /* bronze: 5:1 on plaster, so eyebrows and prices stay readable before dusk */
+  --brass-deep-day: #5e461a;
   --line-day: #cdbfb3;
 
   /* the blend */
   --dusk: 100%;
+  --brass: color-mix(in oklab, var(--brass-dusk) var(--dusk), var(--brass-day));
+  --brass-deep: color-mix(in oklab, var(--brass-deep-dusk) var(--dusk), var(--brass-deep-day));
 
   /* semantic, interpolated */
   --surface: color-mix(in oklab, var(--night) var(--dusk), var(--plaster));
   --surface-alt: color-mix(in oklab, var(--espresso) var(--dusk), var(--porcelain));
   --ink: color-mix(in oklab, var(--ivory) var(--dusk), var(--frame));
   --ink-soft: color-mix(in oklab, var(--sand) var(--dusk), var(--walnut));
-  --ink-muted: color-mix(in oklab, var(--ink) 55%, var(--surface));
+  --ink-muted: color-mix(in oklab, var(--ink) 62%, var(--surface)); /* small notes: 4.5:1 in both states */
   --rule: color-mix(in oklab, var(--umber) var(--dusk), var(--line-day));
   --rule-soft: color-mix(in oklab, var(--rule) 60%, transparent);
   --link: var(--brass);

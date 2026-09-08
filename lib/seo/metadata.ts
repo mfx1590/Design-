@@ -27,7 +27,17 @@ export function localizedPath(locale: Locale, href: Href): string {
  * Metadata builder (PLAN.md §9): canonical, hreflang for the six locales plus x-default (English),
  * OpenGraph and Twitter cards with a real image, and noindex where a page should stay out of search.
  */
-export function pageMetadata({ locale, href, title, description, image, imageAlt, noindex, type = "website" }: PageMetadataInput): Metadata {
+/** Search snippets are cut around 155-160 characters; clip at a word boundary so the visible text is a full phrase. */
+function clip(text: string | undefined, max: number) {
+  if (!text || text.length <= max) return text;
+  const cut = text.slice(0, max - 1);
+  return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), max - 40)).replace(/[,;:.\s]+$/, "")}…`;
+}
+
+export function pageMetadata({ locale, href, title: rawTitle, description: rawDescription, image, imageAlt, noindex, type = "website" }: PageMetadataInput): Metadata {
+  // Long titles lose the brand suffix rather than the page name.
+  const title = rawTitle.length > 70 ? rawTitle.replace(/\s+—\s+\u2066?Design Package\u2069?$/, "") : rawTitle;
+  const description = clip(rawDescription, 160);
   const canonical = absoluteUrl(localizedPath(locale, href));
   const languages = Object.fromEntries(locales.map((l) => [localeMeta[l].hreflang, absoluteUrl(localizedPath(l, href))]));
   languages["x-default"] = absoluteUrl(localizedPath("en", href));

@@ -38,7 +38,7 @@ export function PackageFinder({ types }: PackageFinderProps) {
   const option = (selected: boolean) =>
     cx(
       "border px-4 py-3 text-start text-small font-medium tracking-[0.02em] transition-colors duration-(--dur-ui) ease-soft",
-      selected ? "border-brass bg-brass text-night" : "border-rule text-ink-soft hover:border-ink hover:text-ink",
+      selected ? "border-brass bg-brass text-surface" : "border-rule text-ink-soft hover:border-ink hover:text-ink",
     );
 
   return (
@@ -98,7 +98,7 @@ export function PackageFinder({ types }: PackageFinderProps) {
               href={whatsappHref(message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex w-full items-center justify-center gap-3 border border-brass bg-brass px-6 py-3.5 text-body font-medium tracking-[0.04em] text-night transition-colors hover:border-brass-deep hover:bg-brass-deep"
+              className="mt-6 inline-flex w-full items-center justify-center gap-3 border border-brass bg-brass px-6 py-3.5 text-body font-medium tracking-[0.04em] text-surface transition-colors hover:border-brass-deep hover:bg-brass-deep"
             >
               <WhatsAppGlyph className="size-5" />
               {t("send")}

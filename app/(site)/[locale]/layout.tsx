@@ -42,7 +42,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-brass focus:px-3 focus:py-2 focus:text-night"
+            className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-brass focus:px-3 focus:py-2 focus:text-surface"
           >
             {t("skip")}
           </a>

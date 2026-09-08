@@ -11,16 +11,18 @@ async function urlsFor(locale) {
 
 function attr(html, re) {
   const m = html.match(re);
-  return m ? m[1] : null;
+  return m ? m[1].replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&") : null;
 }
 
+let siteOrigin = "";
 let failures = 0;
 let checked = 0;
 const seenTitles = new Map();
 for (const locale of locales) {
   const urls = await urlsFor(locale);
+  if (!siteOrigin && urls[0]) siteOrigin = new URL(urls[0]).origin;
   for (const url of urls) {
-    const res = await fetch(url);
+    const res = await fetch(url.replace(siteOrigin, base));
     const html = await res.text();
     const problems = [];
     if (res.status !== 200) problems.push(`status ${res.status}`);
@@ -32,7 +34,7 @@ for (const locale of locales) {
     else if (description.length > 170) problems.push(`description ${description.length} chars`);
     const canonical = attr(html, /<link rel="canonical" href="([^"]*)"/);
     if (canonical !== url) problems.push(`canonical ${canonical}`);
-    const hreflangs = (html.match(/hrefLang="/gi) || []).length;
+    const hreflangs = (html.match(/<link rel="alternate" hrefLang="/gi) || []).length;
     if (hreflangs !== locales.length + 1) problems.push(`hreflang ${hreflangs}`);
     if (!/property="og:image"/.test(html)) problems.push("no og:image");
     const h1s = (html.match(/<h1[\s>]/g) || []).length;

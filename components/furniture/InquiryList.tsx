@@ -69,7 +69,7 @@ export function InquiryList({ pieces, labels }: InquiryListProps) {
   return (
     <div className="grid items-start gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
       <div>
-        <p className="text-small text-ink-soft/70">{tf("count", { count: selected.length })}</p>
+        <p className="text-small text-ink-muted">{tf("count", { count: selected.length })}</p>
         <ul className="mt-4 divide-y divide-rule border-y border-rule">
           {selected.map((p) => (
             <li key={p.slug} className="flex items-center gap-4 py-4 sm:gap-6">
@@ -109,12 +109,12 @@ export function InquiryList({ pieces, labels }: InquiryListProps) {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-night transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body"
+          className="mt-5 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-surface transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body"
         >
           <WhatsAppGlyph className="size-5" />
           {labels.send}
         </a>
-        <p className="mt-4 text-micro text-ink-soft/60">{labels.stored}</p>
+        <p className="mt-4 text-micro text-ink-muted">{labels.stored}</p>
       </div>
     </div>
   );

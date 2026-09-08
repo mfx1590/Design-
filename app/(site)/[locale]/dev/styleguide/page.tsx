@@ -65,7 +65,7 @@ export default async function StyleguidePage({ params }: Props) {
               <div className="bg-surface p-3">
                 <p className="font-medium text-ink">{c.name}</p>
                 <p className="text-small text-ink-soft tabular">{c.hex}</p>
-                <p className="text-micro text-ink-soft/70">{c.role}</p>
+                <p className="text-micro text-ink-muted">{c.role}</p>
               </div>
             </li>
           ))}

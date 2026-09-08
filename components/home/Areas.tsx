@@ -19,7 +19,7 @@ export async function Areas() {
           </li>
         ))}
       </ul>
-      <p className="mt-5 text-micro text-ink-soft/60">{t("home.areasNote")}</p>
+      <p className="mt-5 text-micro text-ink-muted">{t("home.areasNote")}</p>
     </Section>
   );
 }

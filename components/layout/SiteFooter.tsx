@@ -91,7 +91,7 @@ export async function SiteFooter() {
           <LanguageSwitcher variant="list" className="mt-5" />
         </div>
       </Container>
-      <Container className="flex flex-wrap justify-between gap-x-8 gap-y-3 border-t border-rule-soft py-6 text-micro text-ink-soft/70">
+      <Container className="flex flex-wrap justify-between gap-x-8 gap-y-3 border-t border-rule-soft py-6 text-micro text-ink-muted">
         <span>{t("footer.rights", { year })}</span>
         <ul className="flex flex-wrap gap-x-5 gap-y-2">
           {legal.map((item) => (

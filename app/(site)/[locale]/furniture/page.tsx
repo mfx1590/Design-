@@ -58,7 +58,7 @@ export default async function FurniturePage({ params }: Props) {
           categories={categoryKeys.map((key) => ({ key, label: cmsLabels[key] ?? (categories.includes(key as CategoryKey) ? tf(`categories.${key as CategoryKey}`) : key) }))}
           labels={{ all: tf("all"), empty: tf("empty") }}
         />
-        <p className="mt-10 text-small text-ink-soft/70">{t("pages.furniture.note")}</p>
+        <p className="mt-10 text-small text-ink-muted">{t("pages.furniture.note")}</p>
       </Section>
 
       <WhatsAppCta />

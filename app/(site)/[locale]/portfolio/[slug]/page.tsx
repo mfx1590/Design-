@@ -59,6 +59,7 @@ export default async function ProjectPage({ params }: Props) {
         <TransformationScene
           tier="sequence"
           priority
+          headingLevel="section"
           before={{ src: project.sequence.poster, alt: project.before.alt }}
           after={project.after}
           sequence={{ desktop: project.sequence.sets.desktop, mobile: project.sequence.sets.mobile }}
@@ -77,6 +78,7 @@ export default async function ProjectPage({ params }: Props) {
         <TransformationScene
           tier="wipe"
           priority
+          headingLevel="section"
           before={project.before}
           after={project.after}
           eyebrow={t("pages.project.eyebrow")}
@@ -108,7 +110,7 @@ export default async function ProjectPage({ params }: Props) {
             </li>
           ))}
         </ul>
-        {project.visualisationNote ? <p className="mt-6 max-w-(--measure) text-micro text-ink-soft/60">{project.visualisationNote}</p> : null}
+        {project.visualisationNote ? <p className="mt-6 max-w-(--measure) text-micro text-ink-muted">{project.visualisationNote}</p> : null}
       </PageIntro>
 
       <Section surface="espresso" labelledBy="gallery-title" className="pt-0 sm:pt-0 lg:pt-0">
@@ -127,7 +129,7 @@ export default async function ProjectPage({ params }: Props) {
               />
             ))}
           </div>
-          <p className="mt-8 text-small text-ink-soft/70">{t("pages.project.videoNote")}</p>
+          <p className="mt-8 text-small text-ink-muted">{t("pages.project.videoNote")}</p>
         </div>
       </Section>
 

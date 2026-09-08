@@ -30,7 +30,7 @@ export async function WhatsAppCta({ message, title, lead }: WhatsAppCtaProps) {
             href={wa}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 border border-brass bg-brass px-7 py-4 text-body font-medium tracking-[0.04em] text-night transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep"
+            className="inline-flex items-center justify-center gap-3 border border-brass bg-brass px-7 py-4 text-body font-medium tracking-[0.04em] text-surface transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep"
           >
             <WhatsAppGlyph className="size-5" />
             {t("contact.openWhatsApp")}

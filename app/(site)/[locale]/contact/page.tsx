@@ -42,7 +42,7 @@ export default async function ContactPage({ params }: Props) {
         title={t("pages.contact.title")}
         lead={t("pages.contact.lead")}
         aside={
-          <a href={wa} target="_blank" rel="noopener noreferrer" className="card block p-6 sm:p-9" aria-label={t("contact.openWhatsApp")}>
+          <a href={wa} target="_blank" rel="noopener noreferrer" className="card block p-6 sm:p-9">
             <p className="inline-flex items-center gap-2 text-micro font-medium uppercase tracking-[0.18em] text-ink-soft">
               <WhatsAppGlyph className="size-4 text-whatsapp" />
               WhatsApp
@@ -50,7 +50,7 @@ export default async function ContactPage({ params }: Props) {
             <p className="type-display tabular mt-4 text-h2 leading-none whitespace-nowrap text-brass" dir="ltr">
               {whatsappDisplay}
             </p>
-            <span className="mt-6 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-night transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body">
+            <span className="mt-6 inline-flex w-full items-center justify-center gap-2 border border-brass bg-brass px-5 py-3 text-small font-medium tracking-[0.04em] text-surface transition-colors duration-(--dur-ui) ease-soft hover:border-brass-deep hover:bg-brass-deep sm:px-7 sm:py-3.5 sm:text-body">
               <WhatsAppGlyph className="size-5" />
               {t("contact.openWhatsApp")}
             </span>
@@ -75,7 +75,7 @@ export default async function ContactPage({ params }: Props) {
           ))}
         </dl>
         <p className="mt-10 max-w-(--measure) text-small text-ink-soft">{t("contact.areasLine", { cities })}</p>
-        <p className="mt-1 text-micro text-ink-soft/60">{t("home.areasNote")}</p>
+        <p className="mt-1 text-micro text-ink-muted">{t("home.areasNote")}</p>
       </Section>
     </>
   );

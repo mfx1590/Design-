@@ -7,10 +7,20 @@ import { Cormorant_Garamond, Jost, Vazirmatn } from "next/font/google";
  */
 export const display = Cormorant_Garamond({
   subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "500"],
+  style: ["normal"],
   variable: "--font-display",
   display: "swap",
+});
+
+/** The one italic accent per section; loaded on demand rather than preloaded on every page. */
+export const displayItalic = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  weight: ["400"],
+  style: ["italic"],
+  variable: "--font-display-italic",
+  display: "swap",
+  preload: false,
 });
 
 export const body = Jost({
@@ -20,10 +30,10 @@ export const body = Jost({
 });
 
 export const persian = Vazirmatn({
-  subsets: ["arabic", "latin"],
+  subsets: ["arabic"],
   variable: "--font-persian",
   display: "swap",
 });
 
 /** Class names to put on <html>. */
-export const fontVariables = `${display.variable} ${body.variable} ${persian.variable}`;
+export const fontVariables = `${display.variable} ${displayItalic.variable} ${body.variable} ${persian.variable}`;

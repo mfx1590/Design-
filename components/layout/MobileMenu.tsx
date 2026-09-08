@@ -59,7 +59,7 @@ export function MobileMenu({ items, whatsappHref, labels }: MobileMenuProps) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center gap-3 border border-brass bg-brass px-6 py-3.5 font-medium tracking-[0.04em] text-night"
+                className="mt-10 inline-flex items-center gap-3 border border-brass bg-brass px-6 py-3.5 font-medium tracking-[0.04em] text-surface"
               >
                 <WhatsAppGlyph className="size-5" />
                 {labels.whatsapp}

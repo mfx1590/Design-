@@ -56,7 +56,7 @@ export default async function PortfolioPage({ params }: Props) {
             />
           ))}
         </div>
-        <p className="mt-10 text-small text-ink-soft/70">{t("pages.portfolio.more")}</p>
+        <p className="mt-10 text-small text-ink-muted">{t("pages.portfolio.more")}</p>
       </Section>
 
       <WhatsAppCta />

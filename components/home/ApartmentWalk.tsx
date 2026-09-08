@@ -128,7 +128,7 @@ export function ApartmentWalk({ types, rooms, labels }: ApartmentWalkProps) {
           <div className="mt-3 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-5 lg:mt-10 lg:block">
             <FloorPlan ref={planRef} type={type} active={active} onRoom={goTo} labels={labels.plan} aria={labels.planAria} />
             <div className="text-end lg:mt-8 lg:text-start">
-              <p className="hidden text-micro uppercase tracking-[0.18em] text-ink-soft/70 lg:block">{current.note}</p>
+              <p className="hidden text-micro uppercase tracking-[0.18em] text-ink-muted lg:block">{current.note}</p>
               <p className="inline-flex flex-wrap items-baseline justify-end gap-x-2 text-small text-ink-soft lg:mt-1 lg:justify-start">
                 {t.rich("from", {
                   price: formatted,
@@ -169,7 +169,7 @@ export function ApartmentWalk({ types, rooms, labels }: ApartmentWalkProps) {
               <div className="aperture aspect-[3/2] overflow-hidden bg-surface-alt">
                 <Image src={room.photo.src} alt={room.photo.alt} fill sizes="(min-width: 1024px) 55vw, 100vw" className="object-cover" />
               </div>
-              <figcaption className="mt-2 text-micro text-ink-soft/70">{labels.fromProject}</figcaption>
+              <figcaption className="mt-2 text-micro text-ink-muted">{labels.fromProject}</figcaption>
             </figure>
 
             <p className="mt-8 text-micro font-medium uppercase tracking-[0.18em] text-brass">{labels.inPackage}</p>

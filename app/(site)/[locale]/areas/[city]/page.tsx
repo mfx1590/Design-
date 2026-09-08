@@ -67,7 +67,7 @@ export default async function AreaPage({ params }: Props) {
     <>
       <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: cityName, href: { pathname: "/areas/[city]", params: { city: area.slug } } }]), ld.faqPage(faqs)]} />
       <PageIntro eyebrow={t("pages.areas.eyebrow")} title={t("pages.areas.title", vars)} lead={t("pages.areas.lead", vars)}>
-        <p className="text-micro text-ink-soft/60">{t("pages.areas.note")}</p>
+        <p className="text-micro text-ink-muted">{t("pages.areas.note")}</p>
       </PageIntro>
 
       <Section className="pt-0" labelledBy="area-packages">

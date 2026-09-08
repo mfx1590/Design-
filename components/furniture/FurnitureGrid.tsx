@@ -20,7 +20,7 @@ export function FurnitureGrid({ items, categories, labels }: FurnitureGridProps)
   const chip = (selected: boolean) =>
     cx(
       "shrink-0 border px-4 py-2 text-small tracking-[0.04em] transition-colors duration-(--dur-ui) ease-soft",
-      selected ? "border-brass bg-brass text-night" : "border-rule text-ink-soft hover:border-ink hover:text-ink",
+      selected ? "border-brass bg-brass text-surface" : "border-rule text-ink-soft hover:border-ink hover:text-ink",
     );
 
   return (
@@ -35,7 +35,7 @@ export function FurnitureGrid({ items, categories, labels }: FurnitureGridProps)
           </button>
         ))}
       </div>
-      <p className="mt-5 text-small text-ink-soft/70" aria-live="polite">
+      <p className="mt-5 text-small text-ink-muted" aria-live="polite">
         {tf("count", { count: visible.length })}
       </p>
       {visible.length ? (

@@ -37,7 +37,7 @@ export function AddToInquiry({ slug, labels, variant = "link" }: AddToInquiryPro
         variant === "button"
           ? "inline-flex items-center justify-center gap-2 border px-6 py-3.5 font-medium tracking-[0.04em] transition-colors duration-(--dur-ui) ease-soft"
           : "link text-small",
-        variant === "button" && (inList ? "border-brass bg-brass text-night" : "border-ink/60 text-ink hover:bg-ink hover:text-surface"),
+        variant === "button" && (inList ? "border-brass bg-brass text-surface" : "border-ink/60 text-ink hover:bg-ink hover:text-surface"),
       )}
     >
       {inList ? labels.remove : labels.add}

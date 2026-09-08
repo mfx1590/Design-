@@ -44,7 +44,7 @@ export default async function AboutPage({ params }: Props) {
           {blocks.map((title) => (
             <div key={title} className="card p-7">
               <dt className="type-display text-h3 text-ink">{title}</dt>
-              <dd className="mt-3 text-small text-ink-soft/70">{t("pages.about.toConfirm")}</dd>
+              <dd className="mt-3 text-small text-ink-muted">{t("pages.about.toConfirm")}</dd>
             </div>
           ))}
         </dl>
