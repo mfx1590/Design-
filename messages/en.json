@@ -1,12 +1,9 @@
 {
   "meta": {
     "title": "Furniture packages in Northern Cyprus — Design Package",
-    "description": "Interior design packages and furniture in Northern Cyprus: Studio from £10,000, 1+1 from £12,000, 2+1 from £14,000."
+    "description": "Interior design packages and furniture in Northern Cyprus: Studio from £10,000, 1+1 from £12,000, 2+1 from £14,000. Delivered and installed."
   },
-  "brand": {
-    "name": "Design Package",
-    "placeholder": "Brand name to be confirmed"
-  },
+  "brand": { "name": "Design Package", "placeholder": "Brand name to be confirmed" },
   "nav": {
     "language": "Language",
     "skip": "Skip to content",
@@ -23,9 +20,12 @@
     "quote": "Request a quote",
     "package": "See the full package",
     "packages": "See packages",
+    "project": "See the project",
+    "allProjects": "See all projects",
     "whatsapp": "Chat on WhatsApp",
     "inquiry": "Add to inquiry list",
-    "priceOnRequest": "Price on request"
+    "priceOnRequest": "Price on request",
+    "send": "Send request"
   },
   "card": {
     "before": "Before",
@@ -35,20 +35,43 @@
     "showAfter": "Show after"
   },
   "hero": {
+    "eyebrow": "Furniture packages · Northern Cyprus",
     "before": "You bought the walls.",
     "after": "We bring the home.",
-    "lead": "Furniture packages for apartments in Northern Cyprus, delivered and installed. Studio from £10,000.",
+    "lead": "Complete furniture packages for apartments in Northern Cyprus, delivered and installed. Studio from £10,000.",
     "visualisation": "Visualisation based on a completed studio project.",
     "altBefore": "Empty studio apartment with a sliding door to the pool, before furnishing",
     "altAfter": "The same studio furnished: breakfast bar, bed, sofa and curtains"
   },
-  "phase0": {
-    "eyebrow": "Phase 0 · foundations",
-    "title": "You bought the walls.",
-    "lead": "We furnish apartments in Northern Cyprus, from empty walls to a finished home.",
-    "direction": "This page renders {dir, select, rtl {right-to-left} other {left-to-right}} for {locale}.",
-    "scriptCheck": "Script check: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
-    "next": "Next"
+  "trust": {
+    "prices": "Studio from £10,000 · 1+1 from £12,000 · 2+1 from £14,000",
+    "delivery": "Delivery and installation included",
+    "remote": "Selection and approval from anywhere",
+    "languages": "Service in six languages"
+  },
+  "home": {
+    "packagesEyebrow": "Packages",
+    "packagesTitle": "One price for the whole apartment.",
+    "packagesLead": "Every room, delivered and installed. Packages are defined by apartment type, not by quality tier.",
+    "packagesScroll": "Keep scrolling to grow the plan",
+    "projectEyebrow": "Recent project",
+    "projectTitle": "A studio, from keys to first night.",
+    "projectMeta": "Studio · pool-side complex · city to be confirmed",
+    "projectBody": "Breakfast bar, bed, sofa, curtains, kitchen, bathroom and terrace, in one delivery. Hover or tap the photo to see the empty room.",
+    "stepsEyebrow": "How it works",
+    "stepsTitle": "Six steps between the keys and the first night.",
+    "servicesEyebrow": "Services",
+    "servicesTitle": "Beyond the package.",
+    "areasEyebrow": "Where we work",
+    "areasTitle": "Across Northern Cyprus.",
+    "areasLead": "Apartments and villas in the places foreign buyers choose most.",
+    "areasNote": "City list to be confirmed by the owner.",
+    "faqEyebrow": "Questions",
+    "faqTitle": "Straight answers.",
+    "contactEyebrow": "Start here",
+    "contactTitle": "Tell us about your apartment.",
+    "contactLead": "Send the floor plan, the handover date and how you will use it. We reply with a first proposal and a price.",
+    "contactOr": "Prefer to chat?"
   },
   "packages": {
     "heading": "Packages",
@@ -58,7 +81,82 @@
     "onePlusOne": "1+1",
     "onePlusOneNote": "one bedroom",
     "twoPlusOne": "2+1",
-    "twoPlusOneNote": "two bedrooms"
+    "twoPlusOneNote": "two bedrooms",
+    "incLiving": "Living and sleeping area",
+    "incLivingRoom": "Living room",
+    "incKitchen": "Kitchen and dining",
+    "incBath": "Bathroom",
+    "incBed1": "One bedroom",
+    "incBed2": "Two bedrooms",
+    "incDelivery": "Delivery and installation",
+    "planLiving": "Living · sleeping",
+    "planLivingRoom": "Living",
+    "planKitchen": "Kitchen",
+    "planBath": "Bath",
+    "planBedroom": "Bedroom",
+    "planTerrace": "Terrace"
+  },
+  "steps": {
+    "s1Title": "Consultation",
+    "s1Body": "A call or a visit. We look at the floor plan, the handover date and how you will use the apartment.",
+    "s2Title": "Concept",
+    "s2Body": "A layout and a shortlist for every room, priced as one package.",
+    "s3Title": "Selection",
+    "s3Body": "You approve the pieces. Remotely, if you are abroad.",
+    "s4Title": "Delivery",
+    "s4Body": "Everything arrives together, timed to your handover.",
+    "s5Title": "Installation",
+    "s5Body": "Assembled, placed and styled by our team.",
+    "s6Title": "Handover",
+    "s6Body": "You walk into a finished home."
+  },
+  "services": {
+    "staging": "Home staging",
+    "stagingBody": "For sellers and agents: furnished, styled and ready to show.",
+    "rental": "Rental furnishing",
+    "rentalBody": "For owners who rent out. Durable and neutral for long-term tenants, guest-ready down to kitchenware and linen for holiday lets.",
+    "custom": "Custom projects",
+    "customBody": "Individual design projects beyond the standard packages."
+  },
+  "areas": {
+    "kyrenia": "Kyrenia (Girne)",
+    "iskele": "İskele (Trikomo)",
+    "famagusta": "Famagusta (Gazimağusa)",
+    "nicosia": "Nicosia (Lefkoşa)"
+  },
+  "faq": {
+    "q1": "What is included in a package?",
+    "a1": "Furniture for every room of the apartment type, plus delivery and installation. The room-by-room list is on each package page.",
+    "q2": "I live abroad. Can I do this remotely?",
+    "a2": "Yes. Many buyers are not in Cyprus at handover. Concept, selection and approval happen online, and we install before you arrive.",
+    "q3": "How is rental furnishing different?",
+    "a3": "Same Studio, 1+1 and 2+1 structure, chosen for the purpose: durable and neutral for long-term tenants, guest-ready down to kitchenware and linen for holiday lets.",
+    "q4": "Are prices in pounds?",
+    "a4": "Yes. All prices are in GBP and start from £10,000 for a Studio, £12,000 for a 1+1 and £14,000 for a 2+1."
+  },
+  "contact": {
+    "name": "Name",
+    "phone": "Phone or WhatsApp",
+    "phoneHint": "With country code",
+    "email": "Email",
+    "location": "Property location",
+    "locationHint": "City or development",
+    "type": "Apartment type",
+    "service": "I am interested in",
+    "serviceStandard": "Furniture package",
+    "serviceRental": "Rental furnishing",
+    "serviceStaging": "Home staging",
+    "serviceCustom": "Custom project",
+    "message": "Message",
+    "consent": "I agree to be contacted about my request."
+  },
+  "phase0": {
+    "eyebrow": "Phase 0 · foundations",
+    "title": "You bought the walls.",
+    "lead": "We furnish apartments in Northern Cyprus, from empty walls to a finished home.",
+    "direction": "This page renders {dir, select, rtl {right-to-left} other {left-to-right}} for {locale}.",
+    "scriptCheck": "Script check: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "Next"
   },
   "notFound": {
     "title": "Page not found",
@@ -75,10 +173,5 @@
   },
   "whatsapp": {
     "prefill": "Hello, I would like to ask about furnishing my apartment in Northern Cyprus."
-  },
-  "services": {
-    "staging": "Home staging",
-    "rental": "Rental furnishing",
-    "custom": "Custom projects"
   }
 }

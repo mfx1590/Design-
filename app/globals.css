@@ -1,13 +1,17 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
-/* Expose tokens to Tailwind utilities: bg-plaster, text-ink-soft, border-rule, text-h2, ease-soft ... */
+/* Expose tokens to Tailwind utilities: bg-night, text-sand, border-umber, text-brass, text-h2, font-display ... */
 @theme inline {
-  --color-plaster: var(--plaster);
-  --color-porcelain: var(--porcelain);
-  --color-frame: var(--frame);
-  --color-walnut: var(--walnut);
-  --color-kyrenia: var(--kyrenia);
+  --color-night: var(--night);
+  --color-espresso: var(--espresso);
+  --color-umber: var(--umber);
+  --color-ivory: var(--ivory);
+  --color-sand: var(--sand);
+  --color-brass: var(--brass);
+  --color-brass-deep: var(--brass-deep);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-text: var(--terracotta-text);
   --color-whatsapp: var(--whatsapp);
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
@@ -15,10 +19,13 @@
   --color-ink-soft: var(--ink-soft);
   --color-ink-muted: var(--ink-muted);
   --color-rule: var(--rule);
+  --color-rule-soft: var(--rule-soft);
   --color-link: var(--link);
-  --color-scrim: var(--scrim);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --font-sans: var(--font-body);
-  --text-display-xl: var(--text-display-xl);
+  --font-display: var(--font-heading);
+  --text-hero: var(--text-hero);
   --text-display: var(--text-display);
   --text-h2: var(--text-h2);
   --text-h3: var(--text-h3);
@@ -26,12 +33,13 @@
   --text-body: var(--text-body);
   --text-small: var(--text-small);
   --text-micro: var(--text-micro);
+  --text-eyebrow: var(--text-eyebrow);
   --ease-soft: var(--ease);
 }
 
 @layer base {
   html {
-    color-scheme: light;
+    color-scheme: dark;
     scroll-behavior: smooth;
   }
   body {
@@ -40,7 +48,6 @@
     font-family: var(--font-body);
     font-size: var(--text-body);
     line-height: var(--leading-body);
-    font-variation-settings: var(--settings-text);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -49,8 +56,8 @@
     outline-offset: 3px;
   }
   ::selection {
-    background: var(--frame);
-    color: var(--plaster);
+    background: var(--brass);
+    color: var(--night);
   }
   img,
   video,
@@ -84,43 +91,98 @@
   }
 }
 
-/* The display cut: same family, flared terminals, tight leading. */
+/* Headlines and prices: Cormorant Garamond (Vazirmatn on Farsi pages). */
 @utility type-display {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-weight: var(--weight-display);
-  font-variation-settings: var(--settings-display);
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
+  font-variant-numeric: lining-nums;
   text-wrap: balance;
 }
 
-/* The text cut, for resetting inside display contexts. */
-@utility type-text {
+/* One italic accent word per section at most. */
+@utility type-italic {
+  font-family: var(--font-heading);
+  font-style: italic;
   font-weight: 400;
-  font-variation-settings: var(--settings-text);
-  letter-spacing: 0;
-  line-height: var(--leading-body);
+}
+
+/* Section label: brass rule + tracked uppercase. One per section. */
+@utility eyebrow {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--brass);
+  &::before {
+    content: "";
+    display: block;
+    flex: none;
+    width: 2rem;
+    height: 1px;
+    margin-top: 0.55em;
+    background: var(--brass);
+  }
 }
 
 @utility tabular {
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
-/* Every photograph sits in a square black frame. */
+/* Every photograph: 1px umber frame that turns brass on hover, plus a soft inner vignette so it glows. */
 @utility aperture {
-  border: var(--frame-width) solid var(--frame);
+  position: relative;
+  border: var(--frame-width) solid var(--umber);
+  transition: border-color var(--dur-ui) var(--ease);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 90px rgb(0 0 0 / 0.35);
+  }
+  &:hover {
+    border-color: var(--brass);
+  }
 }
 
-/* Text link: ink text, Kyrenia underline, no arrow. */
+/* Espresso card with an umber border that warms to brass on hover. */
+@utility card {
+  background: var(--espresso);
+  border: 1px solid var(--umber);
+  transition: border-color var(--dur-ui) var(--ease);
+  &:hover {
+    border-color: var(--brass);
+  }
+}
+
+/* Bottom gradient over photography for text legibility. */
+@utility scrim-bottom {
+  background: linear-gradient(
+    to top,
+    var(--night) 0%,
+    color-mix(in oklab, var(--night) 82%, transparent) 30%,
+    color-mix(in oklab, var(--night) 45%, transparent) 65%,
+    transparent 100%
+  );
+}
+
+/* Text link: sand text, brass underline; ivory on hover. */
 @utility link {
-  color: var(--ink);
+  color: var(--sand);
   text-decoration: underline;
-  text-decoration-color: var(--link);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  text-decoration-color: var(--brass);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
   transition: color var(--dur-ui) var(--ease);
   &:hover {
-    color: var(--link);
+    color: var(--ivory);
   }
 }
 
@@ -134,14 +196,9 @@
   color: var(--ink);
 }
 
-@utility surface-frame {
-  background: var(--frame);
-  color: var(--plaster);
-}
-
 /* Form controls that need an image: the select chevron and the checkbox tick. */
 @utility control-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2315171b' stroke-width='1.5'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23cdbba4' stroke-width='1.5'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");
   background-size: 1rem;
   background-position: right 0.75rem center;
   background-repeat: no-repeat;
@@ -155,11 +212,12 @@
   appearance: none;
   width: 1rem;
   height: 1rem;
-  border: var(--frame-width) solid var(--frame);
-  background-color: var(--porcelain);
+  border: 1px solid var(--sand);
+  background-color: transparent;
   &:checked {
-    background-color: var(--frame);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23efe9e1' stroke-width='2'%3E%3Cpath d='M3.5 8.5l3 3 6-6'/%3E%3C/svg%3E");
+    background-color: var(--brass);
+    border-color: var(--brass);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%2315110d' stroke-width='2'%3E%3Cpath d='M3.5 8.5l3 3 6-6'/%3E%3C/svg%3E");
     background-size: 0.75rem;
     background-position: center;
     background-repeat: no-repeat;

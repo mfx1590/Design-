@@ -13,58 +13,73 @@ interface ProjectCardProps {
   beforeSrc: string;
   alt: string;
   hasVideo?: boolean;
+  /** Image ratio. Cards use 3:2, the featured project uses 16:9 or 21:9. */
+  ratio?: "3/2" | "16/9" | "21/9" | "4/3";
+  sizes?: string;
   /** Rendered around the title (a Link in real pages). */
   titleWrap?: (title: string) => React.ReactNode;
+  /** Hide title and meta (the featured block renders its own). */
+  imageOnly?: boolean;
+  priority?: boolean;
 }
+
+const ratioClass = { "3/2": "aspect-[3/2]", "16/9": "aspect-video", "21/9": "aspect-[21/9]", "4/3": "aspect-[4/3]" };
+
+const chip = "pointer-events-none absolute bg-night/75 px-2.5 py-1 text-micro font-medium uppercase tracking-[0.12em] text-ivory backdrop-blur-sm";
 
 /**
  * Aperture with the finished room; hover or tap wipes the empty room in from the inline-start edge
  * (mirrored in RTL). Reduced motion: no transition, the toggle still works.
  */
-export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, titleWrap }: ProjectCardProps) {
+export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, ratio = "3/2", sizes, titleWrap, imageOnly, priority }: ProjectCardProps) {
   const [showBefore, setShowBefore] = useState(false);
   const t = useTranslations("card");
+  const imgSizes = sizes ?? "(min-width: 1024px) 33vw, 100vw";
 
   return (
     <article className="group">
-      <div className="aperture relative aspect-[3/2] overflow-hidden bg-porcelain">
-        <Image src={afterSrc} alt={alt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+      <div className={cx("aperture overflow-hidden bg-espresso", ratioClass[ratio])}>
+        <Image src={afterSrc} alt={alt} fill sizes={imgSizes} priority={priority} className="object-cover" />
         <div
           aria-hidden="true"
           className={cx(
-            "absolute inset-0 transition-[clip-path] duration-500 ease-soft motion-reduce:transition-none",
+            "absolute inset-0 transition-[clip-path] duration-700 ease-soft motion-reduce:transition-none",
             showBefore
               ? "[clip-path:inset(0)]"
               : "[clip-path:inset(0_100%_0_0)] group-hover:[clip-path:inset(0)] rtl:[clip-path:inset(0_0_0_100%)] rtl:group-hover:[clip-path:inset(0)]",
           )}
         >
-          <Image src={beforeSrc} alt="" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+          <Image src={beforeSrc} alt="" fill sizes={imgSizes} className="object-cover" />
         </div>
 
         <button
           type="button"
           aria-pressed={showBefore}
           onClick={() => setShowBefore((v) => !v)}
-          className="absolute inset-0 cursor-pointer focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-kyrenia"
+          className="absolute inset-0 z-10 cursor-pointer focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-brass"
         >
           <span className="sr-only">{showBefore ? t("showAfter") : t("showBefore")}</span>
         </button>
 
-        <span className="pointer-events-none absolute bottom-3 start-3 bg-frame px-2 py-1 text-micro font-medium text-plaster">
+        <span className={cx(chip, "bottom-4 start-4 border border-terracotta/80")}>
           <span className="group-hover:hidden">{showBefore ? t("before") : t("after")}</span>
           <span className="hidden group-hover:inline">{showBefore ? t("after") : t("before")}</span>
         </span>
 
         {hasVideo ? (
-          <span className="pointer-events-none absolute end-3 top-3 inline-flex items-center gap-1.5 bg-frame px-2 py-1 text-micro font-medium text-plaster">
-            <span aria-hidden="true" className="inline-block size-0 border-y-[5px] border-s-[8px] border-y-transparent border-s-plaster" />
+          <span className={cx(chip, "end-4 top-4 inline-flex items-center gap-1.5 border border-brass/60")}>
+            <span aria-hidden="true" className="inline-block size-0 border-y-[4px] border-s-[7px] border-y-transparent border-s-brass" />
             {t("realVideo")}
           </span>
         ) : null}
       </div>
 
-      <h3 className="type-display mt-3 text-h3">{titleWrap ? titleWrap(title) : title}</h3>
-      <p className="mt-1 text-small text-ink-soft">{meta}</p>
+      {imageOnly ? null : (
+        <>
+          <h3 className="type-display mt-4 text-h3 text-ivory">{titleWrap ? titleWrap(title) : title}</h3>
+          <p className="mt-1.5 text-small text-sand">{meta}</p>
+        </>
+      )}
     </article>
   );
 }

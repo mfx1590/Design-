@@ -17,12 +17,13 @@ export async function HeroScene() {
       after={{ src: `${PROJECT_IMAGES}/after-landscape.jpg`, alt: t("hero.altAfter") }}
       sequence={{ desktop: manifest.sets.desktop, mobile: manifest.sets.mobile }}
       video={{ desktop: manifest.video }}
+      eyebrow={t("hero.eyebrow")}
       headline={{ before: t("hero.before"), after: t("hero.after"), switchAt: 0.6 }}
       lead={t("hero.lead")}
       actions={
         <>
           <Button href="/contact">{t("cta.quote")}</Button>
-          <Button href="/packages" variant="inverse">
+          <Button href="/packages" variant="secondary">
             {t("cta.packages")}
           </Button>
         </>

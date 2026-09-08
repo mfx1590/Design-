@@ -1,21 +1,29 @@
-import { Commissioner, Vazirmatn } from "next/font/google";
+import { Cormorant_Garamond, Jost, Vazirmatn } from "next/font/google";
 
 /**
- * PROVISIONAL Latin + Cyrillic family. The final choice is made in the Phase 1
- * design plan (PLAN.md §4). Commissioner is a humanist grotesk with real axes
- * (weight, slant, flare, volume) and covers Latin Extended + Cyrillic.
- * next/font self-hosts the files at build time (font-display: swap).
+ * Type for the v3 "warm luxury" system (docs/design-plan-v3.md §3).
+ * Cormorant Garamond carries headlines and prices, Jost carries body and UI,
+ * Vazirmatn carries Farsi. All self-hosted by next/font with font-display: swap.
  */
-export const latin = Commissioner({
+export const display = Cormorant_Garamond({
   subsets: ["latin", "latin-ext", "cyrillic"],
-  axes: ["FLAR", "VOLM", "slnt"],
-  variable: "--font-latin",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-display",
   display: "swap",
 });
 
-/** Persian family for /fa. Vazirmatn covers Arabic script plus Latin digits and punctuation. */
+export const body = Jost({
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  variable: "--font-jost",
+  display: "swap",
+});
+
 export const persian = Vazirmatn({
   subsets: ["arabic", "latin"],
   variable: "--font-persian",
   display: "swap",
 });
+
+/** Class names to put on <html>. */
+export const fontVariables = `${display.variable} ${body.variable} ${persian.variable}`;

@@ -33,6 +33,8 @@ export interface TransformationSceneProps {
   after: SceneImage;
   sequence?: { desktop: SequenceSet; mobile?: SequenceSet };
   video?: { desktop: VideoSet; mobile?: VideoSet };
+  /** Small brass label above the headline. */
+  eyebrow?: string;
   /** Headline that switches from the "before" line to the "after" line at switchAt (0-1, default 0.6). */
   headline?: { before: string; after: string; switchAt?: number };
   lead?: string;
@@ -84,6 +86,7 @@ export function TransformationScene(props: TransformationSceneProps) {
     after,
     sequence,
     video,
+    eyebrow,
     headline,
     lead,
     actions,
@@ -230,11 +233,13 @@ export function TransformationScene(props: TransformationSceneProps) {
   }, [tier, sequence, video, reduced, switchAt]);
 
   const Heading = headingLevel === "hero" ? "h1" : "h2";
+  const headingSize = headingLevel === "hero" ? "text-hero" : "text-display";
 
-  const headlineBlock = (
-    <div className="max-w-2xl bg-scrim p-5 text-plaster md:p-7">
+  const textBlock = (
+    <div className="max-w-3xl">
+      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       {headline ? (
-        <Heading className="type-display text-display-xl">
+        <Heading className={cx("type-display mt-5 text-ivory", headingSize)}>
           <span className="sr-only">{headline.after}</span>
           <span aria-hidden="true" className="relative block">
             <span className={cx("block transition-opacity duration-(--dur-text) ease-soft", phase === "after" && "opacity-0")}>
@@ -246,10 +251,10 @@ export function TransformationScene(props: TransformationSceneProps) {
           </span>
         </Heading>
       ) : null}
-      {lead ? <p className="mt-4 max-w-(--measure) text-lead">{lead}</p> : null}
-      {actions ? <div className="mt-6 flex flex-wrap gap-3">{actions}</div> : null}
-      <div className="mt-6 h-0.5 w-full bg-plaster/30" aria-hidden="true">
-        <div ref={railRef} className="h-full origin-left bg-kyrenia rtl:origin-right" style={{ transform: "scaleX(0)" }} />
+      {lead ? <p className="mt-6 max-w-(--measure) text-lead text-sand">{lead}</p> : null}
+      {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
+      <div className="mt-8 h-px w-full max-w-md bg-ivory/20" aria-hidden="true">
+        <div ref={railRef} className="h-full origin-left bg-brass rtl:origin-right" style={{ transform: "scaleX(0)" }} />
       </div>
     </div>
   );
@@ -260,23 +265,24 @@ export function TransformationScene(props: TransformationSceneProps) {
         <div className="mx-auto w-full max-w-(--content-max) px-(--gutter)">
           <div className="grid gap-4 md:grid-cols-2">
             <figure className="m-0">
-              <div className="aperture relative aspect-[4/3] overflow-hidden bg-porcelain">
+              <div className="aperture aspect-[4/3] overflow-hidden bg-espresso">
                 <Image src={before.src} alt={before.alt} fill sizes="(min-width: 768px) 50vw, 100vw" priority={priority} className="object-cover" />
               </div>
-              <figcaption className="mt-2 text-small text-ink-soft">{labels.before}</figcaption>
+              <figcaption className="mt-3 text-small text-sand">{labels.before}</figcaption>
             </figure>
             <figure className="m-0">
-              <div className="aperture relative aspect-[4/3] overflow-hidden bg-porcelain">
+              <div className="aperture aspect-[4/3] overflow-hidden bg-espresso">
                 <Image src={after.src} alt={after.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
               </div>
-              <figcaption className="mt-2 text-small text-ink-soft">{labels.after}</figcaption>
+              <figcaption className="mt-3 text-small text-sand">{labels.after}</figcaption>
             </figure>
           </div>
-          <div className="mt-8">
-            {headline ? <Heading className="type-display text-display">{headline.after}</Heading> : null}
-            {lead ? <p className="mt-4 max-w-(--measure) text-lead text-ink-soft">{lead}</p> : null}
-            {actions ? <div className="mt-6 flex flex-wrap gap-3">{actions}</div> : null}
-            {note ? <p className="mt-4 text-micro text-ink-soft">{note}</p> : null}
+          <div className="mt-10">
+            {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+            {headline ? <Heading className="type-display mt-5 text-display text-ivory">{headline.after}</Heading> : null}
+            {lead ? <p className="mt-6 max-w-(--measure) text-lead text-sand">{lead}</p> : null}
+            {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
+            {note ? <p className="mt-4 text-micro text-sand/80">{note}</p> : null}
           </div>
         </div>
       </section>
@@ -284,7 +290,7 @@ export function TransformationScene(props: TransformationSceneProps) {
   }
 
   return (
-    <section ref={sectionRef} className={cx("relative bg-frame", className)} style={{ height: `${pinHeights * 100}dvh` }}>
+    <section ref={sectionRef} className={cx("relative bg-night", className)} style={{ height: `${pinHeights * 100}dvh` }}>
       <div className="sticky top-(--header-height) h-[calc(100dvh-var(--header-height))] w-full overflow-hidden" data-ready={ready}>
         {/* Poster: the empty room, shown until the tier is ready. Also the LCP image. */}
         <div className={cx("absolute inset-0 transition-opacity duration-500 ease-soft", ready && tier !== "wipe" && "opacity-0")}>
@@ -296,14 +302,7 @@ export function TransformationScene(props: TransformationSceneProps) {
         ) : null}
 
         {tier === "video" && video ? (
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            preload="auto"
-            aria-label={after.alt}
-            className="absolute inset-0 h-full w-full object-cover"
-          >
+          <video ref={videoRef} muted playsInline preload="auto" aria-label={after.alt} className="absolute inset-0 h-full w-full object-cover">
             {video.desktop.webm ? <source src={video.desktop.webm} type="video/webm" /> : null}
             <source src={video.desktop.mp4} type="video/mp4" />
           </video>
@@ -315,8 +314,15 @@ export function TransformationScene(props: TransformationSceneProps) {
           </div>
         ) : null}
 
-        <div className="absolute inset-x-0 bottom-0 p-(--gutter) pb-8 md:pb-10">{headlineBlock}</div>
-        {note ? <p className="absolute end-(--gutter) top-4 bg-scrim px-2 py-1 text-micro text-plaster">{note}</p> : null}
+        {/* Legibility: a gradient from the bottom, never a box. */}
+        <div className="scrim-bottom pointer-events-none absolute inset-x-0 bottom-0 h-[88%]" aria-hidden="true" />
+
+        <div className="absolute inset-x-0 bottom-0 px-(--gutter) pb-10 md:pb-14">
+          <div className="mx-auto w-full max-w-(--content-max)">{textBlock}</div>
+        </div>
+        {note ? (
+          <p className="absolute end-(--gutter) top-5 bg-night/60 px-2.5 py-1 text-micro text-sand/90 backdrop-blur-sm">{note}</p>
+        ) : null}
       </div>
     </section>
   );

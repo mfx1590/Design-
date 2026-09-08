@@ -5,20 +5,24 @@ import { cx } from "@/lib/cx";
 type Variant = "primary" | "secondary" | "tertiary" | "inverse";
 type Size = "sm" | "md" | "lg";
 
-const base = "inline-flex items-center justify-center gap-2 font-medium no-underline transition-colors duration-(--dur-ui) ease-soft";
+const base =
+  "inline-flex items-center justify-center gap-2 font-medium tracking-[0.04em] no-underline transition-colors duration-(--dur-ui) ease-soft";
 
 const variants: Record<Variant, string> = {
-  primary: "border-[1.5px] border-frame bg-frame text-plaster hover:border-walnut hover:bg-walnut",
-  secondary: "border-[1.5px] border-frame bg-transparent text-ink hover:bg-porcelain",
-  tertiary: "link font-normal",
-  /** For use over photography and on Frame surfaces. */
-  inverse: "border-[1.5px] border-plaster bg-transparent text-plaster hover:bg-plaster hover:text-frame",
+  /** Brass fill, night text. The one call to action per view. */
+  primary: "border border-brass bg-brass text-night hover:border-brass-deep hover:bg-brass-deep",
+  /** Ivory outline that fills on hover. */
+  secondary: "border border-ivory/60 bg-transparent text-ivory hover:border-ivory hover:bg-ivory hover:text-night",
+  /** Text link with a brass underline. */
+  tertiary: "link font-normal tracking-normal",
+  /** Same as secondary; kept for callers that sit over photography. */
+  inverse: "border border-ivory/60 bg-transparent text-ivory hover:border-ivory hover:bg-ivory hover:text-night",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "px-3 py-2 text-small",
-  md: "px-5 py-3 text-body",
-  lg: "px-6 py-4 text-lead",
+  sm: "px-4 py-2 text-small",
+  md: "px-7 py-3.5 text-body",
+  lg: "px-8 py-4 text-lead",
 };
 
 type InternalHref = ComponentProps<typeof Link>["href"];
@@ -37,10 +41,6 @@ type ButtonProps = CommonProps &
     | { href?: never; external?: never; onClick?: () => void; type?: "button" | "submit"; disabled?: boolean }
   );
 
-/**
- * Primary: Frame fill. Secondary: Frame outline. Tertiary: text link with a Kyrenia underline.
- * Inverse: Plaster outline for use over photos. No arrows, no icons by default, zero radius.
- */
 export function Button(props: ButtonProps) {
   const { variant = "primary", size = "md", className, children } = props;
   const classes = cx(base, variants[variant], variant === "tertiary" ? "" : sizes[size], className);

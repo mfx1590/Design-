@@ -9,7 +9,7 @@ import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { localeMeta } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
-import { latin, persian } from "@/lib/fonts";
+import { fontVariables } from "@/lib/fonts";
 import "@/app/globals.css";
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
@@ -33,12 +33,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   const t = await getTranslations("nav");
 
   return (
-    <html lang={locale} dir={dir} data-script={script} className={`${latin.variable} ${persian.variable}`}>
+    <html lang={locale} dir={dir} data-script={script} className={fontVariables}>
       <body className="flex min-h-dvh flex-col">
         <NextIntlClientProvider>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-frame focus:px-3 focus:py-2 focus:text-plaster"
+            className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-50 focus:bg-brass focus:px-3 focus:py-2 focus:text-night"
           >
             {t("skip")}
           </a>

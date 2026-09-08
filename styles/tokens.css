@@ -1,71 +1,78 @@
 /*
- * Design tokens. Source of truth: docs/design-plan.md §3.
- * Five colours, one type family (plus a Persian face), a 4px space scale,
- * zero radius, no shadows. Semantic names below are what components use.
+ * Design tokens, v3 "warm luxury, dark". Source of truth: docs/design-plan-v3.md.
+ * Seven colours, Cormorant Garamond + Jost (+ Vazirmatn for Farsi), zero radius, no drop shadows.
  */
 :root {
-  /* palette (sampled from the project photos, lifted to daylight) */
-  --plaster: #efe9e1;
-  --porcelain: #e2dcd5;
-  --frame: #15171b;
-  --walnut: #5a4a40;
-  --kyrenia: #1b5f80;
+  /* palette */
+  --night: #15110d;
+  --espresso: #211a14;
+  --umber: #3b2e24;
+  --ivory: #f4ebdd;
+  --sand: #cdbba4;
+  --brass: #c9a35f;
+  --brass-deep: #a88240;
+  --terracotta: #c4562e;
+  --terracotta-text: #e8865f; /* lighter tint that passes AA for small text on Night (errors) */
   --whatsapp: #25d366; /* functional only: the WhatsApp glyph */
 
   /* semantic */
-  --surface: var(--plaster);
-  --surface-alt: var(--porcelain);
-  --ink: var(--frame);
-  --ink-soft: var(--walnut);
-  --ink-muted: color-mix(in oklab, var(--frame) 45%, var(--plaster));
-  --rule: color-mix(in oklab, var(--frame) 18%, transparent);
-  --rule-strong: var(--frame);
-  --link: var(--kyrenia);
-  --focus: var(--kyrenia);
-  --scrim: color-mix(in oklab, var(--frame) 38%, transparent);
+  --surface: var(--night);
+  --surface-alt: var(--espresso);
+  --ink: var(--ivory);
+  --ink-soft: var(--sand);
+  --ink-muted: color-mix(in oklab, var(--sand) 55%, var(--night));
+  --rule: var(--umber);
+  --rule-soft: color-mix(in oklab, var(--umber) 55%, transparent);
+  --link: var(--brass);
+  --focus: var(--brass);
+  --accent: var(--brass);
+  --accent-2: var(--terracotta);
 
-  /* type: Commissioner text + display cuts, Vazirmatn for Farsi */
-  --font-latin-stack: var(--font-latin), system-ui, "Segoe UI", sans-serif;
-  --font-persian-stack: var(--font-persian), var(--font-latin), "Segoe UI", Tahoma, sans-serif;
-  --font-body: var(--font-latin-stack);
-  --text-display-xl: clamp(2.75rem, 1.5rem + 5vw, 6.5rem);
-  --text-display: clamp(2.125rem, 1.3rem + 3vw, 3.75rem);
-  --text-h2: clamp(1.5rem, 1.15rem + 1.6vw, 2.25rem);
-  --text-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  /* type */
+  --font-display-stack: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --font-body-stack: var(--font-jost), "Jost", system-ui, "Segoe UI", sans-serif;
+  --font-persian-stack: var(--font-persian), var(--font-jost), "Segoe UI", Tahoma, sans-serif;
+  --font-body: var(--font-body-stack);
+  --font-heading: var(--font-display-stack);
+  --text-hero: clamp(3rem, 1.8rem + 6vw, 7.5rem);
+  --text-display: clamp(2.5rem, 1.6rem + 3.5vw, 4.75rem);
+  --text-h2: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
+  --text-h3: clamp(1.5rem, 1.25rem + 0.9vw, 1.9rem);
   --text-lead: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
   --text-body: 1.0625rem;
   --text-small: 0.9375rem;
   --text-micro: 0.8125rem;
+  --text-eyebrow: 0.75rem;
   --leading-display: 1.02;
-  --leading-tight: 1.15;
-  --leading-body: 1.5;
-  --tracking-display: -0.02em;
-  --weight-display: 420;
-  --settings-display: "VOLM" 100, "FLAR" 100, "slnt" 0;
-  --settings-text: "VOLM" 0, "FLAR" 0, "slnt" 0;
+  --leading-tight: 1.2;
+  --leading-body: 1.6;
+  --tracking-display: -0.01em;
+  --tracking-eyebrow: 0.18em;
+  --tracking-button: 0.04em;
+  --weight-display: 500;
 
   /* space and shape */
-  --gutter: clamp(1rem, 4vw, 3rem);
-  --section: clamp(4rem, 9vw, 8rem);
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+  --section: clamp(5rem, 10vw, 9rem);
   --content-max: 85rem;
-  --measure: 62ch;
-  --frame-width: 1.5px;
-  --header-height: 4rem;
+  --measure: 60ch;
+  --frame-width: 1px;
+  --header-height: 4.5rem;
 
   /* motion */
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --dur-ui: 180ms;
-  --dur-text: 320ms;
+  --dur-ui: 200ms;
+  --dur-text: 400ms;
 }
 
-/* Farsi: Persian face first, looser leading, no flare axis, lighter display weight. */
+/* Farsi: Persian face for both roles, looser leading, lighter display weight, gentler tracking. */
 html[lang="fa"] {
   --font-body: var(--font-persian-stack);
-  --leading-body: 1.75;
-  --leading-display: 1.25;
-  --leading-tight: 1.35;
-  --tracking-display: 0;
+  --font-heading: var(--font-persian-stack);
   --weight-display: 300;
-  --settings-display: normal;
-  --settings-text: normal;
+  --tracking-display: 0;
+  --tracking-eyebrow: 0.06em;
+  --leading-display: 1.25;
+  --leading-tight: 1.4;
+  --leading-body: 1.85;
 }
