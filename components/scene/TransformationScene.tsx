@@ -280,13 +280,12 @@ export function TransformationScene(props: TransformationSceneProps) {
   }, [tier, sequence, video, reduced, switchAt, duskSync]);
 
   const Heading = headingLevel === "hero" ? "h1" : "h2";
-  const headingSize = headingLevel === "hero" ? "text-hero" : "text-display";
 
   const textBlock = (
     <div className="max-w-3xl">
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       {headline ? (
-        <Heading className={cx("type-display mt-5 text-ink", headingSize)}>
+        <Heading className={cx("type-display mt-3 text-ink md:mt-5", headingLevel === "hero" ? "text-display md:text-hero" : "text-display")}>
           <span className="sr-only">{headline.after}</span>
           <span aria-hidden="true" className="relative block">
             <span className={cx("block transition-opacity duration-(--dur-text) ease-soft", phase === "after" && "opacity-0")}>
@@ -298,9 +297,9 @@ export function TransformationScene(props: TransformationSceneProps) {
           </span>
         </Heading>
       ) : null}
-      {lead ? <p className="mt-5 max-w-(--measure) text-body text-ink-soft sm:mt-6 sm:text-lead">{lead}</p> : null}
-      {actions ? <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">{actions}</div> : null}
-      <div className="mt-7 h-px w-full max-w-md bg-ink/20" aria-hidden="true">
+      {lead ? <p className="mt-3 max-w-(--measure) text-small text-ink-soft md:mt-6 md:text-lead">{lead}</p> : null}
+      {actions ? <div className="mt-4 flex flex-wrap gap-3 md:mt-8">{actions}</div> : null}
+      <div className="mt-7 hidden h-px w-full max-w-md bg-ink/20 md:block" aria-hidden="true">
         <div ref={railRef} className="h-full origin-left bg-brass rtl:origin-right" style={{ transform: "scaleX(0)" }} />
       </div>
     </div>
@@ -343,7 +342,9 @@ export function TransformationScene(props: TransformationSceneProps) {
       style={{ height: `${pinHeights * 100}svh` }}
       data-dusk-scene={duskSync ? "" : undefined}
     >
-      <div className="sticky top-(--header-height) h-[calc(100svh-var(--header-height))] w-full overflow-hidden" data-ready={ready}>
+      <div className="sticky top-(--header-height) w-full overflow-hidden bg-surface md:h-[calc(100svh-var(--header-height))]" data-ready={ready}>
+        {/* Phones: a 4:3 photo panel so the whole room (bar, bed, sofa) stays in view; text sits below it. Desktop: full bleed. */}
+        <div className="relative aspect-[4/3] w-full md:absolute md:inset-0 md:aspect-auto md:h-full">
         {/* Poster: the empty room, shown until the tier is ready. Also the LCP image. */}
         <div className={cx("absolute inset-0 transition-opacity duration-500 ease-soft", ready && tier !== "wipe" && "opacity-0")}>
           <Image src={before.src} alt={before.alt} fill sizes="100vw" priority={priority} fetchPriority={priority ? "high" : undefined} className="object-cover" />
@@ -366,15 +367,17 @@ export function TransformationScene(props: TransformationSceneProps) {
           </div>
         ) : null}
 
-        {/* Legibility: a soft corner behind the text only, so the furniture stays visible. */}
-        <div className="scrim-corner pointer-events-none absolute inset-x-0 bottom-0 h-[78%] md:h-[64%] md:w-[72%]" aria-hidden="true" />
-
-        <div className="absolute inset-x-0 bottom-0 px-(--gutter) pb-10 md:pb-14">
-          <div className="text-legible mx-auto w-full max-w-(--content-max)">{textBlock}</div>
-        </div>
         {note ? (
-          <p className="absolute end-(--gutter) top-5 bg-surface/80 px-2.5 py-1 text-micro text-ink-soft">{note}</p>
+          <p className="absolute end-(--gutter) top-3 max-w-[85%] bg-surface/80 px-2.5 py-1 text-micro text-ink-soft md:top-5">{note}</p>
         ) : null}
+        </div>
+
+        {/* Legibility on desktop: a soft corner behind the text only, so the furniture stays visible. */}
+        <div className="scrim-corner pointer-events-none absolute inset-x-0 bottom-0 hidden h-[64%] w-[72%] md:block" aria-hidden="true" />
+
+        <div className="relative px-(--gutter) pt-4 pb-6 md:absolute md:inset-x-0 md:bottom-0 md:pt-0 md:pb-14">
+          <div className="mx-auto w-full max-w-(--content-max) md:text-legible">{textBlock}</div>
+        </div>
       </div>
     </section>
   );

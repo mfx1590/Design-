@@ -13,7 +13,7 @@
     "mobile": {
       "basePath": "/sequences/project-01-studio",
       "width": 900,
-      "height": 1600,
+      "height": 676,
       "frameCount": 158,
       "pad": 3
     }
