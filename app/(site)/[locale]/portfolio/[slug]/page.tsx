@@ -11,8 +11,8 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { furnitureBySlug } from "@/lib/content/furniture";
-import { projectBySlug, projects } from "@/lib/content/projects";
+import { getFurnitureItem, getProject } from "@/lib/cms/loaders";
+import { projects } from "@/lib/content/projects";
 import { whatsappHref } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
@@ -24,7 +24,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const project = projectBySlug(slug);
+  const project = await getProject(locale, slug);
   if (!project) return {};
   return { title: `${project.title} — Design Package`, description: project.summary };
 }
@@ -33,14 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProjectPage({ params }: Props) {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-  const project = projectBySlug(slug);
+  const project = await getProject(locale, slug);
   if (!project) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const tp = await getTranslations("packages");
   const prefill = t("pages.project.prefill", { title: project.title });
   const wa = whatsappHref(prefill);
-  const pieces = project.furnitureSlugs.map(furnitureBySlug).filter((x) => x !== undefined);
+  const pieces = (await Promise.all(project.furnitureSlugs.map((s) => getFurnitureItem(locale, s)))).filter((x) => x !== undefined);
 
   const facts = [
     { label: t("pages.project.typeLabel"), value: project.apartmentType },

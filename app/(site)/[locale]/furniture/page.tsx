@@ -9,7 +9,8 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { categories, furniture } from "@/lib/content/furniture";
+import { getFurniture } from "@/lib/cms/loaders";
+import { categories, type CategoryKey } from "@/lib/content/furniture";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -27,6 +28,9 @@ export default async function FurniturePage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const tf = await getTranslations("furniture");
+  const furniture = await getFurniture(locale);
+  const cmsLabels = Object.fromEntries(furniture.filter((f) => f.categoryLabel).map((f) => [f.category, f.categoryLabel as string]));
+  const categoryKeys = [...categories, ...furniture.map((f) => f.category).filter((c) => !categories.includes(c as CategoryKey))];
 
   const items = furniture.map((piece) => ({
     slug: piece.slug,
@@ -47,7 +51,7 @@ export default async function FurniturePage({ params }: Props) {
       <Section className="pt-0">
         <FurnitureGrid
           items={items}
-          categories={categories.map((key) => ({ key, label: tf(`categories.${key}`) }))}
+          categories={categoryKeys.map((key) => ({ key, label: cmsLabels[key] ?? (categories.includes(key as CategoryKey) ? tf(`categories.${key as CategoryKey}`) : key) }))}
           labels={{ all: tf("all"), empty: tf("empty") }}
         />
         <p className="mt-10 text-small text-ink-soft/70">{t("pages.furniture.note")}</p>

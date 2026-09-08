@@ -359,7 +359,8 @@
       "lead": "Reviews from completed projects appear here with each client's permission.",
       "metaTitle": "Client reviews — Design Package",
       "metaDescription": "Reviews from clients of Design Package in Northern Cyprus.",
-      "empty": "We are collecting reviews from completed projects. The first ones will appear here soon."
+      "empty": "We are collecting reviews from completed projects. The first ones will appear here soon.",
+      "rating": "{rating} out of 5"
     },
     "furniture": {
       "eyebrow": "Furniture",

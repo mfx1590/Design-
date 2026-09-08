@@ -12,8 +12,8 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { furniture, furnitureBySlug } from "@/lib/content/furniture";
-import { projectBySlug } from "@/lib/content/projects";
+import { getFurniture, getFurnitureItem, getProject } from "@/lib/cms/loaders";
+import { categories, furniture, type CategoryKey } from "@/lib/content/furniture";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -24,7 +24,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const piece = furnitureBySlug(slug);
+  const piece = await getFurnitureItem(locale, slug);
   if (!piece) return {};
   const t = await getTranslations({ locale, namespace: "pages.furnitureItem" });
   return { title: t("metaTitle", { name: piece.name }), description: piece.description };
@@ -34,18 +34,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function FurnitureItemPage({ params }: Props) {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-  const piece = furnitureBySlug(slug);
+  const piece = await getFurnitureItem(locale, slug);
   if (!piece) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const tf = await getTranslations("furniture");
   const tp = await getTranslations("packages");
   const prefill = t("pages.furnitureItem.prefill", { name: piece.name });
-  const usedIn = piece.usedIn.map(projectBySlug).filter((p) => p !== undefined);
-  const related = furniture.filter((f) => f.category === piece.category && f.slug !== piece.slug).slice(0, 4);
+  const usedIn = (await Promise.all(piece.usedIn.map((s) => getProject(locale, s)))).filter((p) => p !== undefined);
+  const related = (await getFurniture(locale)).filter((f) => f.category === piece.category && f.slug !== piece.slug).slice(0, 4);
+  const categoryLabel = piece.categoryLabel ?? (categories.includes(piece.category as CategoryKey) ? tf(`categories.${piece.category as CategoryKey}`) : piece.category);
 
   const facts = [
-    { label: t("pages.furnitureItem.categoryLabel"), value: tf(`categories.${piece.category}`) },
+    { label: t("pages.furnitureItem.categoryLabel"), value: categoryLabel },
     { label: t("pages.furnitureItem.materialsLabel"), value: piece.materials },
   ];
 

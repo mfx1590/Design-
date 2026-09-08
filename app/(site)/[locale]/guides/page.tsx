@@ -8,7 +8,7 @@ import { Section } from "@/components/layout/Section";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { guides } from "@/lib/content/guides";
+import { getGuides } from "@/lib/cms/loaders";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -26,6 +26,7 @@ export default async function GuidesPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const format = await getFormatter();
+  const guides = await getGuides(locale);
 
   return (
     <>

@@ -7,7 +7,8 @@ export type CategoryKey = "living" | "dining" | "bedroom" | "bathroom" | "outdoo
 export interface FurnitureItem {
   slug: string;
   name: string;
-  category: CategoryKey;
+  /** One of CategoryKey for static content; any category slug once it comes from Sanity. */
+  category: CategoryKey | (string & {});
   materials: string;
   description: string;
   image: { src: string; alt: string };

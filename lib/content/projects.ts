@@ -1,5 +1,7 @@
 import manifest from "@/public/sequences/project-01-studio/manifest.json";
 
+export type SequenceManifest = typeof manifest;
+
 /**
  * Portfolio projects (PLAN.md §6). One real project so far. Facts the owner has not confirmed
  * (city, date, client) are shown as "to be confirmed", never invented. Moves into Sanity later.
@@ -15,7 +17,7 @@ export interface ProjectContent {
   before: { src: string; alt: string };
   after: { src: string; alt: string };
   gallery: Array<{ src: string; alt: string; ratio: "3/2" | "4/3" | "3/4" }>;
-  sequence?: typeof manifest;
+  sequence?: SequenceManifest;
   hasVideo: boolean;
   furnitureSlugs: string[];
   visualisationNote?: string;

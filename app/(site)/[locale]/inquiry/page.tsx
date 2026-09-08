@@ -6,7 +6,7 @@ import { InquiryList } from "@/components/furniture/InquiryList";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { Section } from "@/components/layout/Section";
 import { routing } from "@/i18n/routing";
-import { furniture } from "@/lib/content/furniture";
+import { getFurniture } from "@/lib/cms/loaders";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -23,6 +23,7 @@ export default async function InquiryPage({ params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const ti = await getTranslations("pages.inquiry");
+  const furniture = await getFurniture(locale);
   const pieces = Object.fromEntries(furniture.map((f) => [f.slug, { slug: f.slug, name: f.name, materials: f.materials, image: f.image }]));
 
   return (

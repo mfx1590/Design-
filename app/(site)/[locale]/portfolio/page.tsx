@@ -7,7 +7,7 @@ import { Section } from "@/components/layout/Section";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { routing } from "@/i18n/routing";
-import { projects } from "@/lib/content/projects";
+import { getProjects } from "@/lib/cms/loaders";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,6 +25,7 @@ export default async function PortfolioPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations();
   const tp = await getTranslations("packages");
+  const projects = await getProjects(locale);
 
   return (
     <>

@@ -8,7 +8,8 @@ import { Aperture } from "@/components/ui/Aperture";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { guideBySlug, guides } from "@/lib/content/guides";
+import { getGuide, getGuides } from "@/lib/cms/loaders";
+import { guides } from "@/lib/content/guides";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -19,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const guide = guideBySlug(slug);
+  const guide = await getGuide(locale, slug);
   if (!guide) return {};
   return { title: `${guide.title} — Design Package`, description: guide.lead };
 }
@@ -28,12 +29,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GuidePage({ params }: Props) {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-  const guide = guideBySlug(slug);
+  const guide = await getGuide(locale, slug);
   if (!guide) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
   const format = await getFormatter();
-  const others = guides.filter((g) => g.slug !== guide.slug);
+  const others = (await getGuides(locale)).filter((g) => g.slug !== guide.slug);
 
   return (
     <>
