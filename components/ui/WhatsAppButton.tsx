@@ -26,7 +26,7 @@ export async function WhatsAppButton({ placement = "fixed", demoHref }: WhatsApp
       target="_blank"
       rel="noopener noreferrer"
       className={cx(
-        "group inline-flex h-14 items-center border border-umber bg-espresso text-ivory transition-[padding,border-color] duration-(--dur-ui) ease-soft hover:border-brass hover:pe-5",
+        "group inline-flex h-14 items-center border border-rule bg-surface-alt text-ink transition-[padding,border-color] duration-(--dur-ui) ease-soft hover:border-brass hover:pe-5",
         placement === "fixed" ? "fixed bottom-6 end-6 z-30" : "",
       )}
     >

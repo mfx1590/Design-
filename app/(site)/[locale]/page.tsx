@@ -1,20 +1,21 @@
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Areas } from "@/components/home/Areas";
+import { ApartmentSection } from "@/components/home/ApartmentSection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { Faq } from "@/components/home/Faq";
-import { FeaturedProject } from "@/components/home/FeaturedProject";
 import { HeroScene } from "@/components/home/HeroScene";
 import { HowItWorks } from "@/components/home/HowItWorks";
-import { PackagesSection } from "@/components/home/PackagesSection";
-import { ServicesTiles } from "@/components/home/ServicesTiles";
-import { TrustStrip } from "@/components/home/TrustStrip";
+import { ServicesRows } from "@/components/home/ServicesRows";
 import { routing } from "@/i18n/routing";
 
 type Props = { params: Promise<{ locale: string }> };
 
-/** Homepage per PLAN.md §6, in the v3 warm-luxury system. Reviews return once real ones arrive. */
+/**
+ * Homepage, v4 "the apartment furnishes itself": the hero blends the whole interface from day to dusk
+ * while the room fills, then the visitor walks through the apartment room by room beside a floor plan
+ * that draws the furniture in. Then the front door (process), three more doors (services), questions, handover.
+ */
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
@@ -23,12 +24,9 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <HeroScene />
-      <TrustStrip />
-      <PackagesSection />
-      <FeaturedProject />
+      <ApartmentSection />
       <HowItWorks />
-      <ServicesTiles />
-      <Areas />
+      <ServicesRows />
       <Faq />
       <ContactSection />
     </>

@@ -29,7 +29,7 @@ export function MobileMenu({ items, whatsappHref, labels }: MobileMenuProps) {
     };
   }, [open]);
 
-  const buttonClass = "border border-ivory/60 px-3.5 py-1.5 text-small font-medium tracking-[0.04em] text-ivory";
+  const buttonClass = "border border-ink/60 px-3.5 py-1.5 text-small font-medium tracking-[0.04em] text-ink";
 
   return (
     <div className="lg:hidden">
@@ -38,7 +38,7 @@ export function MobileMenu({ items, whatsappHref, labels }: MobileMenuProps) {
       </button>
 
       {open ? (
-        <div id="mobile-menu" role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex flex-col bg-night">
+        <div id="mobile-menu" role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex flex-col bg-surface">
           <div className="flex h-(--header-height) items-center justify-end border-b border-rule-soft px-(--gutter)">
             <button ref={closeRef} type="button" onClick={() => setOpen(false)} className={buttonClass}>
               {labels.close}
@@ -48,7 +48,7 @@ export function MobileMenu({ items, whatsappHref, labels }: MobileMenuProps) {
             <ul className="divide-y divide-rule-soft">
               {items.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} onClick={() => setOpen(false)} className="type-display block py-5 text-h2 text-ivory">
+                  <Link href={item.href} onClick={() => setOpen(false)} className="type-display block py-5 text-h2 text-ink">
                     {item.label}
                   </Link>
                 </li>

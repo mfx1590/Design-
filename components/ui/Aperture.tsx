@@ -42,11 +42,11 @@ export function Aperture({
 }: ApertureProps) {
   return (
     <figure className={cx("m-0", className)}>
-      <div className={cx("aperture overflow-hidden bg-espresso", ratioClass[ratio])}>
+      <div className={cx("aperture overflow-hidden bg-surface-alt", ratioClass[ratio])}>
         <Image src={src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
         {children}
       </div>
-      {caption ? <figcaption className="mt-3 text-small text-sand">{caption}</figcaption> : null}
+      {caption ? <figcaption className="mt-3 text-small text-ink-soft">{caption}</figcaption> : null}
     </figure>
   );
 }

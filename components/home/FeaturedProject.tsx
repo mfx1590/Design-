@@ -25,11 +25,11 @@ export async function FeaturedProject() {
         />
         <div>
           <p className="eyebrow">{t("home.projectEyebrow")}</p>
-          <h2 id="project-title" className="type-display mt-4 text-h2 text-ivory">
+          <h2 id="project-title" className="type-display mt-4 text-h2 text-ink">
             {t("home.projectTitle")}
           </h2>
-          <p className="mt-3 text-small text-sand/80">{t("home.projectMeta")}</p>
-          <p className="mt-6 max-w-(--measure) text-lead text-sand">{t("home.projectBody")}</p>
+          <p className="mt-3 text-small text-ink-soft/80">{t("home.projectMeta")}</p>
+          <p className="mt-6 max-w-(--measure) text-lead text-ink-soft">{t("home.projectBody")}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/portfolio" variant="secondary">
               {t("cta.allProjects")}

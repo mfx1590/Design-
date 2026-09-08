@@ -12,11 +12,11 @@ const variants: Record<Variant, string> = {
   /** Brass fill, night text. The one call to action per view. */
   primary: "border border-brass bg-brass text-night hover:border-brass-deep hover:bg-brass-deep",
   /** Ivory outline that fills on hover. */
-  secondary: "border border-ivory/60 bg-transparent text-ivory hover:border-ivory hover:bg-ivory hover:text-night",
+  secondary: "border border-ink/60 bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-surface",
   /** Text link with a brass underline. */
   tertiary: "link font-normal tracking-normal",
   /** Same as secondary; kept for callers that sit over photography. */
-  inverse: "border border-ivory/60 bg-transparent text-ivory hover:border-ivory hover:bg-ivory hover:text-night",
+  inverse: "border border-ink/60 bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-surface",
 };
 
 const sizes: Record<Size, string> = {

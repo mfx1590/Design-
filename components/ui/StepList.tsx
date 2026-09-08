@@ -22,11 +22,11 @@ export function StepList({ steps, variant = "list" }: StepListProps) {
             <span aria-hidden="true" className="type-display tabular block text-display leading-none text-brass">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="type-display mt-5 text-h3 text-ivory">
+            <h3 className="type-display mt-5 text-h3 text-ink">
               <span className="sr-only">{i + 1}. </span>
               {step.title}
             </h3>
-            <p className="mt-3 max-w-(--measure) text-sand">{step.body}</p>
+            <p className="mt-3 max-w-(--measure) text-ink-soft">{step.body}</p>
           </li>
         ))}
       </ol>
@@ -41,11 +41,11 @@ export function StepList({ steps, variant = "list" }: StepListProps) {
             {i + 1}
           </span>
           <div>
-            <h3 className="type-display text-h3 text-ivory">
+            <h3 className="type-display text-h3 text-ink">
               <span className="sr-only">{i + 1}. </span>
               {step.title}
             </h3>
-            <p className="mt-2 max-w-(--measure) text-sand">{step.body}</p>
+            <p className="mt-2 max-w-(--measure) text-ink-soft">{step.body}</p>
           </div>
         </li>
       ))}

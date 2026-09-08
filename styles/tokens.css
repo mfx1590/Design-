@@ -1,9 +1,11 @@
 /*
- * Design tokens, v3 "warm luxury, dark". Source of truth: docs/design-plan-v3.md.
- * Seven colours, Cormorant Garamond + Jost (+ Vazirmatn for Farsi), zero radius, no drop shadows.
+ * Design tokens, v4 "the apartment furnishes itself".
+ * Two palettes: DAY (the empty apartment: plaster, daylight) and DUSK (the furnished one: warm
+ * dark, brass). One variable, --dusk, blends between them (0% = day, 100% = dusk). The hero scene
+ * drives it while the room fills with furniture; every other page rests at dusk.
  */
 :root {
-  /* palette */
+  /* dusk palette */
   --night: #15110d;
   --espresso: #211a14;
   --umber: #3b2e24;
@@ -12,17 +14,27 @@
   --brass: #c9a35f;
   --brass-deep: #a88240;
   --terracotta: #c4562e;
-  --terracotta-text: #e8865f; /* lighter tint that passes AA for small text on Night (errors) */
+  --terracotta-text: #e8865f;
   --whatsapp: #25d366; /* functional only: the WhatsApp glyph */
 
-  /* semantic */
-  --surface: var(--night);
-  --surface-alt: var(--espresso);
-  --ink: var(--ivory);
-  --ink-soft: var(--sand);
-  --ink-muted: color-mix(in oklab, var(--sand) 55%, var(--night));
-  --rule: var(--umber);
-  --rule-soft: color-mix(in oklab, var(--umber) 55%, transparent);
+  /* day palette (sampled from the empty-room photos) */
+  --plaster: #efe9e1;
+  --porcelain: #e2dcd5;
+  --frame: #15171b;
+  --walnut: #5a4a40;
+  --line-day: #cdbfb3;
+
+  /* the blend */
+  --dusk: 100%;
+
+  /* semantic, interpolated */
+  --surface: color-mix(in oklab, var(--night) var(--dusk), var(--plaster));
+  --surface-alt: color-mix(in oklab, var(--espresso) var(--dusk), var(--porcelain));
+  --ink: color-mix(in oklab, var(--ivory) var(--dusk), var(--frame));
+  --ink-soft: color-mix(in oklab, var(--sand) var(--dusk), var(--walnut));
+  --ink-muted: color-mix(in oklab, var(--ink) 55%, var(--surface));
+  --rule: color-mix(in oklab, var(--umber) var(--dusk), var(--line-day));
+  --rule-soft: color-mix(in oklab, var(--rule) 60%, transparent);
   --link: var(--brass);
   --focus: var(--brass);
   --accent: var(--brass);
@@ -63,6 +75,11 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --dur-ui: 200ms;
   --dur-text: 400ms;
+}
+
+/* A page with a dusk-driving scene starts at day; the scene then blends it to dusk as the room fills. */
+html:has([data-dusk-scene]) {
+  --dusk: 0%;
 }
 
 /* Farsi: Persian face for both roles, looser leading, lighter display weight, gentler tracking. */

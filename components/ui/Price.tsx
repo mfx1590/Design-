@@ -28,11 +28,11 @@ export async function Price({ amount, from = true, size = "md", tone = "brass", 
   const t = await getTranslations("packages");
   const formatted = formatGBP(amount, locale);
   const number = (
-    <span className={cx("type-display tabular", tone === "brass" ? "text-brass" : "text-ivory", sizeClass[size])}>{formatted}</span>
+    <span className={cx("type-display tabular", tone === "brass" ? "text-brass" : "text-ink", sizeClass[size])}>{formatted}</span>
   );
 
   return (
-    <span className={cx("inline-flex flex-wrap items-baseline gap-x-2 text-small text-sand", className)}>
+    <span className={cx("inline-flex flex-wrap items-baseline gap-x-2 text-small text-ink-soft", className)}>
       {from ? t.rich("from", { price: formatted, b: () => number }) : number}
     </span>
   );

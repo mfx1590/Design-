@@ -47,6 +47,11 @@ export interface TransformationSceneProps {
   priority?: boolean;
   /** "hero" renders an h1; "section" renders an h2. */
   headingLevel?: "hero" | "section";
+  /**
+   * Drive the site-wide day-to-dusk blend (the --dusk token) from this scene's progress,
+   * so the whole interface furnishes itself along with the room. One scene per page.
+   */
+  duskSync?: boolean;
   className?: string;
 }
 
@@ -73,6 +78,19 @@ function loadOrder(count: number): number[] {
   return order;
 }
 
+/** Hero progress → dusk percentage. The blend runs from 10 % to 65 % of the scroll so text stays legible at both ends. */
+function duskFor(progress: number) {
+  const t = Math.min(1, Math.max(0, (progress - 0.12) / 0.5));
+  const eased = t * t * (3 - 2 * t); // smoothstep: less time spent in the muddy middle
+  return `${Math.round(eased * 100)}%`;
+}
+
+function setDusk(value: string | null) {
+  const root = document.documentElement;
+  if (value === null) root.style.removeProperty("--dusk");
+  else root.style.setProperty("--dusk", value);
+}
+
 /**
  * The signature "empty → home" scene (PLAN.md §5). Scroll position drives the transformation;
  * nothing plays on its own. Three tiers share one API: frame sequence on a canvas (preferred),
@@ -95,6 +113,7 @@ export function TransformationScene(props: TransformationSceneProps) {
     pinHeights = 2,
     priority,
     headingLevel = "hero",
+    duskSync,
     className,
   } = props;
   const reduced = useReducedMotion();
@@ -106,6 +125,13 @@ export function TransformationScene(props: TransformationSceneProps) {
   const [phase, setPhase] = useState<"before" | "after">("before");
   const [ready, setReady] = useState(tier === "wipe");
   const switchAt = headline?.switchAt ?? 0.6;
+
+  // Reduced motion: the page rests furnished.
+  useEffect(() => {
+    if (!duskSync || !reduced) return;
+    setDusk("100%");
+    return () => setDusk(null);
+  }, [duskSync, reduced]);
 
   useEffect(() => {
     if (reduced) return;
@@ -200,6 +226,7 @@ export function TransformationScene(props: TransformationSceneProps) {
     let raf = 0;
     let pending = 0;
     let currentPhase: "before" | "after" = "before";
+    let lastDusk = "";
     const update = (progress: number) => {
       pending = progress;
       if (raf) return;
@@ -207,6 +234,13 @@ export function TransformationScene(props: TransformationSceneProps) {
         raf = 0;
         render(pending);
         if (railRef.current) railRef.current.style.transform = `scaleX(${pending})`;
+        if (duskSync) {
+          const d = duskFor(pending);
+          if (d !== lastDusk) {
+            lastDusk = d;
+            setDusk(d);
+          }
+        }
         const next = pending >= switchAt ? "after" : "before";
         if (next !== currentPhase) {
           currentPhase = next;
@@ -229,8 +263,9 @@ export function TransformationScene(props: TransformationSceneProps) {
       cancelAnimationFrame(raf);
       trigger.kill();
       cleanupTier();
+      if (duskSync) setDusk(null);
     };
-  }, [tier, sequence, video, reduced, switchAt]);
+  }, [tier, sequence, video, reduced, switchAt, duskSync]);
 
   const Heading = headingLevel === "hero" ? "h1" : "h2";
   const headingSize = headingLevel === "hero" ? "text-hero" : "text-display";
@@ -239,7 +274,7 @@ export function TransformationScene(props: TransformationSceneProps) {
     <div className="max-w-3xl">
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
       {headline ? (
-        <Heading className={cx("type-display mt-5 text-ivory", headingSize)}>
+        <Heading className={cx("type-display mt-5 text-ink", headingSize)}>
           <span className="sr-only">{headline.after}</span>
           <span aria-hidden="true" className="relative block">
             <span className={cx("block transition-opacity duration-(--dur-text) ease-soft", phase === "after" && "opacity-0")}>
@@ -251,9 +286,9 @@ export function TransformationScene(props: TransformationSceneProps) {
           </span>
         </Heading>
       ) : null}
-      {lead ? <p className="mt-6 max-w-(--measure) text-lead text-sand">{lead}</p> : null}
+      {lead ? <p className="mt-6 max-w-(--measure) text-lead text-ink-soft">{lead}</p> : null}
       {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
-      <div className="mt-8 h-px w-full max-w-md bg-ivory/20" aria-hidden="true">
+      <div className="mt-8 h-px w-full max-w-md bg-ink/20" aria-hidden="true">
         <div ref={railRef} className="h-full origin-left bg-brass rtl:origin-right" style={{ transform: "scaleX(0)" }} />
       </div>
     </div>
@@ -261,28 +296,28 @@ export function TransformationScene(props: TransformationSceneProps) {
 
   if (reduced) {
     return (
-      <section ref={sectionRef} className={cx("surface py-(--section)", className)}>
+      <section ref={sectionRef} className={cx("surface py-(--section)", className)} data-dusk-scene={duskSync ? "" : undefined}>
         <div className="mx-auto w-full max-w-(--content-max) px-(--gutter)">
           <div className="grid gap-4 md:grid-cols-2">
             <figure className="m-0">
-              <div className="aperture aspect-[4/3] overflow-hidden bg-espresso">
+              <div className="aperture aspect-[4/3] overflow-hidden bg-surface-alt">
                 <Image src={before.src} alt={before.alt} fill sizes="(min-width: 768px) 50vw, 100vw" priority={priority} className="object-cover" />
               </div>
-              <figcaption className="mt-3 text-small text-sand">{labels.before}</figcaption>
+              <figcaption className="mt-3 text-small text-ink-soft">{labels.before}</figcaption>
             </figure>
             <figure className="m-0">
-              <div className="aperture aspect-[4/3] overflow-hidden bg-espresso">
+              <div className="aperture aspect-[4/3] overflow-hidden bg-surface-alt">
                 <Image src={after.src} alt={after.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
               </div>
-              <figcaption className="mt-3 text-small text-sand">{labels.after}</figcaption>
+              <figcaption className="mt-3 text-small text-ink-soft">{labels.after}</figcaption>
             </figure>
           </div>
           <div className="mt-10">
             {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-            {headline ? <Heading className="type-display mt-5 text-display text-ivory">{headline.after}</Heading> : null}
-            {lead ? <p className="mt-6 max-w-(--measure) text-lead text-sand">{lead}</p> : null}
+            {headline ? <Heading className="type-display mt-5 text-display text-ink">{headline.after}</Heading> : null}
+            {lead ? <p className="mt-6 max-w-(--measure) text-lead text-ink-soft">{lead}</p> : null}
             {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
-            {note ? <p className="mt-4 text-micro text-sand/80">{note}</p> : null}
+            {note ? <p className="mt-4 text-micro text-ink-soft/80">{note}</p> : null}
           </div>
         </div>
       </section>
@@ -290,7 +325,12 @@ export function TransformationScene(props: TransformationSceneProps) {
   }
 
   return (
-    <section ref={sectionRef} className={cx("relative bg-night", className)} style={{ height: `${pinHeights * 100}dvh` }}>
+    <section
+      ref={sectionRef}
+      className={cx("relative bg-surface", className)}
+      style={{ height: `${pinHeights * 100}dvh` }}
+      data-dusk-scene={duskSync ? "" : undefined}
+    >
       <div className="sticky top-(--header-height) h-[calc(100dvh-var(--header-height))] w-full overflow-hidden" data-ready={ready}>
         {/* Poster: the empty room, shown until the tier is ready. Also the LCP image. */}
         <div className={cx("absolute inset-0 transition-opacity duration-500 ease-soft", ready && tier !== "wipe" && "opacity-0")}>
@@ -314,14 +354,14 @@ export function TransformationScene(props: TransformationSceneProps) {
           </div>
         ) : null}
 
-        {/* Legibility: a gradient from the bottom, never a box. */}
+        {/* Legibility: a gradient from the bottom in the current surface colour, never a box. */}
         <div className="scrim-bottom pointer-events-none absolute inset-x-0 bottom-0 h-[88%]" aria-hidden="true" />
 
         <div className="absolute inset-x-0 bottom-0 px-(--gutter) pb-10 md:pb-14">
           <div className="mx-auto w-full max-w-(--content-max)">{textBlock}</div>
         </div>
         {note ? (
-          <p className="absolute end-(--gutter) top-5 bg-night/60 px-2.5 py-1 text-micro text-sand/90 backdrop-blur-sm">{note}</p>
+          <p className="absolute end-(--gutter) top-5 bg-surface/60 px-2.5 py-1 text-micro text-ink-soft backdrop-blur-sm">{note}</p>
         ) : null}
       </div>
     </section>

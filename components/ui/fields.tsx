@@ -2,7 +2,7 @@ import type { InputHTMLAttributes, ReactNode, SelectHTMLAttributes, TextareaHTML
 import { cx } from "@/lib/cx";
 
 const control =
-  "w-full border border-umber bg-espresso px-4 py-3.5 text-body text-ivory transition-colors duration-(--dur-ui) ease-soft placeholder:text-ink-muted hover:border-sand/60 focus:border-brass focus:outline-none aria-[invalid=true]:border-terracotta disabled:opacity-40";
+  "w-full border border-rule bg-surface-alt px-4 py-3.5 text-body text-ink transition-colors duration-(--dur-ui) ease-soft placeholder:text-ink-muted hover:border-sand/60 focus:border-brass focus:outline-none aria-[invalid=true]:border-terracotta disabled:opacity-40";
 
 interface FieldProps {
   label: string;
@@ -17,7 +17,7 @@ interface FieldProps {
 export function Field({ label, htmlFor, hint, error, children, className }: FieldProps) {
   return (
     <div className={cx("flex flex-col gap-2", className)}>
-      <label htmlFor={htmlFor} className="text-small font-medium tracking-[0.02em] text-sand">
+      <label htmlFor={htmlFor} className="text-small font-medium tracking-[0.02em] text-ink-soft">
         {label}
       </label>
       {children}
@@ -56,7 +56,7 @@ interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "typ
 
 export function Checkbox({ label, className, id, ...props }: CheckboxProps) {
   return (
-    <label htmlFor={id} className={cx("inline-flex cursor-pointer items-start gap-3 text-small text-sand", className)}>
+    <label htmlFor={id} className={cx("inline-flex cursor-pointer items-start gap-3 text-small text-ink-soft", className)}>
       <input id={id} type="checkbox" {...props} className="control-checkbox mt-1 shrink-0" />
       <span>{label}</span>
     </label>

@@ -19,8 +19,8 @@ export const metadata: Metadata = { title: "Styleguide", robots: { index: false,
 const IMG = "/images/projects/project-01-studio";
 
 const palette = [
-  { name: "Night", hex: "#15110D", cls: "bg-night", role: "page background" },
-  { name: "Espresso", hex: "#211A14", cls: "bg-espresso", role: "cards, header, raised surfaces" },
+  { name: "Night", hex: "#15110D", cls: "bg-surface", role: "page background" },
+  { name: "Espresso", hex: "#211A14", cls: "bg-surface-alt", role: "cards, header, raised surfaces" },
   { name: "Umber", hex: "#3B2E24", cls: "bg-umber", role: "rules, borders" },
   { name: "Ivory", hex: "#F4EBDD", cls: "bg-ivory", role: "primary text" },
   { name: "Sand", hex: "#CDBBA4", cls: "bg-sand", role: "secondary text" },
@@ -48,10 +48,10 @@ export default async function StyleguidePage({ params }: Props) {
     <>
       <Section labelledBy="sg-title">
         <p className="eyebrow">Design system · v3</p>
-        <h1 id="sg-title" className="type-display mt-4 text-display text-ivory">
+        <h1 id="sg-title" className="type-display mt-4 text-display text-ink">
           Styleguide
         </h1>
-        <p className="mt-5 max-w-(--measure) text-lead text-sand">
+        <p className="mt-5 max-w-(--measure) text-lead text-ink-soft">
           Seven colours, Cormorant Garamond and Jost, square frames that glow, no drop shadows. Source: docs/design-plan-v3.md.
         </p>
       </Section>
@@ -60,17 +60,17 @@ export default async function StyleguidePage({ params }: Props) {
         <SectionHeader id="sg-palette" eyebrow="Colour" title="Palette" />
         <ul className="mt-12 grid gap-4 sm:grid-cols-3 lg:grid-cols-7">
           {palette.map((c) => (
-            <li key={c.name} className="border border-umber">
+            <li key={c.name} className="border border-rule">
               <div className={`${c.cls} aspect-[4/3]`} />
-              <div className="bg-night p-3">
-                <p className="font-medium text-ivory">{c.name}</p>
-                <p className="text-small text-sand tabular">{c.hex}</p>
-                <p className="text-micro text-sand/70">{c.role}</p>
+              <div className="bg-surface p-3">
+                <p className="font-medium text-ink">{c.name}</p>
+                <p className="text-small text-ink-soft tabular">{c.hex}</p>
+                <p className="text-micro text-ink-soft/70">{c.role}</p>
               </div>
             </li>
           ))}
         </ul>
-        <p className="mt-5 text-small text-sand">
+        <p className="mt-5 text-small text-ink-soft">
           Contrast on Night: Ivory 15.9:1, Sand 10.1:1, Brass 8.0:1. Terracotta is never used for small text.
         </p>
       </Section>
@@ -80,28 +80,28 @@ export default async function StyleguidePage({ params }: Props) {
         <div className="mt-12 divide-y divide-rule border-y border-rule">
           {typeSteps.map(([name, cls, sample]) => (
             <div key={name} className="grid gap-2 py-7 md:grid-cols-[8rem_1fr]">
-              <span className="text-small text-sand">{name}</span>
-              <span className={`type-display text-ivory ${cls}`}>{sample}</span>
+              <span className="text-small text-ink-soft">{name}</span>
+              <span className={`type-display text-ink ${cls}`}>{sample}</span>
             </div>
           ))}
           <div className="grid gap-2 py-7 md:grid-cols-[8rem_1fr]">
-            <span className="text-small text-sand">eyebrow</span>
+            <span className="text-small text-ink-soft">eyebrow</span>
             <p className="eyebrow">Furniture packages · Northern Cyprus</p>
           </div>
           <div className="grid gap-2 py-7 md:grid-cols-[8rem_1fr]">
-            <span className="text-small text-sand">lead</span>
-            <p className="max-w-(--measure) text-lead text-sand">Complete furniture packages for apartments in Northern Cyprus, delivered and installed.</p>
+            <span className="text-small text-ink-soft">lead</span>
+            <p className="max-w-(--measure) text-lead text-ink-soft">Complete furniture packages for apartments in Northern Cyprus, delivered and installed.</p>
           </div>
           <div className="grid gap-2 py-7 md:grid-cols-[8rem_1fr]">
-            <span className="text-small text-sand">body</span>
-            <p className="max-w-(--measure) text-sand">
+            <span className="text-small text-ink-soft">body</span>
+            <p className="max-w-(--measure) text-ink-soft">
               The package covers every room: living, kitchen, bedrooms and bathroom. Delivery and installation are included, and the price
               is fixed before work starts. <a href="#sg-type" className="link">A text link looks like this.</a>
             </p>
           </div>
           <div className="grid gap-2 py-7 md:grid-cols-[8rem_1fr]">
-            <span className="text-small text-sand">small / micro</span>
-            <p className="max-w-(--measure) text-small text-sand">
+            <span className="text-small text-ink-soft">small / micro</span>
+            <p className="max-w-(--measure) text-small text-ink-soft">
               Kyrenia (Girne) · İskele (Trikomo) · Famagusta (Gazimağusa) · Nicosia (Lefkoşa)
               <span className="mt-1 block text-micro">{t("phase0.scriptCheck")}</span>
             </p>

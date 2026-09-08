@@ -39,10 +39,10 @@ export function SectionHeader({ id, eyebrow, title, lead, aside, className }: Se
     <div className={cx("flex flex-wrap items-end justify-between gap-x-12 gap-y-6", className)}>
       <div className="max-w-3xl">
         <p className="eyebrow">{eyebrow}</p>
-        <h2 id={id} className="type-display mt-4 text-h2 text-ivory">
+        <h2 id={id} className="type-display mt-4 text-h2 text-ink">
           {title}
         </h2>
-        {lead ? <p className="mt-5 max-w-(--measure) text-lead text-sand">{lead}</p> : null}
+        {lead ? <p className="mt-5 max-w-(--measure) text-lead text-ink-soft">{lead}</p> : null}
       </div>
       {aside ? <div className="shrink-0">{aside}</div> : null}
     </div>

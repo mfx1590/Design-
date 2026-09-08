@@ -15,11 +15,11 @@ export async function Areas() {
             <span aria-hidden="true" className="type-display tabular text-lead text-brass">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <span className="type-display text-h2 text-ivory">{city}</span>
+            <span className="type-display text-h2 text-ink">{city}</span>
           </li>
         ))}
       </ul>
-      <p className="mt-5 text-micro text-sand/60">{t("home.areasNote")}</p>
+      <p className="mt-5 text-micro text-ink-soft/60">{t("home.areasNote")}</p>
     </Section>
   );
 }

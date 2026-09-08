@@ -5,7 +5,10 @@ import manifest from "@/public/sequences/project-01-studio/manifest.json";
 
 const PROJECT_IMAGES = "/images/projects/project-01-studio";
 
-/** Homepage hero: the studio project scrubbed from empty to furnished (PLAN.md §5). */
+/**
+ * Homepage hero: the studio scrubbed from empty to furnished (PLAN.md §5). It also drives the
+ * site-wide day-to-dusk blend, so the interface furnishes itself along with the room.
+ */
 export async function HeroScene() {
   const t = await getTranslations();
 
@@ -13,6 +16,7 @@ export async function HeroScene() {
     <TransformationScene
       tier="sequence"
       priority
+      duskSync
       before={{ src: manifest.poster, alt: t("hero.altBefore") }}
       after={{ src: `${PROJECT_IMAGES}/after-landscape.jpg`, alt: t("hero.altAfter") }}
       sequence={{ desktop: manifest.sets.desktop, mobile: manifest.sets.mobile }}

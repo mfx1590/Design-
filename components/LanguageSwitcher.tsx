@@ -34,7 +34,7 @@ export function LanguageSwitcher({ variant = "list", className }: LanguageSwitch
           aria-current={current ? "page" : undefined}
           className={cx(
             "block py-1 transition-colors duration-(--dur-ui) ease-soft",
-            current ? "text-ivory underline decoration-brass decoration-1 underline-offset-[6px]" : "text-sand hover:text-ivory",
+            current ? "text-ink underline decoration-brass decoration-1 underline-offset-[6px]" : "text-ink-soft hover:text-ink",
           )}
         >
           {localeMeta[code].nativeName}
@@ -47,7 +47,7 @@ export function LanguageSwitcher({ variant = "list", className }: LanguageSwitch
     return (
       <details className={cx("relative", className)}>
         <summary
-          className="flex cursor-pointer list-none items-center gap-1.5 py-2 text-small font-medium uppercase tracking-[0.12em] text-sand transition-colors hover:text-ivory [&::-webkit-details-marker]:hidden"
+          className="flex cursor-pointer list-none items-center gap-1.5 py-2 text-small font-medium uppercase tracking-[0.12em] text-ink-soft transition-colors hover:text-ink [&::-webkit-details-marker]:hidden"
           aria-label={t("language")}
         >
           {locale}
@@ -55,7 +55,7 @@ export function LanguageSwitcher({ variant = "list", className }: LanguageSwitch
             ▾
           </span>
         </summary>
-        <ul className="absolute end-0 top-full z-50 mt-2 min-w-44 border border-umber bg-espresso px-4 py-3 text-body">{items}</ul>
+        <ul className="absolute end-0 top-full z-50 mt-2 min-w-44 border border-rule bg-surface-alt px-4 py-3 text-body">{items}</ul>
       </details>
     );
   }

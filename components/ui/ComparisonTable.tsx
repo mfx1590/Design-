@@ -28,7 +28,7 @@ interface ComparisonTableProps {
 
 function cell(value: ReactNode | boolean | null) {
   if (value === true) return <span aria-label="included" className="text-brass">✓</span>;
-  if (value === false || value === null) return <span className="text-sand/50">—</span>;
+  if (value === false || value === null) return <span className="text-ink-soft/50">—</span>;
   return value;
 }
 
@@ -41,16 +41,16 @@ export function ComparisonTable({ columns, rows, highlight, footer, mobileFooter
     <div>
       <table className="w-full table-fixed border-collapse text-small tabular">
         {caption ? <caption className="sr-only">{caption}</caption> : null}
-        <thead className="sticky top-(--header-height) z-10 bg-espresso">
+        <thead className="sticky top-(--header-height) z-10 bg-surface-alt">
           <tr>
-            <th scope="col" className="w-[26%] px-1.5 py-5 text-start font-normal text-sand sm:px-4" />
+            <th scope="col" className="w-[26%] px-1.5 py-5 text-start font-normal text-ink-soft sm:px-4" />
             {columns.map((col) => (
               <th
                 key={col.key}
                 scope="col"
                 className={cx("px-1.5 py-5 text-start align-bottom sm:px-4", highlight === col.key && "border-t-2 border-brass")}
               >
-                <span className="type-display block text-lead text-ivory sm:text-h3">{col.name}</span>
+                <span className="type-display block text-lead text-ink sm:text-h3">{col.name}</span>
                 <span className="mt-1 block">
                   <Price amount={col.priceFromGBP} size="sm" />
                 </span>
@@ -61,11 +61,11 @@ export function ComparisonTable({ columns, rows, highlight, footer, mobileFooter
         <tbody>
           {rows.map((row) => (
             <tr key={row.label} className="border-b border-rule">
-              <th scope="row" className="px-1.5 py-3.5 text-start font-medium text-ivory sm:px-4">
+              <th scope="row" className="px-1.5 py-3.5 text-start font-medium text-ink sm:px-4">
                 {row.label}
               </th>
               {row.values.map((value, i) => (
-                <td key={columns[i]?.key ?? i} className="px-1.5 py-3.5 align-top text-sand sm:px-4">
+                <td key={columns[i]?.key ?? i} className="px-1.5 py-3.5 align-top text-ink-soft sm:px-4">
                   {cell(value)}
                 </td>
               ))}

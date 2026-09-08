@@ -1,13 +1,17 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
-/* Expose tokens to Tailwind utilities: bg-night, text-sand, border-umber, text-brass, text-h2, font-display ... */
+/* Expose tokens to Tailwind utilities. Semantic names (surface, ink, rule) blend from day to dusk. */
 @theme inline {
   --color-night: var(--night);
   --color-espresso: var(--espresso);
   --color-umber: var(--umber);
   --color-ivory: var(--ivory);
   --color-sand: var(--sand);
+  --color-plaster: var(--plaster);
+  --color-porcelain: var(--porcelain);
+  --color-frame: var(--frame);
+  --color-walnut: var(--walnut);
   --color-brass: var(--brass);
   --color-brass-deep: var(--brass-deep);
   --color-terracotta: var(--terracotta);
@@ -101,11 +105,12 @@
   text-wrap: balance;
 }
 
-/* One italic accent word per section at most. */
+/* One italic accent line per section at most. */
 @utility type-italic {
   font-family: var(--font-heading);
   font-style: italic;
   font-weight: 400;
+  font-variant-numeric: lining-nums;
 }
 
 /* Section label: brass rule + tracked uppercase. One per section. */
@@ -135,54 +140,54 @@
   font-variant-numeric: lining-nums tabular-nums;
 }
 
-/* Every photograph: 1px umber frame that turns brass on hover, plus a soft inner vignette so it glows. */
+/* Every photograph: 1px frame that warms to brass on hover, plus a soft inner vignette so it glows. */
 @utility aperture {
   position: relative;
-  border: var(--frame-width) solid var(--umber);
+  border: var(--frame-width) solid var(--rule);
   transition: border-color var(--dur-ui) var(--ease);
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    box-shadow: inset 0 0 90px rgb(0 0 0 / 0.35);
+    box-shadow: inset 0 0 90px rgb(0 0 0 / 0.3);
   }
   &:hover {
     border-color: var(--brass);
   }
 }
 
-/* Espresso card with an umber border that warms to brass on hover. */
+/* Raised card with a rule border that warms to brass on hover. */
 @utility card {
-  background: var(--espresso);
-  border: 1px solid var(--umber);
+  background: var(--surface-alt);
+  border: 1px solid var(--rule);
   transition: border-color var(--dur-ui) var(--ease);
   &:hover {
     border-color: var(--brass);
   }
 }
 
-/* Bottom gradient over photography for text legibility. */
+/* Bottom gradient over photography for text legibility. Follows the day/dusk surface. */
 @utility scrim-bottom {
   background: linear-gradient(
     to top,
-    var(--night) 0%,
-    color-mix(in oklab, var(--night) 82%, transparent) 30%,
-    color-mix(in oklab, var(--night) 45%, transparent) 65%,
+    var(--surface) 0%,
+    color-mix(in oklab, var(--surface) 82%, transparent) 30%,
+    color-mix(in oklab, var(--surface) 45%, transparent) 65%,
     transparent 100%
   );
 }
 
-/* Text link: sand text, brass underline; ivory on hover. */
+/* Text link: soft ink, brass underline; full ink on hover. */
 @utility link {
-  color: var(--sand);
+  color: var(--ink-soft);
   text-decoration: underline;
   text-decoration-color: var(--brass);
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
   transition: color var(--dur-ui) var(--ease);
   &:hover {
-    color: var(--ivory);
+    color: var(--ink);
   }
 }
 
@@ -194,6 +199,14 @@
 @utility surface-alt {
   background: var(--surface-alt);
   color: var(--ink);
+}
+
+/* Colour transitions for the day-to-dusk blend on elements that repaint often. */
+@utility dusk-transition {
+  transition:
+    background-color 120ms linear,
+    color 120ms linear,
+    border-color 120ms linear;
 }
 
 /* Form controls that need an image: the select chevron and the checkbox tick. */
@@ -212,7 +225,7 @@
   appearance: none;
   width: 1rem;
   height: 1rem;
-  border: 1px solid var(--sand);
+  border: 1px solid var(--ink-soft);
   background-color: transparent;
   &:checked {
     background-color: var(--brass);

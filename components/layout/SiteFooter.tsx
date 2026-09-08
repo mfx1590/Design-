@@ -14,8 +14,8 @@ export async function SiteFooter() {
     <footer className="surface-alt border-t border-rule">
       <Container className="grid gap-12 py-20 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <p className="type-display text-[1.75rem] text-ivory">{t("brand.name")}</p>
-          <p className="mt-4 max-w-xs text-small text-sand">{t("footer.nap")}</p>
+          <p className="type-display text-[1.75rem] text-ink">{t("brand.name")}</p>
+          <p className="mt-4 max-w-xs text-small text-ink-soft">{t("footer.nap")}</p>
         </div>
 
         <div>
@@ -23,7 +23,7 @@ export async function SiteFooter() {
           <ul className="mt-5 space-y-2 text-small">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-sand transition-colors duration-(--dur-ui) ease-soft hover:text-ivory">
+                <Link href={item.href} className="text-ink-soft transition-colors duration-(--dur-ui) ease-soft hover:text-ink">
                   {t(`nav.${item.key}`)}
                 </Link>
               </li>
@@ -33,7 +33,7 @@ export async function SiteFooter() {
 
         <div>
           <p className={heading}>{t("footer.services")}</p>
-          <ul className="mt-5 space-y-2 text-small text-sand">
+          <ul className="mt-5 space-y-2 text-small text-ink-soft">
             <li>{t("services.staging")}</li>
             <li>{t("services.rental")}</li>
             <li>{t("services.custom")}</li>
@@ -45,7 +45,7 @@ export async function SiteFooter() {
           <LanguageSwitcher variant="list" className="mt-5" />
         </div>
       </Container>
-      <Container className="flex flex-wrap justify-between gap-4 border-t border-rule-soft py-6 text-micro text-sand/70">
+      <Container className="flex flex-wrap justify-between gap-4 border-t border-rule-soft py-6 text-micro text-ink-soft/70">
         <span>{t("footer.rights", { year })}</span>
         <span>{t("footer.legal")}</span>
       </Container>

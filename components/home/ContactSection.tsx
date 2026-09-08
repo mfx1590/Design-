@@ -5,28 +5,31 @@ import { Checkbox, Field, Input, Select, Textarea } from "@/components/ui/fields
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
 import { whatsappHref } from "@/lib/site";
 
-/** Form UI beside the WhatsApp route. Submission and email arrive in Phase 5. */
+/** The handover: form UI beside the WhatsApp route and the cities line. Submission and email arrive in Phase 5. */
 export async function ContactSection() {
   const t = await getTranslations();
   const wa = whatsappHref(t("whatsapp.prefill"));
+  const cities = [t("areas.kyrenia"), t("areas.iskele"), t("areas.famagusta"), t("areas.nicosia")].join(", ");
 
   return (
     <Section id="contact" labelledBy="contact-title">
       <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-24">
         <div>
           <p className="eyebrow">{t("home.contactEyebrow")}</p>
-          <h2 id="contact-title" className="type-display mt-4 text-h2 text-ivory">
+          <h2 id="contact-title" className="type-display mt-4 text-h2 text-ink">
             {t("home.contactTitle")}
           </h2>
-          <p className="mt-5 max-w-(--measure) text-lead text-sand">{t("home.contactLead")}</p>
+          <p className="mt-5 max-w-(--measure) text-lead text-ink-soft">{t("home.contactLead")}</p>
+          <p className="mt-6 max-w-(--measure) text-small text-ink-soft">{t("contact.areasLine", { cities })}</p>
+          <p className="mt-1 text-micro text-ink-soft/60">{t("home.areasNote")}</p>
           {wa ? (
             <div className="mt-10 border-t border-rule pt-8">
-              <p className="text-small text-sand">{t("home.contactOr")}</p>
+              <p className="text-small text-ink-soft">{t("home.contactOr")}</p>
               <a
                 href={wa}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-3 border border-ivory/60 px-6 py-3.5 font-medium tracking-[0.04em] text-ivory transition-colors hover:border-ivory hover:bg-ivory hover:text-night"
+                className="mt-4 inline-flex items-center gap-3 border border-ink/60 px-6 py-3.5 font-medium tracking-[0.04em] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-surface"
               >
                 <WhatsAppGlyph className="size-5 text-whatsapp" />
                 {t("cta.whatsapp")}

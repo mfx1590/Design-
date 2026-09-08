@@ -22,6 +22,7 @@
     "packages": "See packages",
     "project": "See the project",
     "allProjects": "See all projects",
+    "services": "See all services",
     "whatsapp": "Chat on WhatsApp",
     "inquiry": "Add to inquiry list",
     "priceOnRequest": "Price on request",
@@ -49,6 +50,58 @@
     "remote": "Selection and approval from anywhere",
     "languages": "Service in six languages"
   },
+  "apartment": {
+    "eyebrow": "Your apartment",
+    "title": "Walk through it before it exists.",
+    "lead": "Choose your apartment type. As you scroll, the plan fills up room by room, exactly as the package does.",
+    "choose": "Apartment type",
+    "inPackage": "In the package",
+    "fromProject": "Photo from the studio project",
+    "scopeNote": "Room lists are indicative until the owner confirms the package contents.",
+    "planAria": "Floor plan of the selected apartment type; furniture is drawn in as each room scrolls past",
+    "cta": "See the {name} package",
+    "rooms": {
+      "living": {
+        "number": "01",
+        "name": "Living room",
+        "nameStudio": "Living and sleeping",
+        "tagline": "Where the day happens.",
+        "scope": "Sofa · Coffee table · TV panel · Rug · Curtains · Lighting",
+        "scopeStudio": "Sofa · Coffee table · TV panel · Rug · Curtains · Bed and bedside",
+        "fact": "In the studio project: a linen sofa, a jute rug and a walnut slat panel for the TV, with terracotta accents."
+      },
+      "kitchen": {
+        "number": "02",
+        "name": "Kitchen and dining",
+        "tagline": "Breakfast at the bar.",
+        "scope": "Dining table or bar · Seating · Tableware for holiday lets",
+        "fact": "In the studio project: a white quartz breakfast bar with two terracotta stools."
+      },
+      "bedroom": {
+        "number": "03",
+        "name": "Bedroom",
+        "nameStudio": "Sleeping area",
+        "nameTwo": "Two bedrooms",
+        "tagline": "Made up before you land.",
+        "scope": "Bed and mattress · Bedside tables · Wardrobe or storage · Linen for holiday lets",
+        "fact": "In the studio project: an upholstered bed with a rust throw and towels folded on arrival."
+      },
+      "bathroom": {
+        "number": "04",
+        "name": "Bathroom",
+        "tagline": "Towels, mirror, a place for everything.",
+        "scope": "Mirror · Storage · Textiles · Accessories",
+        "fact": "In the studio project: a fluted vanity, a rain shower, towels and a laundry basket."
+      },
+      "terrace": {
+        "number": "05",
+        "name": "Terrace",
+        "tagline": "Dinner by the pool.",
+        "scope": "Outdoor dining or lounge set",
+        "fact": "In the studio project: a black rattan dining set for four."
+      }
+    }
+  },
   "home": {
     "packagesEyebrow": "Packages",
     "packagesTitle": "One price for the whole apartment.",
@@ -58,17 +111,17 @@
     "projectTitle": "A studio, from keys to first night.",
     "projectMeta": "Studio · pool-side complex · city to be confirmed",
     "projectBody": "Breakfast bar, bed, sofa, curtains, kitchen, bathroom and terrace, in one delivery. Hover or tap the photo to see the empty room.",
-    "stepsEyebrow": "How it works",
+    "stepsEyebrow": "The front door",
     "stepsTitle": "Six steps between the keys and the first night.",
-    "servicesEyebrow": "Services",
-    "servicesTitle": "Beyond the package.",
+    "servicesEyebrow": "Beyond the package",
+    "servicesTitle": "Three more doors.",
     "areasEyebrow": "Where we work",
     "areasTitle": "Across Northern Cyprus.",
     "areasLead": "Apartments and villas in the places foreign buyers choose most.",
     "areasNote": "City list to be confirmed by the owner.",
     "faqEyebrow": "Questions",
     "faqTitle": "Straight answers.",
-    "contactEyebrow": "Start here",
+    "contactEyebrow": "Handover",
     "contactTitle": "Tell us about your apartment.",
     "contactLead": "Send the floor plan, the handover date and how you will use it. We reply with a first proposal and a price.",
     "contactOr": "Prefer to chat?"
@@ -148,7 +201,8 @@
     "serviceStaging": "Home staging",
     "serviceCustom": "Custom project",
     "message": "Message",
-    "consent": "I agree to be contacted about my request."
+    "consent": "I agree to be contacted about my request.",
+    "areasLine": "We work in {cities}."
   },
   "phase0": {
     "eyebrow": "Phase 0 · foundations",

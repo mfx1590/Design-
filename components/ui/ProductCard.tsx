@@ -19,10 +19,10 @@ export async function ProductCard({ name, materials, imageSrc, alt, priceGBP }: 
   return (
     <article>
       <Aperture src={imageSrc} alt={alt} ratio="1/1" sizes="(min-width: 1024px) 25vw, 50vw" />
-      <h3 className="type-display mt-4 text-h3 text-ivory">{name}</h3>
-      <p className="mt-1.5 text-small text-sand">{materials}</p>
+      <h3 className="type-display mt-4 text-h3 text-ink">{name}</h3>
+      <p className="mt-1.5 text-small text-ink-soft">{materials}</p>
       <p className="mt-3">
-        {priceGBP === null ? <span className="text-small text-sand">{t("priceOnRequest")}</span> : <Price amount={priceGBP} from={false} size="sm" />}
+        {priceGBP === null ? <span className="text-small text-ink-soft">{t("priceOnRequest")}</span> : <Price amount={priceGBP} from={false} size="sm" />}
       </p>
       <p className="mt-4">
         <Button variant="tertiary">{t("inquiry")}</Button>

@@ -13,9 +13,9 @@ export async function SiteHeader() {
   const items = navItems.map((item) => ({ href: item.href, label: t(`nav.${item.key}`) }));
 
   return (
-    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule-soft bg-night/70 backdrop-blur-md">
+    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule-soft bg-surface/70 backdrop-blur-md">
       <Container className="flex h-full items-center justify-between gap-6">
-        <Link href="/" className="type-display text-[1.65rem] tracking-[0.02em] text-ivory">
+        <Link href="/" className="type-display text-[1.65rem] tracking-[0.02em] text-ink">
           {t("brand.name")}
         </Link>
 
@@ -25,7 +25,7 @@ export async function SiteHeader() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-small font-medium tracking-[0.04em] text-sand transition-colors duration-(--dur-ui) ease-soft hover:text-ivory"
+                  className="text-small font-medium tracking-[0.04em] text-ink-soft transition-colors duration-(--dur-ui) ease-soft hover:text-ink"
                 >
                   {item.label}
                 </Link>
@@ -41,7 +41,7 @@ export async function SiteHeader() {
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-small font-medium tracking-[0.04em] text-sand transition-colors duration-(--dur-ui) ease-soft hover:text-ivory"
+              className="inline-flex items-center gap-2 text-small font-medium tracking-[0.04em] text-ink-soft transition-colors duration-(--dur-ui) ease-soft hover:text-ink"
             >
               <WhatsAppGlyph className="size-5 text-whatsapp" />
               {t("nav.whatsapp")}

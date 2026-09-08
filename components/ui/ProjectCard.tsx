@@ -25,7 +25,7 @@ interface ProjectCardProps {
 
 const ratioClass = { "3/2": "aspect-[3/2]", "16/9": "aspect-video", "21/9": "aspect-[21/9]", "4/3": "aspect-[4/3]" };
 
-const chip = "pointer-events-none absolute bg-night/75 px-2.5 py-1 text-micro font-medium uppercase tracking-[0.12em] text-ivory backdrop-blur-sm";
+const chip = "pointer-events-none absolute bg-surface/75 px-2.5 py-1 text-micro font-medium uppercase tracking-[0.12em] text-ink backdrop-blur-sm";
 
 /**
  * Aperture with the finished room; hover or tap wipes the empty room in from the inline-start edge
@@ -38,7 +38,7 @@ export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, r
 
   return (
     <article className="group">
-      <div className={cx("aperture overflow-hidden bg-espresso", ratioClass[ratio])}>
+      <div className={cx("aperture overflow-hidden bg-surface-alt", ratioClass[ratio])}>
         <Image src={afterSrc} alt={alt} fill sizes={imgSizes} priority={priority} className="object-cover" />
         <div
           aria-hidden="true"
@@ -76,8 +76,8 @@ export function ProjectCard({ title, meta, afterSrc, beforeSrc, alt, hasVideo, r
 
       {imageOnly ? null : (
         <>
-          <h3 className="type-display mt-4 text-h3 text-ivory">{titleWrap ? titleWrap(title) : title}</h3>
-          <p className="mt-1.5 text-small text-sand">{meta}</p>
+          <h3 className="type-display mt-4 text-h3 text-ink">{titleWrap ? titleWrap(title) : title}</h3>
+          <p className="mt-1.5 text-small text-ink-soft">{meta}</p>
         </>
       )}
     </article>

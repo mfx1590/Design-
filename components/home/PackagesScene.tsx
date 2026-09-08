@@ -143,8 +143,8 @@ export function PackagesScene({ packages, labels, cta, className }: PackagesScen
                 )}
               >
                 <p className="eyebrow">{pkg.note}</p>
-                <h3 className="type-display mt-4 text-display text-ivory">{pkg.name}</h3>
-                <ul className="mt-8 divide-y divide-rule-soft border-y border-rule-soft text-sand">
+                <h3 className="type-display mt-4 text-display text-ink">{pkg.name}</h3>
+                <ul className="mt-8 divide-y divide-rule-soft border-y border-rule-soft text-ink-soft">
                   {pkg.inclusions.map((item) => (
                     <li key={item} className="py-3">
                       {item}
@@ -154,7 +154,7 @@ export function PackagesScene({ packages, labels, cta, className }: PackagesScen
               </div>
             ))}
 
-            <p className="mt-8 inline-flex flex-wrap items-baseline gap-x-3 text-small text-sand">
+            <p className="mt-8 inline-flex flex-wrap items-baseline gap-x-3 text-small text-ink-soft">
               {t.rich("from", { price: formatGBP(price, locale), b: () => priceNode })}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-6">
@@ -165,7 +165,7 @@ export function PackagesScene({ packages, labels, cta, className }: PackagesScen
                 ))}
               </span>
             </div>
-            <p className="mt-6 text-micro uppercase tracking-[0.18em] text-sand/60">{labels.scroll}</p>
+            <p className="mt-6 text-micro uppercase tracking-[0.18em] text-ink-soft/60">{labels.scroll}</p>
           </div>
         </div>
       </div>
@@ -182,14 +182,14 @@ export function PackageCards({ packages, cta, className }: { packages: PackageSt
       {packages.map((pkg) => (
         <article key={pkg.key} className="card flex flex-col p-7">
           <p className="eyebrow">{pkg.note}</p>
-          <h3 className="type-display mt-4 text-h2 text-ivory">{pkg.name}</h3>
-          <p className="mt-4 inline-flex flex-wrap items-baseline gap-x-2 text-small text-sand">
+          <h3 className="type-display mt-4 text-h2 text-ink">{pkg.name}</h3>
+          <p className="mt-4 inline-flex flex-wrap items-baseline gap-x-2 text-small text-ink-soft">
             {t.rich("from", {
               price: formatGBP(pkg.priceFromGBP, locale),
               b: () => <span className="type-display tabular text-h2 leading-none text-brass">{formatGBP(pkg.priceFromGBP, locale)}</span>,
             })}
           </p>
-          <ul className="mt-6 flex-1 divide-y divide-rule-soft border-y border-rule-soft text-small text-sand">
+          <ul className="mt-6 flex-1 divide-y divide-rule-soft border-y border-rule-soft text-small text-ink-soft">
             {pkg.inclusions.map((item) => (
               <li key={item} className="py-2.5">
                 {item}
