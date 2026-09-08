@@ -1,8 +1,10 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { furniture as staticFurniture, type FurnitureItem } from "@/lib/content/furniture";
-import { guides as staticGuides, type GuideContent } from "@/lib/content/guides";
-import { projects as staticProjects, type ProjectContent, type SequenceManifest } from "@/lib/content/projects";
+import type { Locale } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { buildFurniture, type FurnitureItem } from "@/lib/content/furniture";
+import { buildGuides, type GuideContent } from "@/lib/content/guides";
+import { buildProjects, type ProjectContent, type SequenceManifest } from "@/lib/content/projects";
 import { reviews as staticReviews, type ReviewContent } from "@/lib/content/reviews";
 import { isSanityConfigured } from "@/sanity/env";
 import { sanityClient } from "@/sanity/lib/client";
@@ -15,6 +17,11 @@ import { blocksToSections, pick, type Block, type LocaleValue } from "./locale";
  * ever see the static shapes, so the owner can move content into the Studio type by type.
  */
 const REVALIDATE = 60;
+
+/** The "content" namespace of the locale's messages (English merged underneath), for the static fallbacks. */
+async function content(locale: string) {
+  return (await getMessages({ locale: locale as Locale })).content;
+}
 
 async function query<T>(groq: string, params: Record<string, unknown>, fallback: () => T): Promise<T> {
   if (!isSanityConfigured) return fallback();
@@ -94,6 +101,7 @@ async function mapProject(doc: ProjectDoc, locale: string): Promise<ProjectConte
 
 export async function getProjects(locale: string): Promise<ProjectContent[]> {
   const docs = await query<ProjectDoc[] | null>(`*[_type == "project" && defined(slug.current)] | order(featured desc, completedAt desc) { ${projectFields} }`, {}, () => null);
+  const staticProjects = buildProjects(await content(locale));
   if (!docs) return staticProjects;
   const mapped = await Promise.all(docs.map((d) => mapProject(d, locale)));
   const list = mapped.filter((p): p is ProjectContent => p !== null);
@@ -103,7 +111,7 @@ export async function getProjects(locale: string): Promise<ProjectContent[]> {
 export async function getProject(locale: string, slug: string): Promise<ProjectContent | undefined> {
   const doc = await query<ProjectDoc | null>(`*[_type == "project" && slug.current == $slug][0] { ${projectFields} }`, { slug }, () => null);
   if (doc) return (await mapProject(doc, locale)) ?? undefined;
-  return staticProjects.find((p) => p.slug === slug);
+  return buildProjects(await content(locale)).find((p) => p.slug === slug);
 }
 
 /* Furniture */
@@ -143,6 +151,7 @@ function mapFurniture(doc: FurnitureDoc, locale: string): (FurnitureItem & { cat
 
 export async function getFurniture(locale: string): Promise<Array<FurnitureItem & { categoryLabel?: string }>> {
   const docs = await query<FurnitureDoc[] | null>(`*[_type == "furnitureItem" && defined(slug.current)] | order(category->order asc, title.en asc) { ${furnitureFields} }`, {}, () => null);
+  const staticFurniture = buildFurniture(await content(locale));
   if (!docs) return staticFurniture;
   const list = docs.map((d) => mapFurniture(d, locale)).filter((f): f is FurnitureItem & { categoryLabel?: string } => f !== null);
   return list.length ? list : staticFurniture;
@@ -151,7 +160,7 @@ export async function getFurniture(locale: string): Promise<Array<FurnitureItem 
 export async function getFurnitureItem(locale: string, slug: string): Promise<(FurnitureItem & { categoryLabel?: string }) | undefined> {
   const doc = await query<FurnitureDoc | null>(`*[_type == "furnitureItem" && slug.current == $slug][0] { ${furnitureFields} }`, { slug }, () => null);
   if (doc) return mapFurniture(doc, locale) ?? undefined;
-  return staticFurniture.find((f) => f.slug === slug);
+  return buildFurniture(await content(locale)).find((f) => f.slug === slug);
 }
 
 /* Guides */
@@ -167,9 +176,9 @@ interface GuideDoc {
 
 const guideFields = `"slug": slug.current, title, lead, cover, "updated": coalesce(updatedAt, publishedAt, _updatedAt), body`;
 
-function mapGuide(doc: GuideDoc, locale: string): GuideContent | null {
+function mapGuide(doc: GuideDoc, locale: string, fallbackCover: GuideContent["cover"]): GuideContent | null {
   if (!doc.slug) return null;
-  const cover = photoToImage(doc.cover, locale, 1200) ?? staticGuides[0].cover;
+  const cover = photoToImage(doc.cover, locale, 1200) ?? fallbackCover;
   return {
     slug: doc.slug,
     title: pick(doc.title, locale) ?? doc.slug,
@@ -182,14 +191,16 @@ function mapGuide(doc: GuideDoc, locale: string): GuideContent | null {
 
 export async function getGuides(locale: string): Promise<GuideContent[]> {
   const docs = await query<GuideDoc[] | null>(`*[_type == "guide" && defined(slug.current)] | order(coalesce(updatedAt, publishedAt) desc) { ${guideFields} }`, {}, () => null);
+  const staticGuides = buildGuides(await content(locale));
   if (!docs) return staticGuides;
-  const list = docs.map((d) => mapGuide(d, locale)).filter((g): g is GuideContent => g !== null);
+  const list = docs.map((d) => mapGuide(d, locale, staticGuides[0].cover)).filter((g): g is GuideContent => g !== null);
   return list.length ? list : staticGuides;
 }
 
 export async function getGuide(locale: string, slug: string): Promise<GuideContent | undefined> {
   const doc = await query<GuideDoc | null>(`*[_type == "guide" && slug.current == $slug][0] { ${guideFields} }`, { slug }, () => null);
-  if (doc) return mapGuide(doc, locale) ?? undefined;
+  const staticGuides = buildGuides(await content(locale));
+  if (doc) return mapGuide(doc, locale, staticGuides[0].cover) ?? undefined;
   return staticGuides.find((g) => g.slug === slug);
 }
 

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { Section } from "@/components/layout/Section";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { services } from "@/lib/content/services";
+import { buildServices } from "@/lib/content/services";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,6 +25,7 @@ export default async function ServicesPage({ params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
+  const services = buildServices((await getMessages()).content);
 
   return (
     <>

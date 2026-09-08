@@ -12,13 +12,13 @@ import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getFurnitureItem, getProject } from "@/lib/cms/loaders";
-import { projects } from "@/lib/content/projects";
+import { projectSlugs } from "@/lib/content/projects";
 import { whatsappHref } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => projects.map((p) => ({ locale, slug: p.slug })));
+  return routing.locales.flatMap((locale) => projectSlugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

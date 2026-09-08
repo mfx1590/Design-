@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { Section, SectionHeader } from "@/components/layout/Section";
@@ -11,19 +11,19 @@ import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { serviceBySlug, services } from "@/lib/content/services";
+import { buildServices, serviceSlugs } from "@/lib/content/services";
 import { whatsappHref } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => services.map((s) => ({ locale, slug: s.slug })));
+  return routing.locales.flatMap((locale) => serviceSlugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
-  const service = serviceBySlug(slug);
+  const service = buildServices((await getMessages({ locale })).content).find((s) => s.slug === slug);
   if (!service) return {};
   return { title: `${service.title} in Northern Cyprus — Design Package`, description: service.lead };
 }
@@ -32,10 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServicePage({ params }: Props) {
   const { locale, slug } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-  const service = serviceBySlug(slug);
-  if (!service) notFound();
   setRequestLocale(locale);
   const t = await getTranslations();
+  const services = buildServices((await getMessages()).content);
+  const service = services.find((s) => s.slug === slug);
+  if (!service) notFound();
   const wa = whatsappHref(service.prefill);
   const others = services.filter((s) => s.slug !== service.slug);
 

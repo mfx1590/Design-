@@ -1,10 +1,12 @@
 import manifest from "@/public/sequences/project-01-studio/manifest.json";
+import type { ContentMessages } from "./types";
 
 export type SequenceManifest = typeof manifest;
 
 /**
- * Portfolio projects (PLAN.md §6). One real project so far. Facts the owner has not confirmed
- * (city, date, client) are shown as "to be confirmed", never invented. Moves into Sanity later.
+ * Portfolio projects (PLAN.md §6). One real project so far. Copy comes from messages under
+ * content.projects.<key>. Facts the owner has not confirmed (city, date, client) are shown as
+ * "to be confirmed", never invented. Moves into Sanity later.
  */
 export interface ProjectContent {
   slug: string;
@@ -25,34 +27,50 @@ export interface ProjectContent {
 
 const IMG = "/images/projects/project-01-studio";
 
-export const projects: ProjectContent[] = [
+export const projectMeta = [
   {
+    key: "studioPoolside",
     slug: "studio-poolside",
-    title: "Studio, pool-side complex",
     apartmentType: "Studio",
     packageKey: "studio",
     city: null,
-    summary:
-      "A studio apartment in a pool-side complex, furnished as a complete package: living and sleeping area, breakfast bar, kitchen, bathroom and terrace, delivered and installed in one go.",
-    scope: ["Living and sleeping area", "Breakfast bar and kitchen", "Bathroom", "Terrace", "Curtains and textiles", "Delivery and installation"],
-    before: { src: `${IMG}/before-landscape.jpg`, alt: "Empty studio with a sliding door to the pool, before furnishing" },
-    after: { src: `${IMG}/after-landscape.jpg`, alt: "The same studio furnished: breakfast bar, bed, sofa and curtains" },
+    before: `${IMG}/before-landscape.jpg`,
+    after: `${IMG}/after-landscape.jpg`,
     gallery: [
-      { src: `${IMG}/after-landscape-bar.jpg`, alt: "Breakfast bar with terracotta stools, bed and sofa", ratio: "3/2" },
-      { src: `${IMG}/after-portrait-bar-to-bed.jpg`, alt: "From the breakfast bar toward the bed", ratio: "3/4" },
-      { src: `${IMG}/after-portrait-wide.jpg`, alt: "Sofa, dressing mirror and fridge", ratio: "3/4" },
-      { src: `${IMG}/after-kitchen.jpg`, alt: "Kitchen with white gloss units and black track lights", ratio: "3/4" },
-      { src: `${IMG}/after-bathroom.jpg`, alt: "Bathroom with glass shower and fluted vanity", ratio: "3/4" },
-      { src: `${IMG}/after-terrace.jpg`, alt: "Black rattan dining set on the terrace by the pool", ratio: "3/4" },
-      { src: `${IMG}/before-portrait.jpg`, alt: "The empty studio before furnishing", ratio: "3/4" },
+      { src: `${IMG}/after-landscape-bar.jpg`, ratio: "3/2" },
+      { src: `${IMG}/after-portrait-bar-to-bed.jpg`, ratio: "3/4" },
+      { src: `${IMG}/after-portrait-wide.jpg`, ratio: "3/4" },
+      { src: `${IMG}/after-kitchen.jpg`, ratio: "3/4" },
+      { src: `${IMG}/after-bathroom.jpg`, ratio: "3/4" },
+      { src: `${IMG}/after-terrace.jpg`, ratio: "3/4" },
+      { src: `${IMG}/before-portrait.jpg`, ratio: "3/4" },
     ],
     sequence: manifest,
     hasVideo: false,
     furnitureSlugs: ["terracotta-bar-stool", "linen-sofa", "round-coffee-table", "upholstered-bed", "walnut-slat-tv-panel", "rattan-dining-set"],
-    visualisationNote: "The wide after photo is a visualisation based on the completed project; the other photos are phone shots from the finished apartment.",
   },
-];
+] as const;
 
-export function projectBySlug(slug: string) {
-  return projects.find((p) => p.slug === slug);
+export const projectSlugs = projectMeta.map((m) => m.slug);
+
+export function buildProjects(content: ContentMessages): ProjectContent[] {
+  return projectMeta.map((m) => {
+    const c = content.projects[m.key];
+    return {
+      slug: m.slug,
+      title: c.title,
+      apartmentType: m.apartmentType,
+      packageKey: m.packageKey,
+      city: m.city,
+      summary: c.summary,
+      scope: ([1, 2, 3, 4, 5, 6] as const).map((n) => c.scope[`s${n}`]),
+      before: { src: m.before, alt: c.beforeAlt },
+      after: { src: m.after, alt: c.afterAlt },
+      gallery: m.gallery.map((g, i) => ({ src: g.src, ratio: g.ratio, alt: c.gallery[`g${(i + 1) as 1 | 2 | 3 | 4 | 5 | 6 | 7}`] })),
+      sequence: m.sequence,
+      hasVideo: m.hasVideo,
+      furnitureSlugs: [...m.furnitureSlugs],
+      visualisationNote: c.visualisationNote,
+    };
+  });
 }

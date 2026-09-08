@@ -13,12 +13,12 @@ import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getFurniture, getFurnitureItem, getProject } from "@/lib/cms/loaders";
-import { categories, furniture, type CategoryKey } from "@/lib/content/furniture";
+import { categories, furnitureSlugs, type CategoryKey } from "@/lib/content/furniture";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => furniture.map((f) => ({ locale, slug: f.slug })));
+  return routing.locales.flatMap((locale) => furnitureSlugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

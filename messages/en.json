@@ -492,5 +492,244 @@
     },
     "count": "{count, plural, one {# piece} other {# pieces}}",
     "empty": "No pieces in this category yet."
+  },
+  "content": {
+    "services": {
+      "staging": {
+        "title": "Home staging",
+        "lead": "Home staging furnishes and styles an empty unit so it photographs well and shows well. For sellers and agents in Northern Cyprus who want a property to look like a home before the first viewing.",
+        "audience": "Sellers and estate agents",
+        "steps": {
+          "s1Title": "Walkthrough or floor plan",
+          "s1Body": "We look at the unit in person or from the plan and photos.",
+          "s2Title": "Staging plan and quote",
+          "s2Body": "Which rooms, which pieces, for how long. One price.",
+          "s3Title": "Delivery and styling",
+          "s3Body": "Furniture, textiles and accessories arrive together and are placed by our team.",
+          "s4Title": "Photos and viewings",
+          "s4Body": "The unit is ready for the listing photos and for visitors."
+        },
+        "pricing": "Priced per property, depending on size and how long the staging stays in place.",
+        "pricingNote": "Pricing model to be confirmed by the owner.",
+        "faqs": {
+          "q1": "Can the buyer keep the furniture?",
+          "a1": "Ask us. Staged pieces can usually be bought with the property or replaced by a full package.",
+          "q2": "Do you stage occupied homes?",
+          "a2": "Yes, where the layout allows. We add or replace pieces rather than clearing the home."
+        },
+        "photos": {
+          "p1Alt": "Furnished studio ready for viewings",
+          "p2Alt": "Sofa, dressing mirror and bed in the studio"
+        },
+        "prefill": "Hello, I would like to ask about home staging for a property in Northern Cyprus."
+      },
+      "rental": {
+        "title": "Rental furnishing",
+        "lead": "Rental furnishing uses the same Studio, 1+1 and 2+1 packages, chosen for the purpose: durable and neutral for long-term tenants, or guest-ready down to kitchenware and linen for holiday lets. Furnished units rent faster and are ready for listing photos on day one.",
+        "audience": "Owners and investors who rent out",
+        "steps": {
+          "s1Title": "Choose the purpose",
+          "s1Body": "Long-term tenants or holiday guests. The package changes with the answer.",
+          "s2Title": "Package adjusted",
+          "s2Body": "Durable finishes and easy maintenance for long lets; full equipment and photogenic styling for short lets.",
+          "s3Title": "Delivered before the season",
+          "s3Body": "Timed to your handover or to the start of the letting season.",
+          "s4Title": "Ready to list",
+          "s4Body": "Photos, keys, and a unit that can receive its first guest."
+        },
+        "pricing": "Studio from £10,000, 1+1 from £12,000, 2+1 from £14,000. Same structure as the standard packages.",
+        "pricingNote": "Rental-specific inclusions to be confirmed by the owner.",
+        "faqs": {
+          "q1": "What does a holiday-let package add?",
+          "a1": "Everything a guest expects on arrival: kitchenware, linen, towels and the small things, plus styling that photographs well.",
+          "q2": "What is different for long-term tenants?",
+          "a2": "Neutral colours, durable fabrics and surfaces, and pieces that are easy to clean and replace."
+        },
+        "photos": {
+          "p1Alt": "Equipped kitchen with breakfast bar",
+          "p2Alt": "Bathroom with towels and accessories"
+        },
+        "prefill": "Hello, I would like to ask about furnishing a rental apartment in Northern Cyprus."
+      },
+      "custom": {
+        "title": "Custom projects",
+        "lead": "Custom projects are individual design projects beyond the standard packages: larger homes, special layouts, or a brief that does not fit Studio, 1+1 or 2+1. Same process, priced for the project.",
+        "audience": "Owners with a larger home or a specific brief",
+        "steps": {
+          "s1Title": "Brief",
+          "s1Body": "What you have, what you need, how you will use it.",
+          "s2Title": "Concept",
+          "s2Body": "Layout, materials and a piece list for every room.",
+          "s3Title": "Selection",
+          "s3Body": "You approve the pieces, in person or remotely.",
+          "s4Title": "Delivery and installation",
+          "s4Body": "Everything arrives together and is installed by our team."
+        },
+        "pricing": "Quoted per project after the brief.",
+        "faqs": {
+          "q1": "Do you work with developers?",
+          "a1": "Yes. Turnkey furnishing for show units and whole projects is handled as a custom project.",
+          "q2": "Can I mix a package with custom pieces?",
+          "a2": "Yes. Start from the closest package and change what you need."
+        },
+        "photos": {
+          "p1Alt": "Terrace dining set by the pool",
+          "p2Alt": "Breakfast bar, bed and sofa in the studio"
+        },
+        "prefill": "Hello, I would like to ask about a custom furnishing project in Northern Cyprus."
+      }
+    },
+    "projects": {
+      "studioPoolside": {
+        "title": "Studio, pool-side complex",
+        "summary": "A studio apartment in a pool-side complex, furnished as a complete package: living and sleeping area, breakfast bar, kitchen, bathroom and terrace, delivered and installed in one go.",
+        "scope": {
+          "s1": "Living and sleeping area",
+          "s2": "Breakfast bar and kitchen",
+          "s3": "Bathroom",
+          "s4": "Terrace",
+          "s5": "Curtains and textiles",
+          "s6": "Delivery and installation"
+        },
+        "beforeAlt": "Empty studio with a sliding door to the pool, before furnishing",
+        "afterAlt": "The same studio furnished: breakfast bar, bed, sofa and curtains",
+        "gallery": {
+          "g1": "Breakfast bar with terracotta stools, bed and sofa",
+          "g2": "From the breakfast bar toward the bed",
+          "g3": "Sofa, dressing mirror and fridge",
+          "g4": "Kitchen with white gloss units and black track lights",
+          "g5": "Bathroom with glass shower and fluted vanity",
+          "g6": "Black rattan dining set on the terrace by the pool",
+          "g7": "The empty studio before furnishing"
+        },
+        "visualisationNote": "The wide after photo is a visualisation based on the completed project; the other photos are phone shots from the finished apartment."
+      }
+    },
+    "furniture": {
+      "terracottaBarStool": {
+        "name": "Bar stool, terracotta",
+        "materials": "Velvet-look upholstery, black steel frame",
+        "description": "Curved back, low profile, set against the white quartz bar in the studio project.",
+        "alt": "Terracotta bar stools at a white quartz breakfast bar"
+      },
+      "linenSofa": {
+        "name": "Three-seat sofa, linen",
+        "materials": "Linen-look fabric, black metal legs",
+        "description": "Loose cushions in the same fabric, with terracotta accent cushions in the studio project.",
+        "alt": "Beige linen sofa with terracotta cushions"
+      },
+      "roundCoffeeTable": {
+        "name": "Round coffee table, wood",
+        "materials": "Light wood top and base",
+        "description": "Small footprint for studios, placed on a jute rug in the studio project.",
+        "alt": "Round wooden coffee table on a jute rug"
+      },
+      "juteRug": {
+        "name": "Jute rug",
+        "materials": "Woven natural fibre",
+        "description": "Anchors the seating area and hides the glossy floor's reflections.",
+        "alt": "Jute rug under the sofa and coffee table"
+      },
+      "upholsteredBed": {
+        "name": "Upholstered bed",
+        "materials": "Fabric headboard, black metal legs",
+        "description": "Dressed with a rust throw and folded towels in the studio project.",
+        "alt": "Upholstered bed with a rust throw"
+      },
+      "roundLedMirror": {
+        "name": "Round LED mirror with dressing table",
+        "materials": "Backlit mirror, wall-mounted desk, terracotta chair",
+        "description": "A dressing corner that doubles as a desk.",
+        "alt": "Round backlit mirror above a dressing table"
+      },
+      "walnutSlatTvPanel": {
+        "name": "Walnut slat TV panel",
+        "materials": "Wood slats on a dark backing",
+        "description": "Runs floor to ceiling behind the TV in the studio project.",
+        "alt": "Walnut slat panel with a wall-mounted TV"
+      },
+      "blackTrackLights": {
+        "name": "Black track lighting",
+        "materials": "Powder-coated metal, adjustable heads",
+        "description": "Three heads over the kitchen in the studio project.",
+        "alt": "Black track lights above the kitchen"
+      },
+      "flutedVanity": {
+        "name": "Fluted bathroom vanity",
+        "materials": "Fluted front, integrated basin",
+        "description": "Wall-hung, with the mirror above and towels beside it.",
+        "alt": "White fluted vanity with a basin"
+      },
+      "rattanDiningSet": {
+        "name": "Outdoor dining set, black rattan",
+        "materials": "Black rattan weave, tempered glass top",
+        "description": "Table and four chairs on the terrace by the pool.",
+        "alt": "Black rattan dining set on a terrace by the pool"
+      }
+    },
+    "guides": {
+      "furnishingFromAbroad": {
+        "title": "Furnishing an apartment in Northern Cyprus from abroad",
+        "lead": "Many buyers are not in Cyprus when the keys are handed over. This is how a furniture package works when you are somewhere else.",
+        "coverAlt": "A furnished studio with a breakfast bar, bed and sofa, the pool visible through the sliding door",
+        "sections": {
+          "s1": {
+            "heading": "Start with three things",
+            "p1": "A floor plan, the handover date, and how you will use the apartment: to live in, to rent long-term, or to let to holiday guests. Those three answers decide the package version and the timing.",
+            "p2": "Send them on WhatsApp and you receive a first proposal without a visit. A short video walk-through of the empty apartment helps, but a plan from the developer is enough to start."
+          },
+          "s2": {
+            "heading": "Concept and selection happen online",
+            "p1": "The concept is a layout and a shortlist for every room, priced as one package. You review it from drawings and photos, ask for changes, and approve the pieces in writing on WhatsApp.",
+            "p2": "Because the package is defined by apartment type, the shortlist already covers every room. What changes with your answers is the character of the pieces, not the list of rooms."
+          },
+          "s3": {
+            "heading": "Delivery and installation are timed to the handover",
+            "p1": "Delivery and installation are part of every package. Everything arrives together, timed to your handover date, and is assembled, placed and styled by our team.",
+            "p2": "You do not need to be present. If the developer or your representative hands over the keys, installation can happen before you fly in."
+          },
+          "s4": {
+            "heading": "Handover with photos",
+            "p1": "When the installation is complete you receive handover photos of every room the same day. If you arrive later, the apartment waits furnished. If it is going on the rental market, those photos are the start of the listing."
+          },
+          "s5": {
+            "heading": "What to decide early",
+            "p1": "Whether the apartment is for you, for long-term tenants or for holiday guests. The rooms are the same, the choices differ: your own colours, comfort and storage if you are moving in; durable and neutral, easy to maintain between tenants, for long-term rental; guest-ready down to kitchenware and linen for holiday lets.",
+            "p2": "The package finder on the packages page turns those answers into a package and a WhatsApp message in three taps."
+          }
+        }
+      },
+      "studio1Plus12Plus1WhatIsIncluded": {
+        "title": "Studio, 1+1 or 2+1: what a furniture package includes",
+        "lead": "Packages are defined by apartment type, not by a quality tier. Here is what each one covers and where the prices start.",
+        "coverAlt": "Breakfast bar with terracotta stools, a bed and a sofa in one furnished studio",
+        "sections": {
+          "s1": {
+            "heading": "One price for the whole apartment",
+            "p1": "A package furnishes every room of the apartment type and includes delivery and installation. Prices are in pounds sterling and are starting prices: the final quote depends on the pieces you approve."
+          },
+          "s2": {
+            "heading": "Studio, from £10,000",
+            "p1": "Living and sleeping area, kitchen and dining, bathroom, delivery and installation. In a studio the living and sleeping area is one room, so the layout does the work: a bed, a sofa, a place to eat and storage that does not crowd the space."
+          },
+          "s3": {
+            "heading": "1+1, from £12,000",
+            "p1": "Living room, one bedroom, kitchen and dining, bathroom, delivery and installation. The bedroom is furnished as a full room: bed, wardrobe or storage, bedside pieces and textiles."
+          },
+          "s4": {
+            "heading": "2+1, from £14,000",
+            "p1": "Living room, two bedrooms, kitchen and dining, bathroom, delivery and installation. The second bedroom can be set up for family, guests or as a home office; the choice is made at the concept stage."
+          },
+          "s5": {
+            "heading": "The rental version",
+            "p1": "Each package also exists as a rental version with the same room structure. For long-term tenants the pieces are durable and neutral, easy to maintain between tenancies. For holiday lets the apartment is guest-ready down to kitchenware and linen, and photogenic for listings."
+          },
+          "s6": {
+            "heading": "Still to be confirmed",
+            "p1": "Terrace furniture and the delivery timeline are listed as to be confirmed on the comparison table until the owner confirms them. Ask on WhatsApp and you get the current answer for your handover date."
+          }
+        }
+      }
+    }
   }
 }

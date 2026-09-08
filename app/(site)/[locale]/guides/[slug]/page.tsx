@@ -9,12 +9,12 @@ import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { getGuide, getGuides } from "@/lib/cms/loaders";
-import { guides } from "@/lib/content/guides";
+import { guideSlugs } from "@/lib/content/guides";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => guides.map((g) => ({ locale, slug: g.slug })));
+  return routing.locales.flatMap((locale) => guideSlugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

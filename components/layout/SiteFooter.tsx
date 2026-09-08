@@ -1,15 +1,16 @@
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Container } from "@/components/layout/Container";
 import { Link } from "@/i18n/navigation";
 import type { StaticPathname } from "@/i18n/routing";
 import { areas } from "@/lib/content/areas";
-import { services } from "@/lib/content/services";
+import { buildServices } from "@/lib/content/services";
 import { navItems, telHref, whatsappDisplay } from "@/lib/site";
 
 /** Espresso, five columns: NAP, pages, services, more, languages. Legal links on the bottom rule. */
 export async function SiteFooter() {
   const t = await getTranslations();
+  const services = buildServices((await getMessages()).content);
   const year = new Date().getFullYear();
   const heading = "text-micro font-medium uppercase tracking-[0.18em] text-brass";
   const link = "text-ink-soft transition-colors duration-(--dur-ui) ease-soft hover:text-ink";
