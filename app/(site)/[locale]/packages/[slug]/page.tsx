@@ -11,6 +11,11 @@ import { Price } from "@/components/ui/Price";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { areas } from "@/lib/content/areas";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { formatGBP } from "@/lib/format/price";
 import { packageBySlug, packages } from "@/lib/content/packages";
 import { buildRooms, buildTypes, PROJECT_IMAGES } from "@/lib/content/rooms";
@@ -31,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const tp = await getTranslations({ locale, namespace: "packages" });
   const name = tp(pkg.key);
   const price = formatGBP(pkg.priceFromGBP, locale);
-  return { title: t("metaTitle", { name, price }), description: t("metaDescription", { name, price }) };
+  return pageMetadata({ locale, href: { pathname: "/packages/[slug]", params: { slug } }, title: t("metaTitle", { name, price }), description: t("metaDescription", { name, price }) });
 }
 
 /** Package detail (PLAN.md §6): room by room, sample photos, price, FAQs. */
@@ -70,8 +75,10 @@ export default async function PackagePage({ params }: Props) {
     { src: `${PROJECT_IMAGES}/after-terrace.jpg`, alt: t("apartment.rooms.terrace.name"), ratio: "3/4" as const },
   ];
 
+  const cities = areas.map((a) => t(`areas.${a.key}`));
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.packages"), href: "/packages" }, { name: current.name, href: { pathname: "/packages/[slug]", params: { slug } } }]), ld.service({ name: current.name, description: t("pages.package.metaDescription", { name: current.name, price }), url: localizedPath(locale, { pathname: "/packages/[slug]", params: { slug } }), priceFromGBP: pkg.priceFromGBP, areaServed: cities, image: photos[0].src }), ld.faqPage(faqs)]} />
       <PageIntro
         eyebrow={t("pages.package.eyebrow")}
         title={current.name}

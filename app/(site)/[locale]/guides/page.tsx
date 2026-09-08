@@ -8,6 +8,9 @@ import { Section } from "@/components/layout/Section";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { getGuides } from "@/lib/cms/loaders";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -16,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.guides" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/guides", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Guides index (PLAN.md §6, §9). */
@@ -30,6 +33,7 @@ export default async function GuidesPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={breadcrumbsFor(locale, t("seo.home"), [{ name: t("footer.guides"), href: "/guides" }])} />
       <PageIntro eyebrow={t("pages.guides.eyebrow")} title={t("pages.guides.title")} lead={t("pages.guides.lead")} />
 
       <Section className="pt-0">

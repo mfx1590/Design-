@@ -11,6 +11,12 @@ import { FaqList } from "@/components/ui/FaqList";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { formatGBP } from "@/lib/format/price";
+import { areas } from "@/lib/content/areas";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { packages } from "@/lib/content/packages";
 import { buildTypes } from "@/lib/content/rooms";
 import { whatsappHref } from "@/lib/site";
@@ -21,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.packages" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/packages", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Packages overview (PLAN.md §6): compare, pick, ask. */
@@ -55,8 +61,10 @@ export default async function PackagesPage({ params }: Props) {
   const faqs = ([1, 2, 3] as const).map((n) => ({ q: tf(`q${n}`), a: tf(`a${n}`) }));
   const wa = whatsappHref(t("whatsapp.prefill"));
 
+  const cities = areas.map((a) => t(`areas.${a.key}`));
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.packages"), href: "/packages" }]), ...types.map((x) => ld.service({ name: x.name, description: t("pages.package.metaDescription", { name: x.name, price: formatGBP(x.priceFromGBP, locale) }), url: localizedPath(locale, { pathname: "/packages/[slug]", params: { slug: slugs[x.key] } }), priceFromGBP: x.priceFromGBP, areaServed: cities })), ld.faqPage(faqs)]} />
       <PageIntro eyebrow={t("pages.packages.eyebrow")} title={t("pages.packages.title")} lead={t("pages.packages.lead")} />
 
       <Section className="pt-0">

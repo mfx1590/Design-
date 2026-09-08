@@ -6,6 +6,9 @@ import { PageIntro } from "@/components/layout/PageIntro";
 import { Section } from "@/components/layout/Section";
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { telHref, whatsappDisplay, whatsappHref } from "@/lib/site";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -14,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.contact" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/contact", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Contact page: WhatsApp first, phone second, the rest of the NAP once the owner confirms it. */
@@ -33,6 +36,7 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.contact"), href: "/contact" }])} />
       <PageIntro
         eyebrow={t("pages.contact.eyebrow")}
         title={t("pages.contact.title")}

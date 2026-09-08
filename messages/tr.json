@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kuzey Kıbrıs'ta mobilya paketleri — Design Package",
-    "description": "Kuzey Kıbrıs'ta iç mekân tasarım paketleri ve mobilya: Stüdyo başlangıç fiyatı 10.000 £, 1+1 12.000 £, 2+1 14.000 £."
+    "description": "Kuzey Kıbrıs'ta iç mekân tasarım paketleri ve mobilya: Stüdyo 10.000 £'den, 1+1 12.000 £'den, 2+1 14.000 £'den. Teslimat ve montaj dahil."
   },
   "brand": {
     "name": "Design Package",
@@ -17,15 +17,22 @@
     "services": "Hizmetler",
     "about": "Hakkımızda",
     "contact": "İletişim",
-    "whatsapp": "WhatsApp'tan yazın"
+    "whatsapp": "WhatsApp'tan yazın",
+    "furniture": "Mobilya"
   },
   "cta": {
-    "quote": "Teklif isteyin",
+    "quote": "WhatsApp'tan teklif isteyin",
     "package": "Paketin tamamını görün",
     "packages": "Paketleri görün",
+    "project": "Projeyi görün",
+    "allProjects": "Tüm projeleri görün",
+    "services": "Tüm hizmetleri görün",
     "whatsapp": "WhatsApp'tan yazın",
     "inquiry": "Talep listesine ekle",
-    "priceOnRequest": "Fiyat için sorun"
+    "priceOnRequest": "Fiyat için sorun",
+    "send": "Talep gönder",
+    "inquiryRemove": "Talep listesinden çıkar",
+    "seeService": "Hizmeti görün"
   },
   "card": {
     "before": "Önce",
@@ -35,20 +42,95 @@
     "showAfter": "Sonrasını göster"
   },
   "hero": {
+    "eyebrow": "Mobilya paketleri · Kuzey Kıbrıs",
     "before": "Duvarlar sizde.",
     "after": "Evi biz getiriyoruz.",
-    "lead": "Kuzey Kıbrıs'taki daireler için teslimat ve montaj dahil mobilya paketleri. Stüdyo başlangıç fiyatı 10.000 £.",
+    "lead": "Kuzey Kıbrıs'taki daireler için teslimat ve montaj dahil eksiksiz mobilya paketleri. Stüdyo 10.000 £'den başlıyor.",
     "visualisation": "Tamamlanmış bir stüdyo projesine dayanan görselleştirme.",
-    "altBefore": "Havuza açılan sürgülü kapılı boş stüdyo daire, mobilyalanmadan önce",
-    "altAfter": "Aynı stüdyo mobilyalandıktan sonra: kahvaltı barı, yatak, koltuk ve perdeler"
+    "altBefore": "Havuza açılan sürgülü kapılı boş stüdyo daire, döşenmeden önce",
+    "altAfter": "Aynı stüdyo döşendikten sonra: kahvaltı barı, yatak, kanepe ve perdeler"
   },
-  "phase0": {
-    "eyebrow": "Aşama 0 · temeller",
-    "title": "Duvarlar sizde.",
-    "lead": "Kuzey Kıbrıs'taki daireleri boş duvarlardan hazır bir eve dönüştürüyoruz.",
-    "direction": "Bu sayfa {locale} dili için {dir, select, rtl {sağdan sola} other {soldan sağa}} görüntülenir.",
-    "scriptCheck": "Karakter testi: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
-    "next": "İleri"
+  "trust": {
+    "prices": "Stüdyo 10.000 £'den · 1+1 12.000 £'den · 2+1 14.000 £'den",
+    "delivery": "Teslimat ve montaj dahil",
+    "remote": "Seçim ve onay dilediğiniz yerden",
+    "languages": "Altı dilde hizmet"
+  },
+  "apartment": {
+    "eyebrow": "Daireniz",
+    "title": "Henüz yokken içinde dolaşın.",
+    "lead": "Daire tipinizi seçin. Siz kaydırdıkça plan, tıpkı paketin yaptığı gibi oda oda dolar.",
+    "choose": "Daire tipi",
+    "inPackage": "Pakette",
+    "fromProject": "Stüdyo projesinden fotoğraf",
+    "scopeNote": "Oda listeleri, mal sahibi paket içeriğini onaylayana kadar bilgi amaçlıdır.",
+    "planAria": "Seçilen daire tipinin kat planı; her oda kaydırıldıkça mobilyalar plana çizilir",
+    "cta": "{name} paketini görün",
+    "rooms": {
+      "living": {
+        "number": "01",
+        "name": "Salon",
+        "nameStudio": "Oturma ve yatak alanı",
+        "tagline": "Günün geçtiği yer.",
+        "scope": "Kanepe · Sehpa · TV paneli · Halı · Perdeler · Aydınlatma",
+        "scopeStudio": "Kanepe · Sehpa · TV paneli · Halı · Perdeler · Yatak ve komodin",
+        "fact": "Stüdyo projesinde: keten kanepe, jüt halı ve TV için ceviz çıtalı panel, terakota vurgularla."
+      },
+      "kitchen": {
+        "number": "02",
+        "name": "Mutfak ve yemek alanı",
+        "tagline": "Kahvaltı barda.",
+        "scope": "Yemek masası veya bar · Oturma · Kısa dönem kiralama için sofra takımı",
+        "fact": "Stüdyo projesinde: iki terakota tabureli beyaz kuvars kahvaltı barı."
+      },
+      "bedroom": {
+        "number": "03",
+        "name": "Yatak odası",
+        "nameStudio": "Yatak alanı",
+        "nameTwo": "İki yatak odası",
+        "tagline": "Siz inmeden yatak hazır.",
+        "scope": "Karyola ve yatak · Komodinler · Gardırop veya depolama · Kısa dönem kiralama için nevresim",
+        "fact": "Stüdyo projesinde: pas rengi örtülü döşemeli yatak ve varışta katlanmış havlular."
+      },
+      "bathroom": {
+        "number": "04",
+        "name": "Banyo",
+        "tagline": "Havlular, ayna, her şeyin bir yeri.",
+        "scope": "Ayna · Depolama · Tekstil · Aksesuarlar",
+        "fact": "Stüdyo projesinde: yivli lavabo dolabı, yağmur duş, havlular ve çamaşır sepeti."
+      },
+      "terrace": {
+        "number": "05",
+        "name": "Teras",
+        "tagline": "Havuz başında akşam yemeği.",
+        "scope": "Dış mekân yemek veya oturma takımı",
+        "fact": "Stüdyo projesinde: dört kişilik siyah rattan yemek takımı."
+      }
+    }
+  },
+  "home": {
+    "packagesEyebrow": "Paketler",
+    "packagesTitle": "Tüm daire için tek fiyat.",
+    "packagesLead": "Her oda, teslimat ve montaj dahil. Paketler kalite seviyesine göre değil, daire tipine göre tanımlanır.",
+    "packagesScroll": "Planın dolması için kaydırmaya devam edin",
+    "projectEyebrow": "Son proje",
+    "projectTitle": "Bir stüdyo: anahtardan ilk geceye.",
+    "projectMeta": "Stüdyo · havuzlu site · şehir onaylanacak",
+    "projectBody": "Kahvaltı barı, yatak, kanepe, perdeler, mutfak, banyo ve teras, tek teslimatta. Boş odayı görmek için fotoğrafın üzerine gelin ya da dokunun.",
+    "stepsEyebrow": "Ön kapı",
+    "stepsTitle": "Anahtardan ilk geceye altı adım.",
+    "servicesEyebrow": "Paketin ötesinde",
+    "servicesTitle": "Üç kapı daha.",
+    "areasEyebrow": "Çalıştığımız bölgeler",
+    "areasTitle": "Kuzey Kıbrıs'ın her yerinde.",
+    "areasLead": "Yabancı alıcıların en çok tercih ettiği bölgelerde daireler ve villalar.",
+    "areasNote": "Şehir listesi mal sahibi tarafından onaylanacak.",
+    "faqEyebrow": "Sorular",
+    "faqTitle": "Net cevaplar.",
+    "contactEyebrow": "Teslim",
+    "contactTitle": "Bize dairenizden bahsedin.",
+    "contactLead": "Kat planını, teslim tarihini ve daireyi nasıl kullanacağınızı gönderin. İlk öneri ve fiyatla yanıt veriyoruz.",
+    "contactOr": "Yazışmayı mı tercih edersiniz?"
   },
   "packages": {
     "heading": "Paketler",
@@ -58,7 +140,87 @@
     "onePlusOne": "1+1",
     "onePlusOneNote": "bir yatak odası",
     "twoPlusOne": "2+1",
-    "twoPlusOneNote": "iki yatak odası"
+    "twoPlusOneNote": "iki yatak odası",
+    "incLiving": "Oturma ve yatak alanı",
+    "incLivingRoom": "Salon",
+    "incKitchen": "Mutfak ve yemek alanı",
+    "incBath": "Banyo",
+    "incBed1": "Bir yatak odası",
+    "incBed2": "İki yatak odası",
+    "incDelivery": "Teslimat ve montaj",
+    "planLiving": "Oturma · yatak",
+    "planLivingRoom": "Salon",
+    "planKitchen": "Mutfak",
+    "planBath": "Banyo",
+    "planBedroom": "Yatak odası",
+    "planTerrace": "Teras"
+  },
+  "steps": {
+    "s1Title": "Görüşme",
+    "s1Body": "Bir arama ya da ziyaret. Kat planına, teslim tarihine ve daireyi nasıl kullanacağınıza bakarız.",
+    "s2Title": "Konsept",
+    "s2Body": "Her oda için bir yerleşim ve ön seçki, tek paket olarak fiyatlandırılır.",
+    "s3Title": "Seçim",
+    "s3Body": "Parçaları siz onaylarsınız. Yurt dışındaysanız uzaktan.",
+    "s4Title": "Teslimat",
+    "s4Body": "Her şey birlikte, teslim tarihinize göre planlanarak gelir.",
+    "s5Title": "Montaj",
+    "s5Body": "Ekibimiz tarafından monte edilir, yerleştirilir ve dekore edilir.",
+    "s6Title": "Teslim",
+    "s6Body": "Hazır bir eve adım atarsınız."
+  },
+  "services": {
+    "staging": "Satışa hazırlama",
+    "stagingBody": "Satıcılar ve emlakçılar için: döşenmiş, dekore edilmiş ve gösterime hazır.",
+    "rental": "Kiralık daire döşeme",
+    "rentalBody": "Dairesini kiraya verenler için. Uzun dönem kiracılar için dayanıklı ve nötr; kısa dönem kiralamada mutfak gereçlerinden nevresimlere kadar misafire hazır.",
+    "custom": "Özel projeler",
+    "customBody": "Standart paketlerin ötesinde, size özel tasarım projeleri."
+  },
+  "areas": {
+    "kyrenia": "Girne",
+    "iskele": "İskele",
+    "famagusta": "Gazimağusa",
+    "nicosia": "Lefkoşa"
+  },
+  "faq": {
+    "q1": "Pakete neler dahil?",
+    "a1": "Daire tipinin her odası için mobilya, ayrıca teslimat ve montaj. Oda oda liste her paket sayfasında yer alır.",
+    "q2": "Yurt dışında yaşıyorum. Bunu uzaktan yapabilir miyim?",
+    "a2": "Evet. Birçok alıcı teslim sırasında Kıbrıs'ta olmuyor. Konsept, seçim ve onay çevrimiçi yapılır; montajı siz gelmeden tamamlarız.",
+    "q3": "Kiralık daire döşeme nasıl farklı?",
+    "a3": "Aynı Stüdyo, 1+1 ve 2+1 yapısı, amaca göre seçilir: uzun dönem kiracılar için dayanıklı ve nötr, kısa dönem kiralamada mutfak gereçlerinden nevresimlere kadar misafire hazır.",
+    "q4": "Fiyatlar sterlin mi?",
+    "a4": "Evet. Tüm fiyatlar İngiliz sterlini (GBP) cinsindendir; Stüdyo 10.000 £, 1+1 12.000 £ ve 2+1 14.000 £ başlangıç fiyatıyla sunulur."
+  },
+  "contact": {
+    "name": "Ad Soyad",
+    "phone": "Telefon veya WhatsApp",
+    "phoneHint": "Ülke koduyla",
+    "email": "E-posta",
+    "location": "Mülkün konumu",
+    "locationHint": "Şehir veya site",
+    "type": "Daire tipi",
+    "service": "İlgilendiğim hizmet",
+    "serviceStandard": "Mobilya paketi",
+    "serviceRental": "Kiralık daire döşeme",
+    "serviceStaging": "Satışa hazırlama",
+    "serviceCustom": "Özel proje",
+    "message": "Mesaj",
+    "consent": "Talebimle ilgili benimle iletişime geçilmesini kabul ediyorum.",
+    "areasLine": "Çalıştığımız bölgeler: {cities}.",
+    "whatsappLead": "Kat planınız ve teslim tarihinizle bize WhatsApp'tan yazın. İlk öneri ve fiyatla yanıt veriyoruz.",
+    "openWhatsApp": "WhatsApp'ı aç",
+    "orCall": "veya arayın",
+    "hoursNote": "Çalışma saatleri mal sahibi tarafından onaylanacak."
+  },
+  "phase0": {
+    "eyebrow": "Aşama 0 · temeller",
+    "title": "Duvarlar sizde.",
+    "lead": "Kuzey Kıbrıs'taki daireleri boş duvarlardan hazır bir eve dönüştürüyoruz.",
+    "direction": "Bu sayfa {locale} için {dir, select, rtl {right-to-left (sağdan sola)} other {left-to-right (soldan sağa)}} olarak görüntülenir.",
+    "scriptCheck": "Karakter testi: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "İleri"
   },
   "notFound": {
     "title": "Sayfa bulunamadı",
@@ -66,19 +228,513 @@
     "home": "Ana sayfaya dön"
   },
   "footer": {
-    "nap": "İsim, adres ve telefon numarası mal sahibi tarafından onaylanacak.",
+    "nap": "Ad, adres ve telefon numarası mal sahibi tarafından onaylanacak.",
     "pages": "Sayfalar",
     "services": "Hizmetler",
     "languages": "Diller",
     "legal": "Gizlilik · Çerezler · Koşullar",
-    "rights": "© {year} Design Package. Tüm hakları saklıdır."
+    "rights": "© {year} Design Package. Tüm hakları saklıdır.",
+    "more": "Daha fazla",
+    "privacy": "Gizlilik",
+    "cookies": "Çerezler",
+    "terms": "Kullanım koşulları",
+    "inquiry": "Talep listesi",
+    "guides": "Rehberler",
+    "process": "Nasıl çalışır",
+    "reviews": "Yorumlar",
+    "areas": "Çalıştığımız bölgeler"
   },
   "whatsapp": {
-    "prefill": "Merhaba, Kuzey Kıbrıs'taki dairemin mobilyalanması hakkında bilgi almak istiyorum."
+    "prefill": "Merhaba, Kuzey Kıbrıs'taki dairemin döşenmesi hakkında bilgi almak istiyorum."
   },
-  "services": {
-    "staging": "Home staging",
-    "rental": "Kiralık için mobilya",
-    "custom": "Özel projeler"
+  "pages": {
+    "packages": {
+      "eyebrow": "Paketler",
+      "title": "Tüm daire için tek fiyat.",
+      "lead": "Kuzey Kıbrıs'ta anahtar teslim bir mobilya paketi, dairenin her odasını teslimat ve montaj dahil, daire tipine göre tek fiyatla döşer: Stüdyo 10.000 £'den, 1+1 12.000 £'den, 2+1 14.000 £'den.",
+      "metaTitle": "Mobilya paketleri: Stüdyo, 1+1, 2+1 — Design Package",
+      "metaDescription": "Kuzey Kıbrıs'taki daireler için anahtar teslim mobilya paketleri. Stüdyo 10.000 £'den, 1+1 12.000 £'den, 2+1 14.000 £'den; teslimat ve montaj dahil.",
+      "compareEyebrow": "Karşılaştırın",
+      "compareTitle": "Üç paket yan yana.",
+      "compareLead": "Paketler daire tipini takip eder. Her birine teslimat ve montaj dahildir.",
+      "finderEyebrow": "Hangi paket bana uygun?",
+      "finderTitle": "Üç soru, tek cevap.",
+      "faqEyebrow": "Sorular",
+      "faqTitle": "Paketler hakkında."
+    },
+    "package": {
+      "eyebrow": "Paket",
+      "metaTitle": "{name} mobilya paketi, başlangıç fiyatı {price} — Design Package",
+      "metaDescription": "{name} paketi, Kuzey Kıbrıs'taki bir {name} dairenin her odasını teslimat ve montaj dahil döşer; başlangıç fiyatı {price}.",
+      "lead": "{name} dairenin her odası, teslimat ve montaj dahil, başlangıç fiyatı {price}. Kendiniz oturmak için standart paketi, kiracılar ve misafirler için kiralık versiyonunu seçin.",
+      "roomsEyebrow": "Oda oda",
+      "roomsTitle": "Neler geliyor.",
+      "roomsNote": "Oda listeleri, mal sahibi paket içeriğini onaylayana kadar bilgi amaçlıdır.",
+      "photosEyebrow": "Stüdyo projesinden",
+      "photosTitle": "Bittiğinde nasıl görünüyor.",
+      "othersEyebrow": "Diğer paketler",
+      "othersTitle": "Daireniz farklı mı?",
+      "prefill": "Merhaba, {name} paketiyle ilgileniyorum. Teklif gönderebilir misiniz?"
+    },
+    "services": {
+      "eyebrow": "Hizmetler",
+      "title": "Üç kapı daha.",
+      "lead": "Standart paketlerin ötesinde, Kuzey Kıbrıs genelinde satılık evleri gösterime hazırlıyor, kiralık daireleri kiracılar veya misafirler için döşüyor ve size özel tasarım projeleri üstleniyoruz.",
+      "metaTitle": "Satışa hazırlama, kiralık daire döşeme ve özel projeler — Design Package",
+      "metaDescription": "Kuzey Kıbrıs'ta satıcılar ve emlakçılar için home staging, mal sahipleri için kiralık daire döşeme ve özel tasarım projeleri."
+    },
+    "service": {
+      "eyebrow": "Hizmet",
+      "forEyebrow": "Kimler için",
+      "howEyebrow": "Nasıl çalışır",
+      "howTitle": "Dört adım.",
+      "pricingEyebrow": "Fiyatlandırma",
+      "faqEyebrow": "Sorular",
+      "faqTitle": "Bu hizmet hakkında.",
+      "othersEyebrow": "Diğer hizmetler",
+      "othersTitle": "İki kapı daha.",
+      "photosEyebrow": "Stüdyo projesinden",
+      "metaTitle": "Kuzey Kıbrıs'ta {name} — Design Package"
+    },
+    "portfolio": {
+      "eyebrow": "Projeler",
+      "title": "Önce ve sonra.",
+      "lead": "Gerçek projeler, öncesi ve sonrasıyla fotoğraflandı. Boş daireyi görmek için bir projenin üzerine gelin ya da dokunun. Yenileri tamamlandıkça ekleniyor.",
+      "metaTitle": "Projeler: önce ve sonra — Design Package",
+      "metaDescription": "Kuzey Kıbrıs'ta tamamlanmış mobilya paketleri, öncesi ve sonrasıyla fotoğraflandı.",
+      "count": "{count, plural, one {# proje} other {# proje}}",
+      "more": "Yeni projeler tamamlandıkça ekleniyor."
+    },
+    "project": {
+      "eyebrow": "Proje",
+      "typeLabel": "Daire tipi",
+      "packageLabel": "Paket",
+      "cityLabel": "Şehir",
+      "cityToConfirm": "onaylanacak",
+      "summaryEyebrow": "Proje özeti",
+      "scopeEyebrow": "Kapsam",
+      "galleryEyebrow": "Galeri",
+      "galleryTitle": "Oda oda.",
+      "furnitureEyebrow": "Kullanılan mobilyalar",
+      "furnitureTitle": "Bu projeden parçalar.",
+      "videoNote": "Mal sahibi sağladığında burada bir gezinti videosu yer alacak.",
+      "backToPortfolio": "Tüm projeler",
+      "prefill": "Merhaba, {title} projesini gördüm ve benzer bir paket istiyorum."
+    },
+    "process": {
+      "eyebrow": "Süreç",
+      "title": "Anahtardan ilk geceye altı adım.",
+      "lead": "İlk aramadan teslime kadar tek ekip, tek fiyat. Sürecin büyük kısmı siz yurt dışındayken ilerleyebilir.",
+      "metaTitle": "Nasıl çalışır: görüşmeden teslime — Design Package",
+      "metaDescription": "Kuzey Kıbrıs'ta bir mobilya paketinin altı adımı: görüşme, konsept, seçim, teslimat, montaj, teslim.",
+      "remoteEyebrow": "Yurt dışından satın alanlar",
+      "remoteTitle": "Burada olmanız gerekmiyor.",
+      "remoteBody": "Kat planı ve fotoğraflardan çalışır, konsepti ve parça listesini çevrimiçi paylaşırız; siz WhatsApp'tan onaylarsınız, biz siz gelmeden montajı tamamlarız. Teslim fotoğrafları aynı gün gelir."
+    },
+    "about": {
+      "eyebrow": "Hakkımızda",
+      "title": "Duvar satın alanlar için bir mobilya şirketi.",
+      "lead": "Design Package, Kuzey Kıbrıs'taki daireleri çoğu zaman uzakta olan mal sahipleri için döşer. Konsept, mobilya, teslimat ve montajı tek ekip üstlenir.",
+      "metaTitle": "Design Package hakkında — Kuzey Kıbrıs'ta mobilya paketleri",
+      "metaDescription": "Biz kimiz: Kuzey Kıbrıs'ta iç mekân tasarım paketleri ve mobilya, teslimat ve montaj dahil.",
+      "teamTitle": "Ekip",
+      "showroomTitle": "Showroom",
+      "warrantyTitle": "Garanti",
+      "partnersTitle": "İş ortakları",
+      "toConfirm": "Mal sahibi tarafından onaylanacak."
+    },
+    "contact": {
+      "eyebrow": "İletişim",
+      "title": "Bize WhatsApp'tan yazın.",
+      "lead": "Teklife giden en hızlı yol: kat planınızı, teslim tarihini ve daireyi nasıl kullanacağınızı gönderin.",
+      "metaTitle": "Design Package ile WhatsApp'tan iletişime geçin",
+      "metaDescription": "Mobilya paketi teklifi için Kuzey Kıbrıs'taki Design Package ile WhatsApp'tan iletişime geçin.",
+      "addressLabel": "Adres",
+      "emailLabel": "E-posta",
+      "hoursLabel": "Çalışma saatleri",
+      "toConfirm": "mal sahibi tarafından onaylanacak"
+    },
+    "reviews": {
+      "eyebrow": "Yorumlar",
+      "title": "Müşterilerimiz ne diyor.",
+      "lead": "Tamamlanan projelerden yorumlar, her müşterinin izniyle burada yer alır.",
+      "metaTitle": "Müşteri yorumları — Design Package",
+      "metaDescription": "Kuzey Kıbrıs'taki Design Package müşterilerinden yorumlar.",
+      "empty": "Tamamlanan projelerden yorumları topluyoruz. İlk yorumlar yakında burada olacak.",
+      "rating": "5 üzerinden {rating}"
+    },
+    "furniture": {
+      "eyebrow": "Mobilya",
+      "title": "Projelerimizden parçalar.",
+      "lead": "Buradaki her parça gerçek bir daireye teslim edildi ve kuruldu. Beğendiklerinizi talep listenize kaydedin; fiyat ve stok bilgisi için listeyi bize WhatsApp'tan gönderin.",
+      "inquiryLink": "Talep listenizi açın",
+      "note": "Katalog, fiyatlar ve stok mal sahibi tarafından onaylanacak.",
+      "metaTitle": "Kuzey Kıbrıs'ta mobilya — Design Package",
+      "metaDescription": "Kuzey Kıbrıs'taki Design Package projelerinden kanepeler, yataklar, yemek takımları, aydınlatma ve dış mekân mobilyaları. Fiyat için sorun; talep listenizi WhatsApp'tan gönderin."
+    },
+    "furnitureItem": {
+      "eyebrow": "Mobilya",
+      "categoryLabel": "Kategori",
+      "materialsLabel": "Malzemeler",
+      "priceLabel": "Fiyat",
+      "usedInEyebrow": "Görüldüğü yer",
+      "usedInTitle": "Nerede kullanıldı.",
+      "relatedEyebrow": "İlgili parçalar",
+      "relatedTitle": "Aynı odadan.",
+      "back": "Tüm mobilyalar",
+      "prefill": "Merhaba, {name} adlı parçayla ilgileniyorum. Fiyat ve stok bilgisini gönderebilir misiniz?",
+      "metaTitle": "{name} — Design Package"
+    },
+    "inquiry": {
+      "eyebrow": "Talep listesi",
+      "title": "Talep listeniz.",
+      "lead": "Gezerken kaydettiğiniz parçalar. Listeyi bize WhatsApp'tan gönderin; fiyat ve stok bilgisiyle yanıt verelim.",
+      "empty": "Listeniz boş.",
+      "browse": "Mobilyalara göz atın",
+      "remove": "Çıkar",
+      "clear": "Listeyi temizle",
+      "send": "Listeyi WhatsApp'tan gönder",
+      "noteLabel": "Eklemek istediğiniz bir şey var mı? (isteğe bağlı)",
+      "notePlaceholder": "Daire tipi, şehir, teslim tarihi",
+      "stored": "Liste yalnızca bu tarayıcıda saklanır. Düğmeye dokunana kadar hiçbir şey gönderilmez.",
+      "messageIntro": "Merhaba, şu parçalarla ilgileniyorum:",
+      "messageNote": "Not:",
+      "metaTitle": "Talep listesi — Design Package",
+      "metaDescription": "Kaydettiğiniz mobilya parçalarını fiyat ve stok bilgisi için Design Package ile WhatsApp üzerinden paylaşın."
+    },
+    "guides": {
+      "eyebrow": "Rehberler",
+      "title": "Döşemeden önce.",
+      "lead": "Kuzey Kıbrıs'taki alıcılar için kısa ve pratik okumalar: bir pakete neler dahil ve yurt dışından nasıl döşenir.",
+      "read": "Rehberi okuyun",
+      "updated": "Güncelleme: {date}",
+      "metaTitle": "Rehberler: Kuzey Kıbrıs'ta daire döşeme — Design Package",
+      "metaDescription": "Design Package pratik rehberleri: Stüdyo, 1+1 veya 2+1 için bir mobilya paketine neler dahil ve Kuzey Kıbrıs'taki bir daire yurt dışından nasıl döşenir."
+    },
+    "guide": {
+      "eyebrow": "Rehber",
+      "back": "Tüm rehberler",
+      "moreEyebrow": "Daha fazla okuma",
+      "moreTitle": "Bir rehber daha."
+    },
+    "areas": {
+      "eyebrow": "Çalıştığımız bölgeler",
+      "title": "{city} bölgesinde mobilya paketleri.",
+      "lead": "Stüdyo başlangıç fiyatı {studio}, 1+1 {one}, 2+1 {two}. {city} bölgesinde her oda teslimat ve montaj dahil; seçim ve onay dilediğiniz yerden.",
+      "note": "Şehir listesi mal sahibi tarafından onaylanacak.",
+      "packagesEyebrow": "Paketler",
+      "packagesTitle": "Tüm daire için tek fiyat.",
+      "faqEyebrow": "Sorular",
+      "faqTitle": "{city} bölgesinde daire mi alıyorsunuz?",
+      "otherEyebrow": "Başka bölgeler",
+      "otherTitle": "Diğer bölgeler.",
+      "prefill": "Merhaba, {city} bölgesinde bir dairem var. Teklif gönderebilir misiniz?",
+      "metaTitle": "{city} mobilya paketleri — Design Package",
+      "metaDescription": "{city}, Kuzey Kıbrıs için iç mekân tasarım paketleri: Stüdyo başlangıç fiyatı {studio}, 1+1 {one}, 2+1 {two}. Teslimat ve montaj dahil."
+    },
+    "legal": {
+      "eyebrow": "Yasal",
+      "updated": "Son güncelleme: {date}",
+      "template": "Mal sahibinin incelemesi için hazırlanmış taslak. Yalnızca köşeli parantez içindeki bilgiler onaylandığında ve gerektiğinde bir avukat tarafından kontrol edildiğinde geçerli olur.",
+      "metaTitle": "{title} — Design Package"
+    }
+  },
+  "comparison": {
+    "caption": "Paket karşılaştırması",
+    "rowLiving": "Salon",
+    "rowKitchen": "Mutfak ve yemek alanı",
+    "rowBedrooms": "Yatak odaları",
+    "rowBathroom": "Banyo",
+    "rowTerrace": "Teras",
+    "rowDelivery": "Teslimat ve montaj",
+    "rowTimeline": "Süre",
+    "toConfirm": "onaylanacak",
+    "one": "bir",
+    "two": "iki"
+  },
+  "finder": {
+    "q1": "Daireniz hangi tip?",
+    "q2": "Nasıl kullanacaksınız?",
+    "q2a": "Kendim oturacağım",
+    "q2b": "Uzun dönem kiralama",
+    "q2c": "Kısa dönem (tatil) kiralama",
+    "q3": "Teslim ne zaman?",
+    "q3a": "Anahtarlar bende",
+    "q3b": "Üç ay içinde",
+    "q3c": "Daha sonra",
+    "result": "Paketiniz",
+    "resultRental": "{name}, kiralık versiyonu",
+    "noteLive": "Sizin için seçildi: günlük yaşam için renkler, konfor ve depolama.",
+    "noteLongTerm": "Dayanıklı ve nötr; kiracılar arasında bakımı kolay.",
+    "noteHoliday": "Mutfak gereçlerinden nevresimlere kadar misafire hazır, ilanlar için fotojenik.",
+    "empty": "Üç soruyu yanıtlayın, paket burada görünsün.",
+    "send": "WhatsApp'a gönder",
+    "prefill": "Merhaba, daire tipim: {type}. Kullanım: {use}. Teslim: {when}. Teklif gönderebilir misiniz?",
+    "reset": "Baştan başla"
+  },
+  "faqPackages": {
+    "q1": "Paketteki parçaları değiştirebilir miyim?",
+    "a1": "Evet. Paket, kapsamı ve başlangıç fiyatını belirler; teslimattan önce her parçayı siz onaylarsınız.",
+    "q2": "Fiyatlara teslimat ve montaj dahil mi?",
+    "a2": "Evet. Her paket fiyatına daireye teslimat ve ekibimizin montajı dahildir.",
+    "q3": "Dairem bu üç tipe uymuyorsa?",
+    "a3": "Daha büyük evler ve villalar, ayrı fiyatlandırılan özel projeler olarak ele alınır."
+  },
+  "furniture": {
+    "all": "Tümü",
+    "categories": {
+      "living": "Oturma",
+      "dining": "Yemek",
+      "bedroom": "Yatak odası",
+      "bathroom": "Banyo",
+      "outdoor": "Dış mekân",
+      "lighting": "Aydınlatma",
+      "decor": "Dekor"
+    },
+    "count": "{count, plural, one {# parça} other {# parça}}",
+    "empty": "Bu kategoride henüz parça yok."
+  },
+  "content": {
+    "services": {
+      "staging": {
+        "title": "Satışa hazırlama (home staging)",
+        "lead": "Home staging, yani satışa hazırlama, boş bir daireyi fotoğrafta ve gösterimde iyi görünecek şekilde döşer ve dekore eder. Kuzey Kıbrıs'ta, ilk ziyaretten önce mülkün bir ev gibi görünmesini isteyen satıcılar ve emlakçılar için.",
+        "audience": "Satıcılar ve emlakçılar",
+        "steps": {
+          "s1Title": "Yerinde inceleme veya kat planı",
+          "s1Body": "Daireyi yerinde ya da plan ve fotoğraflardan inceleriz.",
+          "s2Title": "Hazırlık planı ve teklif",
+          "s2Body": "Hangi odalar, hangi parçalar, ne kadar süreyle. Tek fiyat.",
+          "s3Title": "Teslimat ve dekorasyon",
+          "s3Body": "Mobilya, tekstil ve aksesuarlar birlikte gelir ve ekibimiz tarafından yerleştirilir.",
+          "s4Title": "Fotoğraflar ve gösterimler",
+          "s4Body": "Daire, ilan fotoğrafları ve ziyaretçiler için hazırdır."
+        },
+        "pricing": "Mülk başına, büyüklüğe ve düzenlemenin ne kadar süre kalacağına göre fiyatlandırılır.",
+        "pricingNote": "Fiyatlandırma modeli mal sahibi tarafından onaylanacak.",
+        "faqs": {
+          "q1": "Alıcı mobilyaları alabilir mi?",
+          "a1": "Bize sorun. Hazırlıkta kullanılan parçalar genellikle mülkle birlikte satın alınabilir ya da tam bir paketle değiştirilebilir.",
+          "q2": "İçinde oturulan evleri de hazırlıyor musunuz?",
+          "a2": "Evet, yerleşim izin verdiği sürece. Evi boşaltmak yerine parça ekler veya değiştiririz."
+        },
+        "photos": {
+          "p1Alt": "Gösterime hazır döşenmiş stüdyo",
+          "p2Alt": "Stüdyoda kanepe, makyaj aynası ve yatak"
+        },
+        "prefill": "Merhaba, Kuzey Kıbrıs'taki bir mülk için satışa hazırlama (home staging) hakkında bilgi almak istiyorum."
+      },
+      "rental": {
+        "title": "Kiralık daire döşeme",
+        "lead": "Kiralık daire döşemede aynı Stüdyo, 1+1 ve 2+1 paketleri amaca göre seçilir: uzun dönem kiracılar için dayanıklı ve nötr, kısa dönem kiralamada mutfak gereçlerinden nevresimlere kadar misafire hazır. Eşyalı daireler daha hızlı kiralanır ve ilk günden ilan fotoğraflarına hazırdır.",
+        "audience": "Dairesini kiraya veren mal sahipleri ve yatırımcılar",
+        "steps": {
+          "s1Title": "Amacı seçin",
+          "s1Body": "Uzun dönem kiracılar mı, tatil misafirleri mi? Paket cevaba göre değişir.",
+          "s2Title": "Paket uyarlanır",
+          "s2Body": "Uzun dönem için dayanıklı yüzeyler ve kolay bakım; kısa dönem için eksiksiz donanım ve fotojenik dekorasyon.",
+          "s3Title": "Sezondan önce teslim",
+          "s3Body": "Teslim tarihinize ya da kiralama sezonunun başlangıcına göre planlanır.",
+          "s4Title": "İlana hazır",
+          "s4Body": "Fotoğraflar, anahtarlar ve ilk misafirini ağırlayabilecek bir daire."
+        },
+        "pricing": "Stüdyo 10.000 £'den, 1+1 12.000 £'den, 2+1 14.000 £'den. Standart paketlerle aynı yapı.",
+        "pricingNote": "Kiralığa özel içerikler mal sahibi tarafından onaylanacak.",
+        "faqs": {
+          "q1": "Kısa dönem kiralama paketi neler ekler?",
+          "a1": "Bir misafirin varışta beklediği her şey: mutfak gereçleri, nevresimler, havlular ve küçük detaylar, ayrıca fotoğrafta iyi görünen bir dekorasyon.",
+          "q2": "Uzun dönem kiracılar için ne farklı?",
+          "a2": "Nötr renkler, dayanıklı kumaşlar ve yüzeyler, temizlemesi ve değiştirmesi kolay parçalar."
+        },
+        "photos": {
+          "p1Alt": "Kahvaltı barlı donanımlı mutfak",
+          "p2Alt": "Havlular ve aksesuarlarla banyo"
+        },
+        "prefill": "Merhaba, Kuzey Kıbrıs'taki kiralık bir dairenin döşenmesi hakkında bilgi almak istiyorum."
+      },
+      "custom": {
+        "title": "Özel projeler",
+        "lead": "Özel projeler, standart paketlerin ötesindeki size özel tasarım projeleridir: daha büyük evler, özel yerleşimler ya da Stüdyo, 1+1 veya 2+1 kalıbına uymayan bir ihtiyaç. Aynı süreç, projeye göre fiyatlandırılır.",
+        "audience": "Daha büyük evi veya özel bir ihtiyacı olan mal sahipleri",
+        "steps": {
+          "s1Title": "İhtiyaçlarınız",
+          "s1Body": "Neyiniz var, neye ihtiyacınız var, nasıl kullanacaksınız.",
+          "s2Title": "Konsept",
+          "s2Body": "Her oda için yerleşim, malzemeler ve parça listesi.",
+          "s3Title": "Seçim",
+          "s3Body": "Parçaları yerinde veya uzaktan siz onaylarsınız.",
+          "s4Title": "Teslimat ve montaj",
+          "s4Body": "Her şey birlikte gelir ve ekibimiz tarafından monte edilir."
+        },
+        "pricing": "İhtiyaçlar netleştikten sonra projeye göre teklif verilir.",
+        "faqs": {
+          "q1": "Müteahhitlerle çalışıyor musunuz?",
+          "a1": "Evet. Örnek daireler ve projelerin tamamı için anahtar teslim döşeme, özel proje olarak ele alınır.",
+          "q2": "Bir paketi özel parçalarla birleştirebilir miyim?",
+          "a2": "Evet. En yakın paketten başlayın, gerekeni değiştirin."
+        },
+        "photos": {
+          "p1Alt": "Havuz başında teras yemek takımı",
+          "p2Alt": "Stüdyoda kahvaltı barı, yatak ve kanepe"
+        },
+        "prefill": "Merhaba, Kuzey Kıbrıs'ta özel bir döşeme projesi hakkında bilgi almak istiyorum."
+      }
+    },
+    "projects": {
+      "studioPoolside": {
+        "title": "Stüdyo, havuzlu site",
+        "summary": "Havuzlu bir sitede stüdyo daire, eksiksiz paket olarak döşendi: oturma ve yatak alanı, kahvaltı barı, mutfak, banyo ve teras; tek seferde teslim edildi ve kuruldu.",
+        "scope": {
+          "s1": "Oturma ve yatak alanı",
+          "s2": "Kahvaltı barı ve mutfak",
+          "s3": "Banyo",
+          "s4": "Teras",
+          "s5": "Perdeler ve tekstil",
+          "s6": "Teslimat ve montaj"
+        },
+        "beforeAlt": "Havuza açılan sürgülü kapılı boş stüdyo, döşenmeden önce",
+        "afterAlt": "Aynı stüdyo döşendikten sonra: kahvaltı barı, yatak, kanepe ve perdeler",
+        "gallery": {
+          "g1": "Terakota tabureli kahvaltı barı, yatak ve kanepe",
+          "g2": "Kahvaltı barından yatağa doğru",
+          "g3": "Kanepe, makyaj aynası ve buzdolabı",
+          "g4": "Beyaz parlak dolaplı ve siyah ray spotlu mutfak",
+          "g5": "Cam duşakabinli ve yivli lavabo dolaplı banyo",
+          "g6": "Havuz başındaki terasta siyah rattan yemek takımı",
+          "g7": "Döşenmeden önce boş stüdyo"
+        },
+        "visualisationNote": "Geniş açılı “sonra” fotoğrafı, tamamlanan projeye dayanan bir görselleştirmedir; diğer fotoğraflar bitmiş daireden telefonla çekilmiştir."
+      }
+    },
+    "furniture": {
+      "terracottaBarStool": {
+        "name": "Bar taburesi, terakota",
+        "materials": "Kadife görünümlü döşeme, siyah çelik iskelet",
+        "description": "Kavisli sırt, alçak profil; stüdyo projesinde beyaz kuvars barın önünde.",
+        "alt": "Beyaz kuvars kahvaltı barında terakota bar tabureleri"
+      },
+      "linenSofa": {
+        "name": "Üçlü kanepe, keten",
+        "materials": "Keten görünümlü kumaş, siyah metal ayaklar",
+        "description": "Aynı kumaştan serbest minderler; stüdyo projesinde terakota kırlentlerle.",
+        "alt": "Terakota kırlentli bej keten kanepe"
+      },
+      "roundCoffeeTable": {
+        "name": "Yuvarlak sehpa, ahşap",
+        "materials": "Açık ahşap tabla ve ayak",
+        "description": "Stüdyolar için az yer kaplar; stüdyo projesinde jüt halının üzerine yerleştirildi.",
+        "alt": "Jüt halı üzerinde yuvarlak ahşap sehpa"
+      },
+      "juteRug": {
+        "name": "Jüt halı",
+        "materials": "Dokuma doğal lif",
+        "description": "Oturma alanını toplar ve parlak zeminin yansımalarını gizler.",
+        "alt": "Kanepe ve sehpanın altında jüt halı"
+      },
+      "upholsteredBed": {
+        "name": "Döşemeli yatak",
+        "materials": "Kumaş başlık, siyah metal ayaklar",
+        "description": "Stüdyo projesinde pas rengi bir örtü ve katlanmış havlularla hazırlandı.",
+        "alt": "Pas rengi örtülü döşemeli yatak"
+      },
+      "roundLedMirror": {
+        "name": "Makyaj masalı yuvarlak LED ayna",
+        "materials": "Arkadan aydınlatmalı ayna, duvara monte masa, terakota sandalye",
+        "description": "Çalışma masası olarak da kullanılan bir makyaj köşesi.",
+        "alt": "Makyaj masasının üzerinde yuvarlak arkadan aydınlatmalı ayna"
+      },
+      "walnutSlatTvPanel": {
+        "name": "Ceviz çıtalı TV paneli",
+        "materials": "Koyu zemin üzerine ahşap çıtalar",
+        "description": "Stüdyo projesinde TV'nin arkasında zeminden tavana uzanır.",
+        "alt": "Duvara monte TV'li ceviz çıtalı panel"
+      },
+      "blackTrackLights": {
+        "name": "Siyah ray aydınlatma",
+        "materials": "Toz boyalı metal, ayarlanabilir başlıklar",
+        "description": "Stüdyo projesinde mutfağın üzerinde üç başlık.",
+        "alt": "Mutfağın üzerinde siyah ray spotlar"
+      },
+      "flutedVanity": {
+        "name": "Yivli banyo dolabı",
+        "materials": "Yivli ön yüz, entegre lavabo",
+        "description": "Duvara asılı; ayna üstte, havlular yanında.",
+        "alt": "Lavabolu beyaz yivli banyo dolabı"
+      },
+      "rattanDiningSet": {
+        "name": "Dış mekân yemek takımı, siyah rattan",
+        "materials": "Siyah rattan örgü, temperli cam tabla",
+        "description": "Havuz başındaki terasta masa ve dört sandalye.",
+        "alt": "Havuz başındaki terasta siyah rattan yemek takımı"
+      }
+    },
+    "guides": {
+      "furnishingFromAbroad": {
+        "title": "Kuzey Kıbrıs'taki bir daireyi yurt dışından döşemek",
+        "lead": "Birçok alıcı anahtarlar teslim edilirken Kıbrıs'ta olmuyor. Siz başka bir yerdeyken mobilya paketi şöyle işler.",
+        "coverAlt": "Kahvaltı barı, yatak ve kanepeli döşenmiş bir stüdyo; sürgülü kapıdan havuz görünüyor",
+        "sections": {
+          "s1": {
+            "heading": "Üç şeyle başlayın",
+            "p1": "Bir kat planı, teslim tarihi ve daireyi nasıl kullanacağınız: kendiniz oturmak, uzun dönem kiraya vermek ya da tatil misafirlerine kiralamak. Bu üç cevap paket versiyonunu ve zamanlamayı belirler.",
+            "p2": "Bunları WhatsApp'tan gönderin; ziyaret gerekmeden ilk öneriyi alırsınız. Boş dairenin kısa bir video turu yardımcı olur, ancak başlamak için müteahhitten alınan bir plan yeterlidir."
+          },
+          "s2": {
+            "heading": "Konsept ve seçim çevrimiçi yapılır",
+            "p1": "Konsept, her oda için bir yerleşim ve ön seçkidir; tek paket olarak fiyatlandırılır. Çizimler ve fotoğraflar üzerinden inceler, değişiklik ister ve parçaları WhatsApp'tan yazılı olarak onaylarsınız.",
+            "p2": "Paket daire tipine göre tanımlandığından ön seçki zaten her odayı kapsar. Cevaplarınızla değişen, odaların listesi değil parçaların karakteridir."
+          },
+          "s3": {
+            "heading": "Teslimat ve montaj teslim tarihine göre planlanır",
+            "p1": "Teslimat ve montaj her paketin parçasıdır. Her şey teslim tarihinize göre planlanarak birlikte gelir; ekibimiz tarafından monte edilir, yerleştirilir ve dekore edilir.",
+            "p2": "Orada olmanız gerekmez. Anahtarları müteahhit ya da temsilciniz teslim ediyorsa montaj siz uçağa binmeden tamamlanabilir."
+          },
+          "s4": {
+            "heading": "Fotoğraflarla teslim",
+            "p1": "Montaj tamamlandığında aynı gün her odanın teslim fotoğraflarını alırsınız. Daha sonra gelirseniz daire sizi döşenmiş hâlde bekler. Kiraya çıkacaksa bu fotoğraflar ilanın başlangıcıdır."
+          },
+          "s5": {
+            "heading": "Erken karar verilmesi gerekenler",
+            "p1": "Dairenin sizin için mi, uzun dönem kiracılar için mi yoksa tatil misafirleri için mi olduğu. Odalar aynı, seçimler farklı: kendiniz oturacaksanız kendi renkleriniz, konfor ve depolama; uzun dönem kiralamada dayanıklı ve nötr, kiracılar arasında bakımı kolay; kısa dönem kiralamada mutfak gereçlerinden nevresimlere kadar misafire hazır.",
+            "p2": "Paketler sayfasındaki paket bulucu, bu cevapları üç dokunuşta bir pakete ve bir WhatsApp mesajına dönüştürür."
+          }
+        }
+      },
+      "studio1Plus12Plus1WhatIsIncluded": {
+        "title": "Stüdyo, 1+1 veya 2+1: bir mobilya paketine neler dahil",
+        "lead": "Paketler kalite seviyesine göre değil, daire tipine göre tanımlanır. İşte her birinin kapsamı ve fiyatların başladığı nokta.",
+        "coverAlt": "Döşenmiş bir stüdyoda terakota tabureli kahvaltı barı, yatak ve kanepe",
+        "sections": {
+          "s1": {
+            "heading": "Tüm daire için tek fiyat",
+            "p1": "Bir paket, daire tipinin her odasını döşer; teslimat ve montaj dahildir. Fiyatlar İngiliz sterlini cinsinden başlangıç fiyatlarıdır: kesin teklif, onayladığınız parçalara bağlıdır."
+          },
+          "s2": {
+            "heading": "Stüdyo, 10.000 £'den",
+            "p1": "Oturma ve yatak alanı, mutfak ve yemek alanı, banyo, teslimat ve montaj. Stüdyoda oturma ve yatak alanı tek odadır, bu yüzden işi yerleşim yapar: bir yatak, bir kanepe, yemek yiyecek bir yer ve alanı sıkıştırmayan depolama."
+          },
+          "s3": {
+            "heading": "1+1, 12.000 £'den",
+            "p1": "Salon, bir yatak odası, mutfak ve yemek alanı, banyo, teslimat ve montaj. Yatak odası tam bir oda olarak döşenir: yatak, gardırop veya depolama, komodinler ve tekstil."
+          },
+          "s4": {
+            "heading": "2+1, 14.000 £'den",
+            "p1": "Salon, iki yatak odası, mutfak ve yemek alanı, banyo, teslimat ve montaj. İkinci yatak odası aile, misafir ya da çalışma odası olarak düzenlenebilir; seçim konsept aşamasında yapılır."
+          },
+          "s5": {
+            "heading": "Kiralık versiyonu",
+            "p1": "Her paketin aynı oda yapısıyla bir kiralık versiyonu da vardır. Uzun dönem kiracılar için parçalar dayanıklı ve nötrdür, kiracılar arasında bakımı kolaydır. Kısa dönem kiralamada daire mutfak gereçlerinden nevresimlere kadar misafire hazır ve ilanlar için fotojeniktir."
+          },
+          "s6": {
+            "heading": "Henüz onaylanmayanlar",
+            "p1": "Teras mobilyası ve teslimat süresi, mal sahibi onaylayana kadar karşılaştırma tablosunda “onaylanacak” olarak listelenir. WhatsApp'tan sorun; teslim tarihiniz için güncel cevabı alın."
+          }
+        }
+      }
+    }
+  },
+  "seo": {
+    "home": "Ana sayfa",
+    "ogAlt": "Design Package tarafından döşenmiş, Kuzey Kıbrıs'ta bir stüdyo daire"
   }
 }

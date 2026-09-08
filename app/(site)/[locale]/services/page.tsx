@@ -8,6 +8,11 @@ import { Section } from "@/components/layout/Section";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { areas } from "@/lib/content/areas";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { buildServices } from "@/lib/content/services";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -16,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.services" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/services", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Services overview: three doors, each a photo, an audience line and a link. */
@@ -27,8 +32,10 @@ export default async function ServicesPage({ params }: Props) {
   const t = await getTranslations();
   const services = buildServices((await getMessages()).content);
 
+  const cities = areas.map((a) => t(`areas.${a.key}`));
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.services"), href: "/services" }]), ...services.map((s) => ld.service({ name: s.title, description: s.lead, url: localizedPath(locale, { pathname: "/services/[slug]", params: { slug: s.slug } }), areaServed: cities, image: s.photos[0].src }))]} />
       <PageIntro eyebrow={t("pages.services.eyebrow")} title={t("pages.services.title")} lead={t("pages.services.lead")} />
 
       <Section className="pt-0">

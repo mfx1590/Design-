@@ -7,6 +7,9 @@ import { Section, SectionHeader } from "@/components/layout/Section";
 import { StepList } from "@/components/ui/StepList";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import { pageMetadata } from "@/lib/seo/metadata";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -14,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.process" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/process", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Process page (PLAN.md §6): the six steps and the remote-buyer flow. */
@@ -27,6 +30,7 @@ export default async function ProcessPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={breadcrumbsFor(locale, t("seo.home"), [{ name: t("footer.process"), href: "/process" }])} />
       <PageIntro eyebrow={t("pages.process.eyebrow")} title={t("pages.process.title")} lead={t("pages.process.lead")} />
 
       <Section className="pt-0">

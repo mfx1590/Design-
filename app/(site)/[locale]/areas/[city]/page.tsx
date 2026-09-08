@@ -10,6 +10,10 @@ import { StepList } from "@/components/ui/StepList";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { areaBySlug, areas } from "@/lib/content/areas";
 import { packages } from "@/lib/content/packages";
 import { buildTypes } from "@/lib/content/rooms";
@@ -33,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!area) return {};
   const t = await getTranslations({ locale });
   const vars = { city: t(`areas.${area.key}`), ...(await priceVars(locale)) };
-  return { title: t("pages.areas.metaTitle", vars), description: t("pages.areas.metaDescription", vars) };
+  return pageMetadata({ locale, href: { pathname: "/areas/[city]", params: { city: area.slug } }, title: t("pages.areas.metaTitle", vars), description: t("pages.areas.metaDescription", vars) });
 }
 
 /** City landing page (PLAN.md §6, §9): the packages, the remote process, questions, WhatsApp. No invented local facts. */
@@ -61,6 +65,7 @@ export default async function AreaPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: cityName, href: { pathname: "/areas/[city]", params: { city: area.slug } } }]), ld.faqPage(faqs)]} />
       <PageIntro eyebrow={t("pages.areas.eyebrow")} title={t("pages.areas.title", vars)} lead={t("pages.areas.lead", vars)}>
         <p className="text-micro text-ink-soft/60">{t("pages.areas.note")}</p>
       </PageIntro>

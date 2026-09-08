@@ -7,6 +7,9 @@ import { Section } from "@/components/layout/Section";
 import { Aperture } from "@/components/ui/Aperture";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { PROJECT_IMAGES } from "@/lib/content/rooms";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -15,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.about" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/about", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** About page (PLAN.md §6). Team, showroom, warranty and partners wait for the owner's facts. */
@@ -28,6 +31,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.about"), href: "/about" }])} />
       <PageIntro
         eyebrow={t("pages.about.eyebrow")}
         title={t("pages.about.title")}

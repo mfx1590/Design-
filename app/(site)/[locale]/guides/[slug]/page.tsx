@@ -8,6 +8,10 @@ import { Aperture } from "@/components/ui/Aperture";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { getGuide, getGuides } from "@/lib/cms/loaders";
 import { guideSlugs } from "@/lib/content/guides";
 
@@ -22,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(routing.locales, locale)) return {};
   const guide = await getGuide(locale, slug);
   if (!guide) return {};
-  return { title: `${guide.title} — Design Package`, description: guide.lead };
+  return pageMetadata({ locale, href: { pathname: "/guides/[slug]", params: { slug: guide.slug } }, title: `${guide.title} — Design Package`, description: guide.lead, image: guide.cover.src, imageAlt: guide.cover.alt, type: "article" });
 }
 
 /** One guide: intro with the cover, a single measured column of sections, the other guides. */
@@ -38,6 +42,7 @@ export default async function GuidePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("footer.guides"), href: "/guides" }, { name: guide.title, href: { pathname: "/guides/[slug]", params: { slug: guide.slug } } }]), ld.article({ headline: guide.title, description: guide.lead, url: localizedPath(locale, { pathname: "/guides/[slug]", params: { slug: guide.slug } }), image: guide.cover.src, datePublished: guide.updated, dateModified: guide.updated, inLanguage: locale })]} />
       <PageIntro
         eyebrow={t("pages.guide.eyebrow")}
         title={guide.title}

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Möbelpakete in Nordzypern — Design Package",
-    "description": "Einrichtungspakete und Möbel in Nordzypern: Studio ab 10.000 £, 1+1 ab 12.000 £, 2+1 ab 14.000 £."
+    "description": "Einrichtungspakete und Möbel in Nordzypern: Studio ab 10.000 £, 1+1 ab 12.000 £, 2+1 ab 14.000 £. Geliefert und montiert."
   },
   "brand": {
     "name": "Design Package",
@@ -17,15 +17,22 @@
     "services": "Leistungen",
     "about": "Über uns",
     "contact": "Kontakt",
-    "whatsapp": "Per WhatsApp schreiben"
+    "whatsapp": "Per WhatsApp schreiben",
+    "furniture": "Möbel"
   },
   "cta": {
-    "quote": "Angebot anfragen",
+    "quote": "Angebot per WhatsApp anfragen",
     "package": "Das ganze Paket ansehen",
     "packages": "Pakete ansehen",
+    "project": "Projekt ansehen",
+    "allProjects": "Alle Projekte ansehen",
+    "services": "Alle Leistungen ansehen",
     "whatsapp": "Per WhatsApp schreiben",
     "inquiry": "Zur Anfrageliste hinzufügen",
-    "priceOnRequest": "Preis auf Anfrage"
+    "priceOnRequest": "Preis auf Anfrage",
+    "send": "Anfrage senden",
+    "inquiryRemove": "Aus der Anfrageliste entfernen",
+    "seeService": "Leistung ansehen"
   },
   "card": {
     "before": "Vorher",
@@ -35,20 +42,95 @@
     "showAfter": "Nachher zeigen"
   },
   "hero": {
+    "eyebrow": "Möbelpakete · Nordzypern",
     "before": "Die Wände haben Sie schon.",
     "after": "Das Zuhause bringen wir.",
-    "lead": "Möbelpakete für Wohnungen in Nordzypern, geliefert und montiert. Studio ab 10.000 £.",
+    "lead": "Komplette Möbelpakete für Wohnungen in Nordzypern, geliefert und montiert. Studio ab 10.000 £.",
     "visualisation": "Visualisierung auf Basis eines fertiggestellten Studio-Projekts.",
     "altBefore": "Leeres Studio-Apartment mit Schiebetür zum Pool, vor der Einrichtung",
     "altAfter": "Dasselbe Studio eingerichtet: Frühstücksbar, Bett, Sofa und Vorhänge"
   },
-  "phase0": {
-    "eyebrow": "Phase 0 · Grundlagen",
-    "title": "Die Wände haben Sie schon.",
-    "lead": "Wir richten Wohnungen in Nordzypern ein – von leeren Wänden bis zum fertigen Zuhause.",
-    "direction": "Diese Seite wird für {locale} {dir, select, rtl {von rechts nach links} other {von links nach rechts}} dargestellt.",
-    "scriptCheck": "Zeichentest: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
-    "next": "Weiter"
+  "trust": {
+    "prices": "Studio ab 10.000 £ · 1+1 ab 12.000 £ · 2+1 ab 14.000 £",
+    "delivery": "Lieferung und Montage inklusive",
+    "remote": "Auswahl und Freigabe von überall",
+    "languages": "Service in sechs Sprachen"
+  },
+  "apartment": {
+    "eyebrow": "Ihre Wohnung",
+    "title": "Ein Rundgang, bevor sie existiert.",
+    "lead": "Wählen Sie Ihren Wohnungstyp. Beim Scrollen füllt sich der Grundriss Raum für Raum – genau wie das Paket.",
+    "choose": "Wohnungstyp",
+    "inPackage": "Im Paket",
+    "fromProject": "Foto aus dem Studio-Projekt",
+    "scopeNote": "Die Raumlisten sind unverbindlich, bis der Inhaber den Paketinhalt bestätigt.",
+    "planAria": "Grundriss des gewählten Wohnungstyps; die Möbel werden eingezeichnet, während die Räume vorbeiscrollen",
+    "cta": "Das {name}-Paket ansehen",
+    "rooms": {
+      "living": {
+        "number": "01",
+        "name": "Wohnzimmer",
+        "nameStudio": "Wohnen und Schlafen",
+        "tagline": "Hier spielt sich der Tag ab.",
+        "scope": "Sofa · Couchtisch · TV-Paneel · Teppich · Vorhänge · Beleuchtung",
+        "scopeStudio": "Sofa · Couchtisch · TV-Paneel · Teppich · Vorhänge · Bett und Nachttisch",
+        "fact": "Im Studio-Projekt: ein Leinensofa, ein Juteteppich und ein Lamellenpaneel aus Nussbaum für den Fernseher, mit Terrakotta-Akzenten."
+      },
+      "kitchen": {
+        "number": "02",
+        "name": "Küche und Essen",
+        "tagline": "Frühstück an der Bar.",
+        "scope": "Esstisch oder Bar · Sitzgelegenheiten · Geschirr für Ferienvermietung",
+        "fact": "Im Studio-Projekt: eine weiße Quarz-Frühstücksbar mit zwei Terrakotta-Hockern."
+      },
+      "bedroom": {
+        "number": "03",
+        "name": "Schlafzimmer",
+        "nameStudio": "Schlafbereich",
+        "nameTwo": "Zwei Schlafzimmer",
+        "tagline": "Bezogen, bevor Sie landen.",
+        "scope": "Bett und Matratze · Nachttische · Kleiderschrank oder Stauraum · Bettwäsche für Ferienvermietung",
+        "fact": "Im Studio-Projekt: ein Polsterbett mit rostroter Tagesdecke und bei Ankunft gefalteten Handtüchern."
+      },
+      "bathroom": {
+        "number": "04",
+        "name": "Bad",
+        "tagline": "Handtücher, Spiegel, ein Platz für alles.",
+        "scope": "Spiegel · Stauraum · Textilien · Accessoires",
+        "fact": "Im Studio-Projekt: ein Waschtisch mit Rillenfront, eine Regendusche, Handtücher und ein Wäschekorb."
+      },
+      "terrace": {
+        "number": "05",
+        "name": "Terrasse",
+        "tagline": "Abendessen am Pool.",
+        "scope": "Ess- oder Lounge-Set für draußen",
+        "fact": "Im Studio-Projekt: ein schwarzes Rattan-Essset für vier Personen."
+      }
+    }
+  },
+  "home": {
+    "packagesEyebrow": "Pakete",
+    "packagesTitle": "Ein Preis für die ganze Wohnung.",
+    "packagesLead": "Jeder Raum, geliefert und montiert. Die Pakete richten sich nach dem Wohnungstyp, nicht nach einer Qualitätsstufe.",
+    "packagesScroll": "Weiterscrollen, um den Grundriss zu füllen",
+    "projectEyebrow": "Aktuelles Projekt",
+    "projectTitle": "Ein Studio, von der Schlüsselübergabe bis zur ersten Nacht.",
+    "projectMeta": "Studio · Anlage am Pool · Stadt wird noch bestätigt",
+    "projectBody": "Frühstücksbar, Bett, Sofa, Vorhänge, Küche, Bad und Terrasse in einer Lieferung. Fahren Sie mit der Maus über das Foto oder tippen Sie darauf, um den leeren Raum zu sehen.",
+    "stepsEyebrow": "Die Haustür",
+    "stepsTitle": "Sechs Schritte zwischen Schlüssel und erster Nacht.",
+    "servicesEyebrow": "Über das Paket hinaus",
+    "servicesTitle": "Drei weitere Türen.",
+    "areasEyebrow": "Wo wir arbeiten",
+    "areasTitle": "In ganz Nordzypern.",
+    "areasLead": "Wohnungen und Villen dort, wo ausländische Käufer am liebsten kaufen.",
+    "areasNote": "Städteliste wird vom Inhaber bestätigt.",
+    "faqEyebrow": "Fragen",
+    "faqTitle": "Klare Antworten.",
+    "contactEyebrow": "Übergabe",
+    "contactTitle": "Erzählen Sie uns von Ihrer Wohnung.",
+    "contactLead": "Schicken Sie uns den Grundriss, den Übergabetermin und wie Sie die Wohnung nutzen werden. Wir antworten mit einem ersten Vorschlag und einem Preis.",
+    "contactOr": "Lieber direkt chatten?"
   },
   "packages": {
     "heading": "Pakete",
@@ -58,7 +140,87 @@
     "onePlusOne": "1+1",
     "onePlusOneNote": "ein Schlafzimmer",
     "twoPlusOne": "2+1",
-    "twoPlusOneNote": "zwei Schlafzimmer"
+    "twoPlusOneNote": "zwei Schlafzimmer",
+    "incLiving": "Wohn- und Schlafbereich",
+    "incLivingRoom": "Wohnzimmer",
+    "incKitchen": "Küche und Essen",
+    "incBath": "Bad",
+    "incBed1": "Ein Schlafzimmer",
+    "incBed2": "Zwei Schlafzimmer",
+    "incDelivery": "Lieferung und Montage",
+    "planLiving": "Wohnen · Schlafen",
+    "planLivingRoom": "Wohnen",
+    "planKitchen": "Küche",
+    "planBath": "Bad",
+    "planBedroom": "Schlafzimmer",
+    "planTerrace": "Terrasse"
+  },
+  "steps": {
+    "s1Title": "Beratung",
+    "s1Body": "Ein Anruf oder ein Besuch. Wir sehen uns den Grundriss, den Übergabetermin und Ihre Nutzung der Wohnung an.",
+    "s2Title": "Konzept",
+    "s2Body": "Ein Layout und eine Auswahl für jeden Raum, als ein Paket kalkuliert.",
+    "s3Title": "Auswahl",
+    "s3Body": "Sie geben die Stücke frei. Auch aus dem Ausland.",
+    "s4Title": "Lieferung",
+    "s4Body": "Alles kommt zusammen an, abgestimmt auf Ihre Übergabe.",
+    "s5Title": "Montage",
+    "s5Body": "Aufgebaut, platziert und gestylt von unserem Team.",
+    "s6Title": "Übergabe",
+    "s6Body": "Sie betreten ein fertiges Zuhause."
+  },
+  "services": {
+    "staging": "Home Staging",
+    "stagingBody": "Für Verkäufer und Makler: eingerichtet, gestylt und bereit für Besichtigungen.",
+    "rental": "Einrichtung für Vermietung",
+    "rentalBody": "Für Eigentümer, die vermieten. Robust und neutral für Langzeitmieter, gästefertig bis zu Geschirr und Bettwäsche für Ferienvermietung.",
+    "custom": "Individuelle Projekte",
+    "customBody": "Individuelle Einrichtungsprojekte jenseits der Standardpakete."
+  },
+  "areas": {
+    "kyrenia": "Kyrenia (Girne)",
+    "iskele": "İskele (Trikomo)",
+    "famagusta": "Famagusta (Gazimağusa)",
+    "nicosia": "Nikosia (Lefkoşa)"
+  },
+  "faq": {
+    "q1": "Was ist in einem Paket enthalten?",
+    "a1": "Möbel für jeden Raum des Wohnungstyps, plus Lieferung und Montage. Die Liste Raum für Raum finden Sie auf jeder Paketseite.",
+    "q2": "Ich lebe im Ausland. Geht das auch aus der Ferne?",
+    "a2": "Ja. Viele Käufer sind bei der Übergabe nicht auf Zypern. Konzept, Auswahl und Freigabe laufen online, und wir montieren, bevor Sie ankommen.",
+    "q3": "Was ist bei der Einrichtung für Vermietung anders?",
+    "a3": "Dieselbe Struktur mit Studio, 1+1 und 2+1, passend zum Zweck gewählt: robust und neutral für Langzeitmieter, gästefertig bis zu Geschirr und Bettwäsche für Ferienvermietung.",
+    "q4": "Sind die Preise in Pfund?",
+    "a4": "Ja. Alle Preise sind in GBP und beginnen bei 10.000 £ für ein Studio, 12.000 £ für ein 1+1 und 14.000 £ für ein 2+1."
+  },
+  "contact": {
+    "name": "Name",
+    "phone": "Telefon oder WhatsApp",
+    "phoneHint": "Mit Ländervorwahl",
+    "email": "E-Mail",
+    "location": "Lage der Immobilie",
+    "locationHint": "Stadt oder Wohnanlage",
+    "type": "Wohnungstyp",
+    "service": "Ich interessiere mich für",
+    "serviceStandard": "Möbelpaket",
+    "serviceRental": "Einrichtung für Vermietung",
+    "serviceStaging": "Home Staging",
+    "serviceCustom": "Individuelles Projekt",
+    "message": "Nachricht",
+    "consent": "Ich bin einverstanden, zu meiner Anfrage kontaktiert zu werden.",
+    "areasLine": "Wir arbeiten in {cities}.",
+    "whatsappLead": "Schreiben Sie uns per WhatsApp mit Ihrem Grundriss und dem Übergabetermin. Wir antworten mit einem ersten Vorschlag und einem Preis.",
+    "openWhatsApp": "WhatsApp öffnen",
+    "orCall": "oder anrufen",
+    "hoursNote": "Öffnungszeiten werden vom Inhaber bestätigt."
+  },
+  "phase0": {
+    "eyebrow": "Phase 0 · Grundlagen",
+    "title": "Die Wände haben Sie schon.",
+    "lead": "Wir richten Wohnungen in Nordzypern ein – von leeren Wänden bis zum fertigen Zuhause.",
+    "direction": "Diese Seite wird für {locale} {dir, select, rtl {right-to-left (von rechts nach links)} other {left-to-right (von links nach rechts)}} dargestellt.",
+    "scriptCheck": "Zeichentest: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "Weiter"
   },
   "notFound": {
     "title": "Seite nicht gefunden",
@@ -70,15 +232,509 @@
     "pages": "Seiten",
     "services": "Leistungen",
     "languages": "Sprachen",
-    "legal": "Datenschutz · Cookies · AGB",
-    "rights": "© {year} Design Package. Alle Rechte vorbehalten."
+    "legal": "Datenschutz · Cookies · Nutzungsbedingungen",
+    "rights": "© {year} Design Package. Alle Rechte vorbehalten.",
+    "more": "Mehr",
+    "privacy": "Datenschutz",
+    "cookies": "Cookies",
+    "terms": "Nutzungsbedingungen",
+    "inquiry": "Anfrageliste",
+    "guides": "Ratgeber",
+    "process": "So funktioniert es",
+    "reviews": "Bewertungen",
+    "areas": "Wo wir arbeiten"
   },
   "whatsapp": {
     "prefill": "Hallo, ich möchte mich über die Einrichtung meiner Wohnung in Nordzypern informieren."
   },
-  "services": {
-    "staging": "Home Staging",
-    "rental": "Einrichtung für Vermietung",
-    "custom": "Individuelle Projekte"
+  "pages": {
+    "packages": {
+      "eyebrow": "Pakete",
+      "title": "Ein Preis für die ganze Wohnung.",
+      "lead": "Ein schlüsselfertiges Möbelpaket in Nordzypern richtet jeden Raum einer Wohnung ein, geliefert und montiert, zu einem Preis je Wohnungstyp: Studio ab 10.000 £, 1+1 ab 12.000 £, 2+1 ab 14.000 £.",
+      "metaTitle": "Möbelpakete: Studio, 1+1, 2+1 — Design Package",
+      "metaDescription": "Schlüsselfertige Möbelpakete für Wohnungen in Nordzypern. Studio ab 10.000 £, 1+1 ab 12.000 £, 2+1 ab 14.000 £, geliefert und montiert.",
+      "compareEyebrow": "Vergleich",
+      "compareTitle": "Die drei Pakete im Überblick.",
+      "compareLead": "Die Pakete folgen dem Wohnungstyp. Jedes enthält Lieferung und Montage.",
+      "finderEyebrow": "Welches Paket passt zu mir?",
+      "finderTitle": "Drei Fragen, eine Antwort.",
+      "faqEyebrow": "Fragen",
+      "faqTitle": "Zu den Paketen."
+    },
+    "package": {
+      "eyebrow": "Paket",
+      "metaTitle": "{name}-Möbelpaket ab {price} — Design Package",
+      "metaDescription": "Das {name}-Paket richtet jeden Raum einer {name}-Wohnung in Nordzypern ein, geliefert und montiert, ab {price}.",
+      "lead": "Jeder Raum einer {name}-Wohnung, geliefert und montiert, ab {price}. Wählen Sie das Standardpaket zum Selbstbewohnen oder die Vermietungsversion für Mieter und Gäste.",
+      "roomsEyebrow": "Raum für Raum",
+      "roomsTitle": "Was geliefert wird.",
+      "roomsNote": "Die Raumlisten sind unverbindlich, bis der Inhaber den Paketinhalt bestätigt.",
+      "photosEyebrow": "Aus dem Studio-Projekt",
+      "photosTitle": "So sieht es fertig aus.",
+      "othersEyebrow": "Weitere Pakete",
+      "othersTitle": "Andere Wohnung?",
+      "prefill": "Hallo, ich interessiere mich für das {name}-Paket. Bitte senden Sie mir einen Vorschlag."
+    },
+    "services": {
+      "eyebrow": "Leistungen",
+      "title": "Drei weitere Türen.",
+      "lead": "Über die Standardpakete hinaus stagen wir Immobilien für den Verkauf, richten Mietwohnungen für Mieter oder Gäste ein und übernehmen individuelle Einrichtungsprojekte in ganz Nordzypern.",
+      "metaTitle": "Home Staging, Einrichtung für Vermietung und individuelle Projekte — Design Package",
+      "metaDescription": "Home Staging für Verkäufer und Makler, Einrichtung für Vermietung für Eigentümer und individuelle Einrichtungsprojekte in Nordzypern."
+    },
+    "service": {
+      "eyebrow": "Leistung",
+      "forEyebrow": "Für",
+      "howEyebrow": "So funktioniert es",
+      "howTitle": "Vier Schritte.",
+      "pricingEyebrow": "Preise",
+      "faqEyebrow": "Fragen",
+      "faqTitle": "Zu dieser Leistung.",
+      "othersEyebrow": "Weitere Leistungen",
+      "othersTitle": "Zwei weitere Türen.",
+      "photosEyebrow": "Aus dem Studio-Projekt",
+      "metaTitle": "{name} in Nordzypern — Design Package"
+    },
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Vorher und nachher.",
+      "lead": "Echte Projekte, vorher und nachher fotografiert. Fahren Sie mit der Maus über ein Projekt oder tippen Sie darauf, um die leere Wohnung zu sehen. Weitere folgen, sobald sie fertig sind.",
+      "metaTitle": "Portfolio: Vorher und Nachher — Design Package",
+      "metaDescription": "Fertiggestellte Möbelpakete in Nordzypern, vorher und nachher fotografiert.",
+      "count": "{count, plural, one {# Projekt} other {# Projekte}}",
+      "more": "Weitere Projekte kommen hinzu, sobald sie fertig sind."
+    },
+    "project": {
+      "eyebrow": "Projekt",
+      "typeLabel": "Wohnungstyp",
+      "packageLabel": "Paket",
+      "cityLabel": "Stadt",
+      "cityToConfirm": "wird noch bestätigt",
+      "summaryEyebrow": "Die Aufgabe",
+      "scopeEyebrow": "Umfang",
+      "galleryEyebrow": "Galerie",
+      "galleryTitle": "Raum für Raum.",
+      "furnitureEyebrow": "Verwendete Möbel",
+      "furnitureTitle": "Stücke aus diesem Projekt.",
+      "videoNote": "Ein Rundgang-Video erscheint hier, sobald der Inhaber es bereitstellt.",
+      "backToPortfolio": "Alle Projekte",
+      "prefill": "Hallo, ich habe das Projekt {title} gesehen und hätte gern ein ähnliches Paket."
+    },
+    "process": {
+      "eyebrow": "Ablauf",
+      "title": "Sechs Schritte zwischen Schlüssel und erster Nacht.",
+      "lead": "Vom ersten Gespräch bis zur Übergabe: ein Team und ein Preis. Das meiste davon geht auch aus dem Ausland.",
+      "metaTitle": "So funktioniert es: von der Beratung bis zur Übergabe — Design Package",
+      "metaDescription": "Die sechs Schritte eines Möbelpakets in Nordzypern: Beratung, Konzept, Auswahl, Lieferung, Montage, Übergabe.",
+      "remoteEyebrow": "Kauf aus dem Ausland",
+      "remoteTitle": "Sie müssen nicht vor Ort sein.",
+      "remoteBody": "Wir arbeiten mit Grundriss und Fotos, teilen Konzept und Möbelliste online, Sie geben per WhatsApp frei, und wir montieren, bevor Sie ankommen. Die Übergabefotos kommen noch am selben Tag."
+    },
+    "about": {
+      "eyebrow": "Über uns",
+      "title": "Ein Möbelunternehmen für Menschen, die Wände gekauft haben.",
+      "lead": "Design Package richtet Wohnungen in Nordzypern für Eigentümer ein, die oft weit weg sind. Ein Team übernimmt Konzept, Möbel, Lieferung und Montage.",
+      "metaTitle": "Über Design Package — Möbelpakete in Nordzypern",
+      "metaDescription": "Wer wir sind: Einrichtungspakete und Möbel in Nordzypern, geliefert und montiert.",
+      "teamTitle": "Team",
+      "showroomTitle": "Showroom",
+      "warrantyTitle": "Garantie",
+      "partnersTitle": "Partner",
+      "toConfirm": "Wird vom Inhaber bestätigt."
+    },
+    "contact": {
+      "eyebrow": "Kontakt",
+      "title": "Schreiben Sie uns per WhatsApp.",
+      "lead": "Der schnellste Weg zu einem Vorschlag: Schicken Sie Ihren Grundriss, den Übergabetermin und wie Sie die Wohnung nutzen werden.",
+      "metaTitle": "Design Package per WhatsApp kontaktieren",
+      "metaDescription": "Kontaktieren Sie Design Package in Nordzypern per WhatsApp und erhalten Sie einen Vorschlag für Ihr Möbelpaket.",
+      "addressLabel": "Adresse",
+      "emailLabel": "E-Mail",
+      "hoursLabel": "Öffnungszeiten",
+      "toConfirm": "wird vom Inhaber bestätigt"
+    },
+    "reviews": {
+      "eyebrow": "Bewertungen",
+      "title": "Was Kunden sagen.",
+      "lead": "Bewertungen aus abgeschlossenen Projekten erscheinen hier mit Zustimmung der jeweiligen Kunden.",
+      "metaTitle": "Kundenbewertungen — Design Package",
+      "metaDescription": "Bewertungen von Kunden von Design Package in Nordzypern.",
+      "empty": "Wir sammeln gerade Bewertungen aus abgeschlossenen Projekten. Die ersten erscheinen hier bald.",
+      "rating": "{rating} von 5"
+    },
+    "furniture": {
+      "eyebrow": "Möbel",
+      "title": "Stücke aus unseren Projekten.",
+      "lead": "Jedes Stück hier wurde in einer echten Wohnung geliefert und montiert. Speichern Sie Ihre Favoriten in der Anfrageliste und schicken Sie sie uns per WhatsApp für Preise und Verfügbarkeit.",
+      "inquiryLink": "Anfrageliste öffnen",
+      "note": "Katalog, Preise und Bestand werden vom Inhaber bestätigt.",
+      "metaTitle": "Möbel in Nordzypern — Design Package",
+      "metaDescription": "Sofas, Betten, Essgruppen, Leuchten und Outdoor-Möbel aus Projekten von Design Package in Nordzypern. Preise auf Anfrage; schicken Sie uns eine Anfrageliste per WhatsApp."
+    },
+    "furnitureItem": {
+      "eyebrow": "Möbel",
+      "categoryLabel": "Kategorie",
+      "materialsLabel": "Materialien",
+      "priceLabel": "Preis",
+      "usedInEyebrow": "Zu sehen in",
+      "usedInTitle": "Wo es eingesetzt wurde.",
+      "relatedEyebrow": "Passende Stücke",
+      "relatedTitle": "Aus demselben Raum.",
+      "back": "Alle Möbel",
+      "prefill": "Hallo, ich interessiere mich für das Stück {name}. Bitte senden Sie mir Preis und Verfügbarkeit.",
+      "metaTitle": "{name} — Design Package"
+    },
+    "inquiry": {
+      "eyebrow": "Anfrageliste",
+      "title": "Ihre Anfrageliste.",
+      "lead": "Stücke, die Sie beim Stöbern gespeichert haben. Schicken Sie uns die Liste per WhatsApp, und wir antworten mit Preisen und Verfügbarkeit.",
+      "empty": "Ihre Liste ist leer.",
+      "browse": "Möbel durchstöbern",
+      "remove": "Entfernen",
+      "clear": "Liste leeren",
+      "send": "Liste per WhatsApp senden",
+      "noteLabel": "Noch etwas? (optional)",
+      "notePlaceholder": "Wohnungstyp, Stadt, Übergabetermin",
+      "stored": "Die Liste wird nur in diesem Browser gespeichert. Es wird nichts gesendet, bis Sie auf den Button tippen.",
+      "messageIntro": "Hallo, ich interessiere mich für diese Stücke:",
+      "messageNote": "Hinweis:",
+      "metaTitle": "Anfrageliste — Design Package",
+      "metaDescription": "Schicken Sie die gespeicherten Möbelstücke per WhatsApp an Design Package und erhalten Sie Preise und Verfügbarkeit."
+    },
+    "guides": {
+      "eyebrow": "Ratgeber",
+      "title": "Bevor Sie einrichten.",
+      "lead": "Kurz und praktisch für Käufer in Nordzypern: Was ein Paket enthält und wie Sie aus dem Ausland einrichten.",
+      "read": "Ratgeber lesen",
+      "updated": "Aktualisiert: {date}",
+      "metaTitle": "Ratgeber: Wohnung in Nordzypern einrichten — Design Package",
+      "metaDescription": "Praktische Ratgeber von Design Package: Was ein Möbelpaket für Studio, 1+1 oder 2+1 enthält und wie Sie eine Wohnung in Nordzypern aus dem Ausland einrichten."
+    },
+    "guide": {
+      "eyebrow": "Ratgeber",
+      "back": "Alle Ratgeber",
+      "moreEyebrow": "Weiterlesen",
+      "moreTitle": "Noch ein Ratgeber."
+    },
+    "areas": {
+      "eyebrow": "Wo wir arbeiten",
+      "title": "Möbelpakete in {city}.",
+      "lead": "Studio ab {studio}, 1+1 ab {one}, 2+1 ab {two}. Jeder Raum geliefert und montiert in {city}, mit Auswahl und Freigabe von überall.",
+      "note": "Städteliste wird vom Inhaber bestätigt.",
+      "packagesEyebrow": "Pakete",
+      "packagesTitle": "Ein Preis für die ganze Wohnung.",
+      "faqEyebrow": "Fragen",
+      "faqTitle": "Sie kaufen in {city}?",
+      "otherEyebrow": "Anderswo",
+      "otherTitle": "Weitere Regionen.",
+      "prefill": "Hallo, ich habe eine Wohnung in {city}. Bitte senden Sie mir einen Vorschlag.",
+      "metaTitle": "Möbelpakete in {city} — Design Package",
+      "metaDescription": "Einrichtungspakete in {city}, Nordzypern: Studio ab {studio}, 1+1 ab {one}, 2+1 ab {two}. Geliefert und montiert."
+    },
+    "legal": {
+      "eyebrow": "Rechtliches",
+      "updated": "Zuletzt aktualisiert: {date}",
+      "template": "Vorlage zur Prüfung durch den Inhaber. Sie gilt erst, wenn die Angaben in eckigen Klammern bestätigt und, wo nötig, von einem Anwalt geprüft wurden.",
+      "metaTitle": "{title} — Design Package"
+    }
+  },
+  "comparison": {
+    "caption": "Paketvergleich",
+    "rowLiving": "Wohnzimmer",
+    "rowKitchen": "Küche und Essen",
+    "rowBedrooms": "Schlafzimmer",
+    "rowBathroom": "Bad",
+    "rowTerrace": "Terrasse",
+    "rowDelivery": "Lieferung und Montage",
+    "rowTimeline": "Zeitplan",
+    "toConfirm": "noch offen",
+    "one": "eins",
+    "two": "zwei"
+  },
+  "finder": {
+    "q1": "Welche Wohnung haben Sie?",
+    "q2": "Wie werden Sie sie nutzen?",
+    "q2a": "Ich wohne selbst darin",
+    "q2b": "Langzeitvermietung",
+    "q2c": "Ferienvermietung",
+    "q3": "Wann ist die Übergabe?",
+    "q3a": "Ich habe die Schlüssel schon",
+    "q3b": "In den nächsten drei Monaten",
+    "q3c": "Später",
+    "result": "Ihr Paket",
+    "resultRental": "{name}, Vermietungsversion",
+    "noteLive": "Für Sie gewählt: Farben, Komfort und Stauraum für den Alltag.",
+    "noteLongTerm": "Robust und neutral, leicht zu pflegen zwischen zwei Mietern.",
+    "noteHoliday": "Gästefertig bis zu Geschirr und Bettwäsche, fotogen für Inserate.",
+    "empty": "Beantworten Sie die drei Fragen, und das Paket erscheint hier.",
+    "send": "Per WhatsApp senden",
+    "prefill": "Hallo, ich habe eine {type}-Wohnung. Nutzung: {use}. Übergabe: {when}. Bitte senden Sie mir einen Vorschlag.",
+    "reset": "Von vorn beginnen"
+  },
+  "faqPackages": {
+    "q1": "Kann ich Stücke im Paket austauschen?",
+    "a1": "Ja. Das Paket legt Umfang und Startpreis fest; Sie geben jedes Stück vor der Lieferung frei.",
+    "q2": "Sind Lieferung und Montage im Preis enthalten?",
+    "a2": "Ja. Jeder Paketpreis enthält die Lieferung in die Wohnung und die Montage durch unser Team.",
+    "q3": "Was, wenn meine Wohnung keinem der drei Typen entspricht?",
+    "a3": "Größere Wohnungen und Villen behandeln wir als individuelle Projekte mit eigener Kalkulation."
+  },
+  "furniture": {
+    "all": "Alle",
+    "categories": {
+      "living": "Wohnen",
+      "dining": "Essen",
+      "bedroom": "Schlafen",
+      "bathroom": "Bad",
+      "outdoor": "Outdoor",
+      "lighting": "Leuchten",
+      "decor": "Deko"
+    },
+    "count": "{count, plural, one {# Stück} other {# Stücke}}",
+    "empty": "In dieser Kategorie gibt es noch keine Stücke."
+  },
+  "content": {
+    "services": {
+      "staging": {
+        "title": "Home Staging",
+        "lead": "Beim Home Staging wird eine leere Einheit eingerichtet und gestylt, damit sie auf Fotos und bei Besichtigungen überzeugt. Für Verkäufer und Makler in Nordzypern, die eine Immobilie schon vor der ersten Besichtigung wie ein Zuhause aussehen lassen möchten.",
+        "audience": "Verkäufer und Immobilienmakler",
+        "steps": {
+          "s1Title": "Begehung oder Grundriss",
+          "s1Body": "Wir sehen uns die Einheit vor Ort oder anhand von Plan und Fotos an.",
+          "s2Title": "Staging-Plan und Angebot",
+          "s2Body": "Welche Räume, welche Stücke, für wie lange. Ein Preis.",
+          "s3Title": "Lieferung und Styling",
+          "s3Body": "Möbel, Textilien und Accessoires kommen zusammen an und werden von unserem Team platziert.",
+          "s4Title": "Fotos und Besichtigungen",
+          "s4Body": "Die Einheit ist bereit für die Inseratsfotos und für Besucher."
+        },
+        "pricing": "Preis je Objekt, abhängig von der Größe und davon, wie lange das Staging bestehen bleibt.",
+        "pricingNote": "Preismodell wird vom Inhaber bestätigt.",
+        "faqs": {
+          "q1": "Kann der Käufer die Möbel behalten?",
+          "a1": "Fragen Sie uns. Staging-Möbel können meist mit der Immobilie gekauft oder durch ein komplettes Paket ersetzt werden.",
+          "q2": "Stagen Sie auch bewohnte Immobilien?",
+          "a2": "Ja, wo der Grundriss es zulässt. Wir ergänzen oder ersetzen Stücke, statt die Wohnung auszuräumen."
+        },
+        "photos": {
+          "p1Alt": "Eingerichtetes Studio, bereit für Besichtigungen",
+          "p2Alt": "Sofa, Schminkspiegel und Bett im Studio"
+        },
+        "prefill": "Hallo, ich möchte mich über Home Staging für eine Immobilie in Nordzypern informieren."
+      },
+      "rental": {
+        "title": "Einrichtung für Vermietung",
+        "lead": "Die Einrichtung für Vermietung nutzt dieselben Studio-, 1+1- und 2+1-Pakete, passend zum Zweck gewählt: robust und neutral für Langzeitmieter oder gästefertig bis zu Geschirr und Bettwäsche für Ferienvermietung. Möblierte Einheiten vermieten sich schneller und sind vom ersten Tag an bereit für Inseratsfotos.",
+        "audience": "Eigentümer und Investoren, die vermieten",
+        "steps": {
+          "s1Title": "Zweck wählen",
+          "s1Body": "Langzeitmieter oder Feriengäste. Mit der Antwort ändert sich das Paket.",
+          "s2Title": "Paket angepasst",
+          "s2Body": "Robuste Oberflächen und leichte Pflege für Langzeitvermietung; volle Ausstattung und fotogenes Styling für Kurzzeitvermietung.",
+          "s3Title": "Geliefert vor der Saison",
+          "s3Body": "Abgestimmt auf Ihre Übergabe oder den Start der Vermietungssaison.",
+          "s4Title": "Bereit zum Inserieren",
+          "s4Body": "Fotos, Schlüssel und eine Einheit, die ihren ersten Gast empfangen kann."
+        },
+        "pricing": "Studio ab 10.000 £, 1+1 ab 12.000 £, 2+1 ab 14.000 £. Gleiche Struktur wie die Standardpakete.",
+        "pricingNote": "Vermietungsspezifische Leistungen werden vom Inhaber bestätigt.",
+        "faqs": {
+          "q1": "Was kommt bei einem Paket für Ferienvermietung dazu?",
+          "a1": "Alles, was ein Gast bei der Ankunft erwartet: Geschirr, Bettwäsche, Handtücher und die kleinen Dinge, dazu ein Styling, das auf Fotos gut wirkt.",
+          "q2": "Was ist bei Langzeitmietern anders?",
+          "a2": "Neutrale Farben, robuste Stoffe und Oberflächen sowie Stücke, die leicht zu reinigen und zu ersetzen sind."
+        },
+        "photos": {
+          "p1Alt": "Ausgestattete Küche mit Frühstücksbar",
+          "p2Alt": "Bad mit Handtüchern und Accessoires"
+        },
+        "prefill": "Hallo, ich möchte mich über die Einrichtung einer Mietwohnung in Nordzypern informieren."
+      },
+      "custom": {
+        "title": "Individuelle Projekte",
+        "lead": "Individuelle Projekte sind Einrichtungsprojekte jenseits der Standardpakete: größere Wohnungen, besondere Grundrisse oder eine Aufgabe, die nicht zu Studio, 1+1 oder 2+1 passt. Gleicher Ablauf, Preis nach Projekt.",
+        "audience": "Eigentümer mit einer größeren Immobilie oder einer besonderen Aufgabe",
+        "steps": {
+          "s1Title": "Briefing",
+          "s1Body": "Was Sie haben, was Sie brauchen, wie Sie es nutzen werden.",
+          "s2Title": "Konzept",
+          "s2Body": "Layout, Materialien und eine Möbelliste für jeden Raum.",
+          "s3Title": "Auswahl",
+          "s3Body": "Sie geben die Stücke frei, vor Ort oder aus der Ferne.",
+          "s4Title": "Lieferung und Montage",
+          "s4Body": "Alles kommt zusammen an und wird von unserem Team montiert."
+        },
+        "pricing": "Angebot je Projekt nach dem Briefing.",
+        "faqs": {
+          "q1": "Arbeiten Sie mit Bauträgern?",
+          "a1": "Ja. Schlüsselfertige Einrichtung für Musterwohnungen und ganze Projekte läuft als individuelles Projekt.",
+          "q2": "Kann ich ein Paket mit individuellen Stücken kombinieren?",
+          "a2": "Ja. Beginnen Sie mit dem passendsten Paket und ändern Sie, was Sie brauchen."
+        },
+        "photos": {
+          "p1Alt": "Essgruppe auf der Terrasse am Pool",
+          "p2Alt": "Frühstücksbar, Bett und Sofa im Studio"
+        },
+        "prefill": "Hallo, ich möchte mich über ein individuelles Einrichtungsprojekt in Nordzypern informieren."
+      }
+    },
+    "projects": {
+      "studioPoolside": {
+        "title": "Studio, Anlage am Pool",
+        "summary": "Ein Studio-Apartment in einer Anlage am Pool, als komplettes Paket eingerichtet: Wohn- und Schlafbereich, Frühstücksbar, Küche, Bad und Terrasse, in einem Zug geliefert und montiert.",
+        "scope": {
+          "s1": "Wohn- und Schlafbereich",
+          "s2": "Frühstücksbar und Küche",
+          "s3": "Bad",
+          "s4": "Terrasse",
+          "s5": "Vorhänge und Textilien",
+          "s6": "Lieferung und Montage"
+        },
+        "beforeAlt": "Leeres Studio mit Schiebetür zum Pool, vor der Einrichtung",
+        "afterAlt": "Dasselbe Studio eingerichtet: Frühstücksbar, Bett, Sofa und Vorhänge",
+        "gallery": {
+          "g1": "Frühstücksbar mit Terrakotta-Hockern, Bett und Sofa",
+          "g2": "Von der Frühstücksbar zum Bett",
+          "g3": "Sofa, Schminkspiegel und Kühlschrank",
+          "g4": "Küche mit weißen Hochglanzfronten und schwarzen Schienenstrahlern",
+          "g5": "Bad mit Glasdusche und Waschtisch mit Rillenfront",
+          "g6": "Schwarzes Rattan-Essset auf der Terrasse am Pool",
+          "g7": "Das leere Studio vor der Einrichtung"
+        },
+        "visualisationNote": "Das breite Nachher-Foto ist eine Visualisierung auf Basis des fertiggestellten Projekts; die anderen Fotos sind Handyaufnahmen aus der fertigen Wohnung."
+      }
+    },
+    "furniture": {
+      "terracottaBarStool": {
+        "name": "Barhocker, Terrakotta",
+        "materials": "Bezug in Samtoptik, schwarzes Stahlgestell",
+        "description": "Geschwungene Lehne, niedriges Profil, im Studio-Projekt an der weißen Quarzbar.",
+        "alt": "Terrakotta-Barhocker an einer weißen Quarz-Frühstücksbar"
+      },
+      "linenSofa": {
+        "name": "Dreisitzer-Sofa, Leinen",
+        "materials": "Stoff in Leinenoptik, schwarze Metallbeine",
+        "description": "Lose Kissen im gleichen Stoff, im Studio-Projekt mit Terrakotta-Akzentkissen.",
+        "alt": "Beiges Leinensofa mit Terrakotta-Kissen"
+      },
+      "roundCoffeeTable": {
+        "name": "Runder Couchtisch, Holz",
+        "materials": "Platte und Gestell aus hellem Holz",
+        "description": "Kleine Stellfläche für Studios, im Studio-Projekt auf einem Juteteppich platziert.",
+        "alt": "Runder Holz-Couchtisch auf einem Juteteppich"
+      },
+      "juteRug": {
+        "name": "Juteteppich",
+        "materials": "Gewebte Naturfaser",
+        "description": "Verankert den Sitzbereich und kaschiert die Spiegelungen des glänzenden Bodens.",
+        "alt": "Juteteppich unter Sofa und Couchtisch"
+      },
+      "upholsteredBed": {
+        "name": "Polsterbett",
+        "materials": "Stoffkopfteil, schwarze Metallbeine",
+        "description": "Im Studio-Projekt mit rostroter Tagesdecke und gefalteten Handtüchern dekoriert.",
+        "alt": "Polsterbett mit rostroter Tagesdecke"
+      },
+      "roundLedMirror": {
+        "name": "Runder LED-Spiegel mit Schminktisch",
+        "materials": "Hinterleuchteter Spiegel, wandmontierter Tisch, Terrakotta-Stuhl",
+        "description": "Eine Schminkecke, die auch als Schreibtisch dient.",
+        "alt": "Runder hinterleuchteter Spiegel über einem Schminktisch"
+      },
+      "walnutSlatTvPanel": {
+        "name": "TV-Lamellenpaneel, Nussbaum",
+        "materials": "Holzlamellen auf dunklem Träger",
+        "description": "Läuft im Studio-Projekt vom Boden bis zur Decke hinter dem Fernseher.",
+        "alt": "Nussbaum-Lamellenpaneel mit wandmontiertem Fernseher"
+      },
+      "blackTrackLights": {
+        "name": "Schwarze Schienenbeleuchtung",
+        "materials": "Pulverbeschichtetes Metall, verstellbare Strahler",
+        "description": "Drei Strahler über der Küche im Studio-Projekt.",
+        "alt": "Schwarze Schienenstrahler über der Küche"
+      },
+      "flutedVanity": {
+        "name": "Waschtisch mit Rillenfront",
+        "materials": "Rillenfront, integriertes Waschbecken",
+        "description": "Wandhängend, mit dem Spiegel darüber und Handtüchern daneben.",
+        "alt": "Weißer Waschtisch mit Rillenfront und Waschbecken"
+      },
+      "rattanDiningSet": {
+        "name": "Outdoor-Essset, schwarzes Rattan",
+        "materials": "Schwarzes Rattangeflecht, Platte aus gehärtetem Glas",
+        "description": "Tisch und vier Stühle auf der Terrasse am Pool.",
+        "alt": "Schwarzes Rattan-Essset auf einer Terrasse am Pool"
+      }
+    },
+    "guides": {
+      "furnishingFromAbroad": {
+        "title": "Eine Wohnung in Nordzypern aus dem Ausland einrichten",
+        "lead": "Viele Käufer sind bei der Schlüsselübergabe nicht auf Zypern. So funktioniert ein Möbelpaket, wenn Sie woanders sind.",
+        "coverAlt": "Ein eingerichtetes Studio mit Frühstücksbar, Bett und Sofa, der Pool durch die Schiebetür sichtbar",
+        "sections": {
+          "s1": {
+            "heading": "Beginnen Sie mit drei Dingen",
+            "p1": "Ein Grundriss, der Übergabetermin und wie Sie die Wohnung nutzen werden: selbst bewohnen, langfristig vermieten oder an Feriengäste vermieten. Diese drei Antworten bestimmen die Paketversion und den Zeitplan.",
+            "p2": "Schicken Sie sie per WhatsApp, und Sie erhalten einen ersten Vorschlag ohne Besichtigung. Ein kurzes Video der leeren Wohnung hilft, aber ein Plan vom Bauträger reicht für den Anfang."
+          },
+          "s2": {
+            "heading": "Konzept und Auswahl laufen online",
+            "p1": "Das Konzept ist ein Layout und eine Auswahl für jeden Raum, als ein Paket kalkuliert. Sie prüfen es anhand von Zeichnungen und Fotos, wünschen Änderungen und geben die Stücke schriftlich per WhatsApp frei.",
+            "p2": "Weil das Paket über den Wohnungstyp definiert ist, deckt die Auswahl bereits jeden Raum ab. Mit Ihren Antworten ändert sich der Charakter der Stücke, nicht die Liste der Räume."
+          },
+          "s3": {
+            "heading": "Lieferung und Montage sind auf die Übergabe abgestimmt",
+            "p1": "Lieferung und Montage sind Teil jedes Pakets. Alles kommt zusammen an, abgestimmt auf Ihren Übergabetermin, und wird von unserem Team aufgebaut, platziert und gestylt.",
+            "p2": "Sie müssen nicht anwesend sein. Wenn der Bauträger oder Ihr Vertreter die Schlüssel übergibt, kann die Montage stattfinden, bevor Sie einfliegen."
+          },
+          "s4": {
+            "heading": "Übergabe mit Fotos",
+            "p1": "Sobald die Montage abgeschlossen ist, erhalten Sie noch am selben Tag Übergabefotos von jedem Raum. Kommen Sie später an, wartet die Wohnung eingerichtet auf Sie. Geht sie auf den Mietmarkt, sind diese Fotos der Anfang des Inserats."
+          },
+          "s5": {
+            "heading": "Was Sie früh entscheiden sollten",
+            "p1": "Ob die Wohnung für Sie, für Langzeitmieter oder für Feriengäste ist. Die Räume sind dieselben, die Wahl unterscheidet sich: eigene Farben, Komfort und Stauraum, wenn Sie einziehen; robust und neutral, leicht zu pflegen zwischen zwei Mietern, für Langzeitvermietung; gästefertig bis zu Geschirr und Bettwäsche für Ferienvermietung.",
+            "p2": "Der Paketfinder auf der Paketseite macht aus diesen Antworten in drei Klicks ein Paket und eine WhatsApp-Nachricht."
+          }
+        }
+      },
+      "studio1Plus12Plus1WhatIsIncluded": {
+        "title": "Studio, 1+1 oder 2+1: Was ein Möbelpaket enthält",
+        "lead": "Die Pakete richten sich nach dem Wohnungstyp, nicht nach einer Qualitätsstufe. Hier lesen Sie, was jedes Paket abdeckt und wo die Preise beginnen.",
+        "coverAlt": "Frühstücksbar mit Terrakotta-Hockern, ein Bett und ein Sofa in einem eingerichteten Studio",
+        "sections": {
+          "s1": {
+            "heading": "Ein Preis für die ganze Wohnung",
+            "p1": "Ein Paket richtet jeden Raum des Wohnungstyps ein und enthält Lieferung und Montage. Die Preise sind in Pfund Sterling und sind Startpreise: Das endgültige Angebot hängt von den Stücken ab, die Sie freigeben."
+          },
+          "s2": {
+            "heading": "Studio, ab 10.000 £",
+            "p1": "Wohn- und Schlafbereich, Küche und Essen, Bad, Lieferung und Montage. Im Studio sind Wohnen und Schlafen ein Raum, deshalb macht das Layout die Arbeit: ein Bett, ein Sofa, ein Platz zum Essen und Stauraum, der den Raum nicht erdrückt."
+          },
+          "s3": {
+            "heading": "1+1, ab 12.000 £",
+            "p1": "Wohnzimmer, ein Schlafzimmer, Küche und Essen, Bad, Lieferung und Montage. Das Schlafzimmer wird als vollständiger Raum eingerichtet: Bett, Kleiderschrank oder Stauraum, Nachttische und Textilien."
+          },
+          "s4": {
+            "heading": "2+1, ab 14.000 £",
+            "p1": "Wohnzimmer, zwei Schlafzimmer, Küche und Essen, Bad, Lieferung und Montage. Das zweite Schlafzimmer kann für Familie, Gäste oder als Homeoffice eingerichtet werden; die Entscheidung fällt in der Konzeptphase."
+          },
+          "s5": {
+            "heading": "Die Vermietungsversion",
+            "p1": "Jedes Paket gibt es auch als Vermietungsversion mit derselben Raumstruktur. Für Langzeitmieter sind die Stücke robust und neutral, leicht zu pflegen zwischen zwei Mietverhältnissen. Für Ferienvermietung ist die Wohnung gästefertig bis zu Geschirr und Bettwäsche und fotogen für Inserate."
+          },
+          "s6": {
+            "heading": "Noch zu bestätigen",
+            "p1": "Terrassenmöbel und der Lieferzeitplan stehen in der Vergleichstabelle als „noch offen“, bis der Inhaber sie bestätigt. Fragen Sie per WhatsApp, und Sie erhalten die aktuelle Antwort für Ihren Übergabetermin."
+          }
+        }
+      }
+    }
+  },
+  "seo": {
+    "home": "Startseite",
+    "ogAlt": "Eingerichtete Studio-Wohnung in Nordzypern von Design Package"
   }
 }

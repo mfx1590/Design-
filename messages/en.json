@@ -293,7 +293,8 @@
       "faqTitle": "About this service.",
       "othersEyebrow": "Other services",
       "othersTitle": "Two more doors.",
-      "photosEyebrow": "From the studio project"
+      "photosEyebrow": "From the studio project",
+      "metaTitle": "{name} in Northern Cyprus — Design Package"
     },
     "portfolio": {
       "eyebrow": "Portfolio",
@@ -731,5 +732,9 @@
         }
       }
     }
+  },
+  "seo": {
+    "home": "Home",
+    "ogAlt": "Furnished studio apartment in Northern Cyprus by Design Package"
   }
 }

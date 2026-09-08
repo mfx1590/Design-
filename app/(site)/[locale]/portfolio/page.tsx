@@ -7,6 +7,9 @@ import { Section } from "@/components/layout/Section";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { getProjects } from "@/lib/cms/loaders";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -15,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.portfolio" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/portfolio", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Portfolio grid (PLAN.md §6). Filters arrive once there is more than one project to filter. */
@@ -29,6 +32,7 @@ export default async function PortfolioPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.portfolio"), href: "/portfolio" }])} />
       <PageIntro eyebrow={t("pages.portfolio.eyebrow")} title={t("pages.portfolio.title")} lead={t("pages.portfolio.lead")}>
         <p className="text-small text-ink-soft">{t("pages.portfolio.count", { count: projects.length })}</p>
       </PageIntro>

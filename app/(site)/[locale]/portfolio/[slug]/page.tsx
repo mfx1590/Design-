@@ -11,6 +11,10 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { getFurnitureItem, getProject } from "@/lib/cms/loaders";
 import { projectSlugs } from "@/lib/content/projects";
 import { whatsappHref } from "@/lib/site";
@@ -26,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(routing.locales, locale)) return {};
   const project = await getProject(locale, slug);
   if (!project) return {};
-  return { title: `${project.title} — Design Package`, description: project.summary };
+  return pageMetadata({ locale, href: { pathname: "/portfolio/[slug]", params: { slug: project.slug } }, title: `${project.title} — Design Package`, description: project.summary, image: project.after.src, imageAlt: project.after.alt });
 }
 
 /** Project detail (PLAN.md §6): its own scene, then the case study. */
@@ -50,6 +54,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.portfolio"), href: "/portfolio" }, { name: project.title, href: { pathname: "/portfolio/[slug]", params: { slug: project.slug } } }]), ld.imageGallery({ name: project.title, url: localizedPath(locale, { pathname: "/portfolio/[slug]", params: { slug: project.slug } }), images: [project.after, ...project.gallery] })]} />
       {project.sequence ? (
         <TransformationScene
           tier="sequence"

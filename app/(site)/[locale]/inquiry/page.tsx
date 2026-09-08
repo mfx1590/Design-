@@ -6,6 +6,7 @@ import { InquiryList } from "@/components/furniture/InquiryList";
 import { PageIntro } from "@/components/layout/PageIntro";
 import { Section } from "@/components/layout/Section";
 import { routing } from "@/i18n/routing";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { getFurniture } from "@/lib/cms/loaders";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.inquiry" });
-  return { title: t("metaTitle"), description: t("metaDescription"), robots: { index: false } };
+  return pageMetadata({ locale, href: "/inquiry", title: t("metaTitle"), description: t("metaDescription"), noindex: true });
 }
 
 /** Inquiry list (PLAN.md §6): the saved pieces become one WhatsApp message. No payment, no account. */

@@ -19,7 +19,7 @@ function leaves(obj, prefix = "", out = new Map()) {
 // Placeholders: {name} and {name, plural/select ...}; tags: <b>, </b>
 function placeholders(s) {
   const found = new Set();
-  for (const m of String(s).matchAll(/\{\s*([A-Za-z0-9_]+)/g)) found.add(m[1]);
+  for (const m of String(s).matchAll(/\{\s*([A-Za-z0-9_]+)\s*[,}]/g)) found.add(m[1]);
   return [...found].sort().join(",");
 }
 function tags(s) {

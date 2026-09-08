@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Pakiety meblowe na Cyprze Północnym — Design Package",
-    "description": "Pakiety wyposażenia wnętrz i meble na Cyprze Północnym: Studio od 10 000 £, 1+1 od 12 000 £, 2+1 od 14 000 £."
+    "description": "Pakiety wyposażenia wnętrz i meble na Cyprze Północnym: Studio od 10 000 £, 1+1 od 12 000 £, 2+1 od 14 000 £. Z dostawą i montażem."
   },
   "brand": {
     "name": "Design Package",
@@ -17,38 +17,120 @@
     "services": "Usługi",
     "about": "O nas",
     "contact": "Kontakt",
-    "whatsapp": "Napisz na WhatsApp"
+    "whatsapp": "Napisz na WhatsApp",
+    "furniture": "Meble"
   },
   "cta": {
-    "quote": "Poproś o wycenę",
+    "quote": "Poproś o wycenę na WhatsApp",
     "package": "Zobacz cały pakiet",
     "packages": "Zobacz pakiety",
+    "project": "Zobacz realizację",
+    "allProjects": "Zobacz wszystkie realizacje",
+    "services": "Zobacz wszystkie usługi",
     "whatsapp": "Napisz na WhatsApp",
-    "inquiry": "Dodaj do zapytania",
-    "priceOnRequest": "Cena na zapytanie"
+    "inquiry": "Dodaj do wyceny",
+    "priceOnRequest": "Cena na zapytanie",
+    "send": "Wyślij zapytanie",
+    "inquiryRemove": "Usuń z wyceny",
+    "seeService": "Zobacz usługę"
   },
   "card": {
     "before": "Przed",
     "after": "Po",
-    "realVideo": "Prawdziwe wideo",
+    "realVideo": "Prawdziwe nagranie",
     "showBefore": "Pokaż przed",
     "showAfter": "Pokaż po"
   },
   "hero": {
+    "eyebrow": "Pakiety meblowe · Cypr Północny",
     "before": "Ściany już masz.",
     "after": "My wnosimy dom.",
-    "lead": "Pakiety meblowe do mieszkań na Cyprze Północnym, z dostawą i montażem. Studio od 10 000 £.",
+    "lead": "Kompletne pakiety meblowe do mieszkań na Cyprze Północnym, z dostawą i montażem. Studio od 10 000 £.",
     "visualisation": "Wizualizacja na podstawie zrealizowanego projektu studia.",
     "altBefore": "Puste studio z przesuwnymi drzwiami na basen, przed umeblowaniem",
     "altAfter": "To samo studio po umeblowaniu: bar śniadaniowy, łóżko, sofa i zasłony"
   },
-  "phase0": {
-    "eyebrow": "Faza 0 · fundamenty",
-    "title": "Ściany już masz.",
-    "lead": "Urządzamy mieszkania na Cyprze Północnym — od pustych ścian po gotowy dom.",
-    "direction": "Ta strona wyświetla się {dir, select, rtl {od prawej do lewej} other {od lewej do prawej}} dla języka {locale}.",
-    "scriptCheck": "Test znaków: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
-    "next": "Dalej"
+  "trust": {
+    "prices": "Studio od 10 000 £ · 1+1 od 12 000 £ · 2+1 od 14 000 £",
+    "delivery": "Dostawa i montaż w cenie",
+    "remote": "Wybór i akceptacja z dowolnego miejsca",
+    "languages": "Obsługa w sześciu językach"
+  },
+  "apartment": {
+    "eyebrow": "Twoje mieszkanie",
+    "title": "Przejdź się po nim, zanim powstanie.",
+    "lead": "Wybierz typ mieszkania. W miarę przewijania rzut wypełnia się pokój po pokoju, dokładnie tak jak pakiet.",
+    "choose": "Typ mieszkania",
+    "inPackage": "W pakiecie",
+    "fromProject": "Zdjęcie z projektu studia",
+    "scopeNote": "Listy pomieszczeń są orientacyjne do czasu potwierdzenia zawartości pakietu przez właściciela.",
+    "planAria": "Rzut wybranego typu mieszkania; meble pojawiają się w miarę przewijania kolejnych pokoi",
+    "cta": "Zobacz pakiet {name}",
+    "rooms": {
+      "living": {
+        "number": "01",
+        "name": "Salon",
+        "nameStudio": "Strefa dzienna i sypialna",
+        "tagline": "Tu toczy się dzień.",
+        "scope": "Sofa · Stolik kawowy · Panel TV · Dywan · Zasłony · Oświetlenie",
+        "scopeStudio": "Sofa · Stolik kawowy · Panel TV · Dywan · Zasłony · Łóżko i szafka nocna",
+        "fact": "W projekcie studia: lniana sofa, dywan z juty i orzechowy panel lamelowy za telewizorem, z akcentami w kolorze terakoty."
+      },
+      "kitchen": {
+        "number": "02",
+        "name": "Kuchnia i jadalnia",
+        "tagline": "Śniadanie przy barze.",
+        "scope": "Stół lub bar · Siedziska · Naczynia dla wynajmu krótkoterminowego",
+        "fact": "W projekcie studia: bar śniadaniowy z białego kwarcu i dwa stołki w kolorze terakoty."
+      },
+      "bedroom": {
+        "number": "03",
+        "name": "Sypialnia",
+        "nameStudio": "Strefa sypialna",
+        "nameTwo": "Dwie sypialnie",
+        "tagline": "Pościelone, zanim wylądujesz.",
+        "scope": "Łóżko i materac · Szafki nocne · Szafa lub schowki · Pościel dla wynajmu krótkoterminowego",
+        "fact": "W projekcie studia: tapicerowane łóżko z rdzawym pledem i ręczniki złożone na przyjazd."
+      },
+      "bathroom": {
+        "number": "04",
+        "name": "Łazienka",
+        "tagline": "Ręczniki, lustro, miejsce na wszystko.",
+        "scope": "Lustro · Szafki · Tekstylia · Akcesoria",
+        "fact": "W projekcie studia: ryflowana szafka umywalkowa, deszczownica, ręczniki i kosz na pranie."
+      },
+      "terrace": {
+        "number": "05",
+        "name": "Taras",
+        "tagline": "Kolacja przy basenie.",
+        "scope": "Zestaw jadalniany lub wypoczynkowy na zewnątrz",
+        "fact": "W projekcie studia: czarny rattanowy zestaw jadalniany dla czterech osób."
+      }
+    }
+  },
+  "home": {
+    "packagesEyebrow": "Pakiety",
+    "packagesTitle": "Jedna cena za całe mieszkanie.",
+    "packagesLead": "Każdy pokój, z dostawą i montażem. Pakiety zależą od typu mieszkania, nie od poziomu jakości.",
+    "packagesScroll": "Przewijaj dalej, a rzut się wypełni",
+    "projectEyebrow": "Ostatnia realizacja",
+    "projectTitle": "Studio: od kluczy do pierwszej nocy.",
+    "projectMeta": "Studio · osiedle z basenem · miasto do potwierdzenia",
+    "projectBody": "Bar śniadaniowy, łóżko, sofa, zasłony, kuchnia, łazienka i taras w jednej dostawie. Najedź lub dotknij zdjęcia, aby zobaczyć puste wnętrze.",
+    "stepsEyebrow": "Drzwi wejściowe",
+    "stepsTitle": "Sześć kroków od kluczy do pierwszej nocy.",
+    "servicesEyebrow": "Poza pakietem",
+    "servicesTitle": "Jeszcze troje drzwi.",
+    "areasEyebrow": "Gdzie działamy",
+    "areasTitle": "Na całym Cyprze Północnym.",
+    "areasLead": "Mieszkania i wille w miejscach, które zagraniczni kupujący wybierają najczęściej.",
+    "areasNote": "Lista miast do potwierdzenia przez właściciela.",
+    "faqEyebrow": "Pytania",
+    "faqTitle": "Konkretne odpowiedzi.",
+    "contactEyebrow": "Przekazanie",
+    "contactTitle": "Opowiedz nam o swoim mieszkaniu.",
+    "contactLead": "Prześlij rzut, termin odbioru i informację, jak będziesz korzystać z mieszkania. Odpowiemy pierwszą propozycją i ceną.",
+    "contactOr": "Wolisz napisać?"
   },
   "packages": {
     "heading": "Pakiety",
@@ -58,7 +140,87 @@
     "onePlusOne": "1+1",
     "onePlusOneNote": "jedna sypialnia",
     "twoPlusOne": "2+1",
-    "twoPlusOneNote": "dwie sypialnie"
+    "twoPlusOneNote": "dwie sypialnie",
+    "incLiving": "Strefa dzienna i sypialna",
+    "incLivingRoom": "Salon",
+    "incKitchen": "Kuchnia i jadalnia",
+    "incBath": "Łazienka",
+    "incBed1": "Jedna sypialnia",
+    "incBed2": "Dwie sypialnie",
+    "incDelivery": "Dostawa i montaż",
+    "planLiving": "Dzienna · sypialna",
+    "planLivingRoom": "Salon",
+    "planKitchen": "Kuchnia",
+    "planBath": "Łazienka",
+    "planBedroom": "Sypialnia",
+    "planTerrace": "Taras"
+  },
+  "steps": {
+    "s1Title": "Konsultacja",
+    "s1Body": "Rozmowa lub wizyta. Patrzymy na rzut, termin odbioru i to, jak będziesz korzystać z mieszkania.",
+    "s2Title": "Koncepcja",
+    "s2Body": "Układ i krótka lista propozycji do każdego pokoju, wycenione jako jeden pakiet.",
+    "s3Title": "Wybór",
+    "s3Body": "Zatwierdzasz meble. Zdalnie, jeśli jesteś za granicą.",
+    "s4Title": "Dostawa",
+    "s4Body": "Wszystko przyjeżdża razem, w terminie dopasowanym do odbioru.",
+    "s5Title": "Montaż",
+    "s5Body": "Złożone, ustawione i wystylizowane przez nasz zespół.",
+    "s6Title": "Przekazanie",
+    "s6Body": "Wchodzisz do gotowego domu."
+  },
+  "services": {
+    "staging": "Home staging",
+    "stagingBody": "Dla sprzedających i agentów: umeblowane, wystylizowane i gotowe do prezentacji.",
+    "rental": "Wyposażenie pod wynajem",
+    "rentalBody": "Dla właścicieli, którzy wynajmują. Trwałe i neutralne dla najemców długoterminowych, gotowe na gości aż po naczynia i pościel przy wynajmie krótkoterminowym.",
+    "custom": "Projekty indywidualne",
+    "customBody": "Indywidualne projekty wnętrz wykraczające poza standardowe pakiety."
+  },
+  "areas": {
+    "kyrenia": "Kyrenia (Girne)",
+    "iskele": "İskele (Trikomo)",
+    "famagusta": "Famagusta (Gazimağusa)",
+    "nicosia": "Nikozja (Lefkoşa)"
+  },
+  "faq": {
+    "q1": "Co zawiera pakiet?",
+    "a1": "Meble do każdego pokoju danego typu mieszkania oraz dostawa i montaż. Lista pokój po pokoju jest na stronie każdego pakietu.",
+    "q2": "Mieszkam za granicą. Czy mogę załatwić to zdalnie?",
+    "a2": "Tak. Wielu kupujących nie ma na Cyprze w dniu odbioru. Koncepcja, wybór i akceptacja odbywają się online, a montaż wykonujemy przed Twoim przyjazdem.",
+    "q3": "Czym różni się wyposażenie pod wynajem?",
+    "a3": "Ta sama struktura Studio, 1+1 i 2+1, dobrana do celu: trwałe i neutralne dla najemców długoterminowych, gotowe na gości aż po naczynia i pościel przy wynajmie krótkoterminowym.",
+    "q4": "Czy ceny są w funtach?",
+    "a4": "Tak. Wszystkie ceny są w GBP i zaczynają się od 10 000 £ za Studio, 12 000 £ za 1+1 i 14 000 £ za 2+1."
+  },
+  "contact": {
+    "name": "Imię i nazwisko",
+    "phone": "Telefon lub WhatsApp",
+    "phoneHint": "Z numerem kierunkowym kraju",
+    "email": "E-mail",
+    "location": "Lokalizacja nieruchomości",
+    "locationHint": "Miasto lub osiedle",
+    "type": "Typ mieszkania",
+    "service": "Interesuje mnie",
+    "serviceStandard": "Pakiet meblowy",
+    "serviceRental": "Wyposażenie pod wynajem",
+    "serviceStaging": "Home staging",
+    "serviceCustom": "Projekt indywidualny",
+    "message": "Wiadomość",
+    "consent": "Zgadzam się na kontakt w sprawie mojego zapytania.",
+    "areasLine": "Obszar działania: {cities}.",
+    "whatsappLead": "Napisz do nas na WhatsApp, przesyłając rzut mieszkania i termin odbioru. Odpowiemy pierwszą propozycją i ceną.",
+    "openWhatsApp": "Otwórz WhatsApp",
+    "orCall": "lub zadzwoń",
+    "hoursNote": "Godziny otwarcia do potwierdzenia przez właściciela."
+  },
+  "phase0": {
+    "eyebrow": "Faza 0 · fundamenty",
+    "title": "Ściany już masz.",
+    "lead": "Urządzamy mieszkania na Cyprze Północnym — od pustych ścian po gotowy dom.",
+    "direction": "Ta strona wyświetla się {dir, select, rtl {right-to-left (od prawej do lewej)} other {left-to-right (od lewej do prawej)}} dla języka {locale}.",
+    "scriptCheck": "Test znaków: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
+    "next": "Dalej"
   },
   "notFound": {
     "title": "Nie znaleziono strony",
@@ -70,15 +232,509 @@
     "pages": "Strony",
     "services": "Usługi",
     "languages": "Języki",
-    "legal": "Prywatność · Cookies · Regulamin",
-    "rights": "© {year} Design Package. Wszelkie prawa zastrzeżone."
+    "legal": "Prywatność · Pliki cookie · Regulamin",
+    "rights": "© {year} Design Package. Wszelkie prawa zastrzeżone.",
+    "more": "Więcej",
+    "privacy": "Prywatność",
+    "cookies": "Pliki cookie",
+    "terms": "Regulamin",
+    "inquiry": "Lista do wyceny",
+    "guides": "Poradniki",
+    "process": "Jak to działa",
+    "reviews": "Opinie",
+    "areas": "Gdzie działamy"
   },
   "whatsapp": {
     "prefill": "Dzień dobry, mam pytanie o umeblowanie mieszkania na Cyprze Północnym."
   },
-  "services": {
-    "staging": "Home staging",
-    "rental": "Wyposażenie pod wynajem",
-    "custom": "Projekty indywidualne"
+  "pages": {
+    "packages": {
+      "eyebrow": "Pakiety",
+      "title": "Jedna cena za całe mieszkanie.",
+      "lead": "Pakiet meblowy pod klucz na Cyprze Północnym wyposaża każdy pokój mieszkania, z dostawą i montażem, w jednej cenie zależnej od typu mieszkania: Studio od 10 000 £, 1+1 od 12 000 £, 2+1 od 14 000 £.",
+      "metaTitle": "Pakiety meblowe: Studio, 1+1, 2+1 — Design Package",
+      "metaDescription": "Pakiety meblowe pod klucz do mieszkań na Cyprze Północnym. Studio od 10 000 £, 1+1 od 12 000 £, 2+1 od 14 000 £, z dostawą i montażem.",
+      "compareEyebrow": "Porównanie",
+      "compareTitle": "Trzy pakiety obok siebie.",
+      "compareLead": "Pakiety odpowiadają typowi mieszkania. Każdy zawiera dostawę i montaż.",
+      "finderEyebrow": "Który pakiet jest dla mnie?",
+      "finderTitle": "Trzy pytania, jedna odpowiedź.",
+      "faqEyebrow": "Pytania",
+      "faqTitle": "O pakietach."
+    },
+    "package": {
+      "eyebrow": "Pakiet",
+      "metaTitle": "Pakiet meblowy {name} od {price} — Design Package",
+      "metaDescription": "Pakiet {name} wyposaża każdy pokój mieszkania typu {name} na Cyprze Północnym, z dostawą i montażem, od {price}.",
+      "lead": "Każdy pokój mieszkania typu {name}, z dostawą i montażem, od {price}. Wybierz pakiet standardowy dla siebie albo wersję pod wynajem dla najemców i gości.",
+      "roomsEyebrow": "Pokój po pokoju",
+      "roomsTitle": "Co przyjeżdża.",
+      "roomsNote": "Listy pomieszczeń są orientacyjne do czasu potwierdzenia zawartości pakietu przez właściciela.",
+      "photosEyebrow": "Z projektu studia",
+      "photosTitle": "Jak to wygląda po zakończeniu.",
+      "othersEyebrow": "Pozostałe pakiety",
+      "othersTitle": "Inne mieszkanie?",
+      "prefill": "Dzień dobry, interesuje mnie pakiet {name}. Proszę o przesłanie propozycji."
+    },
+    "services": {
+      "eyebrow": "Usługi",
+      "title": "Jeszcze troje drzwi.",
+      "lead": "Poza standardowymi pakietami przygotowujemy domy do sprzedaży, wyposażamy mieszkania pod wynajem dla najemców lub gości i realizujemy indywidualne projekty wnętrz na całym Cyprze Północnym.",
+      "metaTitle": "Home staging, wyposażenie pod wynajem i projekty indywidualne — Design Package",
+      "metaDescription": "Home staging dla sprzedających i agentów, wyposażenie pod wynajem dla właścicieli oraz indywidualne projekty wnętrz na Cyprze Północnym."
+    },
+    "service": {
+      "eyebrow": "Usługa",
+      "forEyebrow": "Dla kogo",
+      "howEyebrow": "Jak to działa",
+      "howTitle": "Cztery kroki.",
+      "pricingEyebrow": "Cennik",
+      "faqEyebrow": "Pytania",
+      "faqTitle": "O tej usłudze.",
+      "othersEyebrow": "Pozostałe usługi",
+      "othersTitle": "Jeszcze dwoje drzwi.",
+      "photosEyebrow": "Z projektu studia",
+      "metaTitle": "{name} na Cyprze Północnym — Design Package"
+    },
+    "portfolio": {
+      "eyebrow": "Realizacje",
+      "title": "Przed i po.",
+      "lead": "Prawdziwe realizacje, sfotografowane przed i po. Najedź lub dotknij realizacji, aby zobaczyć puste mieszkanie. Kolejne pojawiają się w miarę ukończenia.",
+      "metaTitle": "Realizacje: przed i po — Design Package",
+      "metaDescription": "Zrealizowane pakiety meblowe na Cyprze Północnym, sfotografowane przed i po.",
+      "count": "{count, plural, one {# realizacja} few {# realizacje} many {# realizacji} other {# realizacji}}",
+      "more": "Kolejne realizacje dodajemy w miarę ich ukończenia."
+    },
+    "project": {
+      "eyebrow": "Realizacja",
+      "typeLabel": "Typ mieszkania",
+      "packageLabel": "Pakiet",
+      "cityLabel": "Miasto",
+      "cityToConfirm": "do potwierdzenia",
+      "summaryEyebrow": "Założenia",
+      "scopeEyebrow": "Zakres",
+      "galleryEyebrow": "Galeria",
+      "galleryTitle": "Pokój po pokoju.",
+      "furnitureEyebrow": "Użyte meble",
+      "furnitureTitle": "Meble z tej realizacji.",
+      "videoNote": "Wideo ze spaceru po mieszkaniu pojawi się tutaj, gdy właściciel je dostarczy.",
+      "backToPortfolio": "Wszystkie realizacje",
+      "prefill": "Dzień dobry, piszę w sprawie realizacji {title}. Interesuje mnie podobny pakiet."
+    },
+    "process": {
+      "eyebrow": "Proces",
+      "title": "Sześć kroków od kluczy do pierwszej nocy.",
+      "lead": "Od pierwszej rozmowy do przekazania: jeden zespół i jedna cena. Większość może się odbyć, gdy jesteś za granicą.",
+      "metaTitle": "Jak to działa: od konsultacji do przekazania — Design Package",
+      "metaDescription": "Sześć kroków pakietu meblowego na Cyprze Północnym: konsultacja, koncepcja, wybór, dostawa, montaż, przekazanie.",
+      "remoteEyebrow": "Zakup z zagranicy",
+      "remoteTitle": "Nie musisz tu być.",
+      "remoteBody": "Pracujemy na podstawie rzutu i zdjęć, koncepcję i listę mebli udostępniamy online, Ty zatwierdzasz na WhatsApp, a my montujemy przed Twoim przyjazdem. Zdjęcia z przekazania wysyłamy tego samego dnia."
+    },
+    "about": {
+      "eyebrow": "O nas",
+      "title": "Firma meblowa dla ludzi, którzy kupili ściany.",
+      "lead": "Design Package wyposaża mieszkania na Cyprze Północnym dla właścicieli, którzy często są daleko. Jeden zespół zajmuje się koncepcją, meblami, dostawą i montażem.",
+      "metaTitle": "O Design Package — pakiety meblowe na Cyprze Północnym",
+      "metaDescription": "Kim jesteśmy: pakiety wyposażenia wnętrz i meble na Cyprze Północnym, z dostawą i montażem.",
+      "teamTitle": "Zespół",
+      "showroomTitle": "Showroom",
+      "warrantyTitle": "Gwarancja",
+      "partnersTitle": "Partnerzy",
+      "toConfirm": "Do potwierdzenia przez właściciela."
+    },
+    "contact": {
+      "eyebrow": "Kontakt",
+      "title": "Napisz do nas na WhatsApp.",
+      "lead": "Najszybsza droga do propozycji: prześlij rzut mieszkania, termin odbioru i informację, jak będziesz z niego korzystać.",
+      "metaTitle": "Kontakt z Design Package na WhatsApp",
+      "metaDescription": "Skontaktuj się z Design Package na Cyprze Północnym przez WhatsApp, aby otrzymać propozycję pakietu meblowego.",
+      "addressLabel": "Adres",
+      "emailLabel": "E-mail",
+      "hoursLabel": "Godziny otwarcia",
+      "toConfirm": "do potwierdzenia przez właściciela"
+    },
+    "reviews": {
+      "eyebrow": "Opinie",
+      "title": "Co mówią klienci.",
+      "lead": "Opinie ze zrealizowanych projektów pojawiają się tutaj za zgodą każdego klienta.",
+      "metaTitle": "Opinie klientów — Design Package",
+      "metaDescription": "Opinie klientów Design Package na Cyprze Północnym.",
+      "empty": "Zbieramy opinie ze zrealizowanych projektów. Pierwsze pojawią się tutaj wkrótce.",
+      "rating": "{rating} na 5"
+    },
+    "furniture": {
+      "eyebrow": "Meble",
+      "title": "Meble z naszych realizacji.",
+      "lead": "Każdy mebel tutaj został dostarczony i zamontowany w prawdziwym mieszkaniu. Zapisz te, które Ci się podobają, na liście do wyceny i wyślij ją do nas na WhatsApp, aby poznać ceny i dostępność.",
+      "inquiryLink": "Otwórz listę do wyceny",
+      "note": "Katalog, ceny i dostępność do potwierdzenia przez właściciela.",
+      "metaTitle": "Meble na Cyprze Północnym — Design Package",
+      "metaDescription": "Sofy, łóżka, zestawy jadalniane, oświetlenie i meble ogrodowe z realizacji Design Package na Cyprze Północnym. Ceny na zapytanie; wyślij listę do wyceny na WhatsApp."
+    },
+    "furnitureItem": {
+      "eyebrow": "Meble",
+      "categoryLabel": "Kategoria",
+      "materialsLabel": "Materiały",
+      "priceLabel": "Cena",
+      "usedInEyebrow": "Pojawia się w",
+      "usedInTitle": "Gdzie został użyty.",
+      "relatedEyebrow": "Podobne meble",
+      "relatedTitle": "Z tego samego pokoju.",
+      "back": "Wszystkie meble",
+      "prefill": "Dzień dobry, interesuje mnie mebel {name}. Proszę o cenę i dostępność.",
+      "metaTitle": "{name} — Design Package"
+    },
+    "inquiry": {
+      "eyebrow": "Lista do wyceny",
+      "title": "Twoja lista do wyceny.",
+      "lead": "Meble zapisane podczas przeglądania. Wyślij listę do nas na WhatsApp, a odpowiemy cenami i dostępnością.",
+      "empty": "Twoja lista jest pusta.",
+      "browse": "Przeglądaj meble",
+      "remove": "Usuń",
+      "clear": "Wyczyść listę",
+      "send": "Wyślij listę na WhatsApp",
+      "noteLabel": "Chcesz coś dodać? (opcjonalnie)",
+      "notePlaceholder": "Typ mieszkania, miasto, termin odbioru",
+      "stored": "Lista jest zapisana tylko w tej przeglądarce. Nic nie zostanie wysłane, dopóki nie dotkniesz przycisku.",
+      "messageIntro": "Dzień dobry, interesują mnie te meble:",
+      "messageNote": "Uwagi:",
+      "metaTitle": "Lista do wyceny — Design Package",
+      "metaDescription": "Wyślij zapisane meble do Design Package na WhatsApp, aby poznać ceny i dostępność."
+    },
+    "guides": {
+      "eyebrow": "Poradniki",
+      "title": "Zanim urządzisz mieszkanie.",
+      "lead": "Krótka, praktyczna lektura dla kupujących na Cyprze Północnym: co zawiera pakiet i jak umeblować mieszkanie z zagranicy.",
+      "read": "Czytaj poradnik",
+      "updated": "Zaktualizowano {date}",
+      "metaTitle": "Poradniki: urządzanie mieszkania na Cyprze Północnym — Design Package",
+      "metaDescription": "Praktyczne poradniki Design Package: co zawiera pakiet meblowy dla Studio, 1+1 lub 2+1 i jak umeblować mieszkanie na Cyprze Północnym z zagranicy."
+    },
+    "guide": {
+      "eyebrow": "Poradnik",
+      "back": "Wszystkie poradniki",
+      "moreEyebrow": "Więcej lektury",
+      "moreTitle": "Kolejny poradnik."
+    },
+    "areas": {
+      "eyebrow": "Gdzie działamy",
+      "title": "Pakiety meblowe: {city}.",
+      "lead": "Studio od {studio}, 1+1 od {one}, 2+1 od {two}. Każdy pokój z dostawą i montażem w mieście {city}, z wyborem i akceptacją z dowolnego miejsca.",
+      "note": "Lista miast do potwierdzenia przez właściciela.",
+      "packagesEyebrow": "Pakiety",
+      "packagesTitle": "Jedna cena za całe mieszkanie.",
+      "faqEyebrow": "Pytania",
+      "faqTitle": "Kupujesz w mieście {city}?",
+      "otherEyebrow": "Gdzie indziej",
+      "otherTitle": "Pozostałe lokalizacje.",
+      "prefill": "Dzień dobry, mam mieszkanie w mieście {city}. Proszę o przesłanie propozycji.",
+      "metaTitle": "Pakiety meblowe: {city} — Design Package",
+      "metaDescription": "Pakiety wyposażenia wnętrz w mieście {city}, Cypr Północny: Studio od {studio}, 1+1 od {one}, 2+1 od {two}. Z dostawą i montażem."
+    },
+    "legal": {
+      "eyebrow": "Informacje prawne",
+      "updated": "Ostatnia aktualizacja {date}",
+      "template": "Szablon przygotowany do weryfikacji przez właściciela. Obowiązuje dopiero po potwierdzeniu danych w nawiasach kwadratowych i, w razie potrzeby, sprawdzeniu przez prawnika.",
+      "metaTitle": "{title} — Design Package"
+    }
+  },
+  "comparison": {
+    "caption": "Porównanie pakietów",
+    "rowLiving": "Salon",
+    "rowKitchen": "Kuchnia i jadalnia",
+    "rowBedrooms": "Sypialnie",
+    "rowBathroom": "Łazienka",
+    "rowTerrace": "Taras",
+    "rowDelivery": "Dostawa i montaż",
+    "rowTimeline": "Czas realizacji",
+    "toConfirm": "do potwierdzenia",
+    "one": "jedna",
+    "two": "dwie"
+  },
+  "finder": {
+    "q1": "Jakie masz mieszkanie?",
+    "q2": "Jak będziesz z niego korzystać?",
+    "q2a": "Będę w nim mieszkać",
+    "q2b": "Wynajem długoterminowy",
+    "q2c": "Wynajem krótkoterminowy",
+    "q3": "Kiedy odbiór?",
+    "q3a": "Mam już klucze",
+    "q3b": "W ciągu trzech miesięcy",
+    "q3c": "Później",
+    "result": "Twój pakiet",
+    "resultRental": "{name}, wersja pod wynajem",
+    "noteLive": "Dobrane dla Ciebie: kolory, wygoda i schowki na co dzień.",
+    "noteLongTerm": "Trwałe i neutralne, łatwe w utrzymaniu między najemcami.",
+    "noteHoliday": "Gotowe na gości aż po naczynia i pościel, fotogeniczne do ogłoszeń.",
+    "empty": "Odpowiedz na trzy pytania, a pakiet pojawi się tutaj.",
+    "send": "Wyślij na WhatsApp",
+    "prefill": "Dzień dobry, mam mieszkanie typu {type}. Przeznaczenie: {use}. Odbiór: {when}. Proszę o przesłanie propozycji.",
+    "reset": "Zacznij od nowa"
+  },
+  "faqPackages": {
+    "q1": "Czy mogę zmienić meble w pakiecie?",
+    "a1": "Tak. Pakiet określa zakres i cenę wyjściową; każdy mebel zatwierdzasz przed dostawą.",
+    "q2": "Czy ceny zawierają dostawę i montaż?",
+    "a2": "Tak. Cena każdego pakietu obejmuje dostawę do mieszkania i montaż przez nasz zespół.",
+    "q3": "A jeśli moje mieszkanie nie pasuje do tych trzech typów?",
+    "a3": "Większe domy i wille realizujemy jako projekty indywidualne, wyceniane osobno."
+  },
+  "furniture": {
+    "all": "Wszystkie",
+    "categories": {
+      "living": "Salon",
+      "dining": "Jadalnia",
+      "bedroom": "Sypialnia",
+      "bathroom": "Łazienka",
+      "outdoor": "Na zewnątrz",
+      "lighting": "Oświetlenie",
+      "decor": "Dekoracje"
+    },
+    "count": "{count, plural, one {# mebel} few {# meble} many {# mebli} other {# mebla}}",
+    "empty": "W tej kategorii nie ma jeszcze mebli."
+  },
+  "content": {
+    "services": {
+      "staging": {
+        "title": "Home staging",
+        "lead": "Home staging to umeblowanie i stylizacja pustego lokalu tak, aby dobrze wyglądał na zdjęciach i podczas prezentacji. Dla sprzedających i agentów na Cyprze Północnym, którzy chcą, aby nieruchomość wyglądała jak dom jeszcze przed pierwszą wizytą.",
+        "audience": "Sprzedający i agenci nieruchomości",
+        "steps": {
+          "s1Title": "Wizyta lub rzut",
+          "s1Body": "Oglądamy lokal na miejscu albo na podstawie rzutu i zdjęć.",
+          "s2Title": "Plan stylizacji i wycena",
+          "s2Body": "Które pokoje, które meble, na jak długo. Jedna cena.",
+          "s3Title": "Dostawa i stylizacja",
+          "s3Body": "Meble, tekstylia i akcesoria przyjeżdżają razem i są ustawiane przez nasz zespół.",
+          "s4Title": "Zdjęcia i prezentacje",
+          "s4Body": "Lokal jest gotowy do zdjęć do ogłoszenia i na wizyty oglądających."
+        },
+        "pricing": "Wycena za nieruchomość, w zależności od wielkości i czasu trwania stylizacji.",
+        "pricingNote": "Model cenowy do potwierdzenia przez właściciela.",
+        "faqs": {
+          "q1": "Czy kupujący może zatrzymać meble?",
+          "a1": "Zapytaj nas. Meble z home stagingu zwykle można kupić razem z nieruchomością albo zastąpić pełnym pakietem.",
+          "q2": "Czy robicie home staging w zamieszkanych domach?",
+          "a2": "Tak, jeśli układ na to pozwala. Dodajemy lub wymieniamy meble, zamiast opróżniać dom."
+        },
+        "photos": {
+          "p1Alt": "Umeblowane studio gotowe do prezentacji",
+          "p2Alt": "Sofa, lustro toaletkowe i łóżko w studiu"
+        },
+        "prefill": "Dzień dobry, mam pytanie o home staging nieruchomości na Cyprze Północnym."
+      },
+      "rental": {
+        "title": "Wyposażenie pod wynajem",
+        "lead": "Wyposażenie pod wynajem korzysta z tych samych pakietów Studio, 1+1 i 2+1, dobranych do celu: trwałe i neutralne dla najemców długoterminowych albo gotowe na gości aż po naczynia i pościel przy wynajmie krótkoterminowym. Umeblowane lokale wynajmują się szybciej i od pierwszego dnia są gotowe do zdjęć do ogłoszenia.",
+        "audience": "Właściciele i inwestorzy, którzy wynajmują",
+        "steps": {
+          "s1Title": "Wybierz przeznaczenie",
+          "s1Body": "Najemcy długoterminowi czy goście na krótko. Od odpowiedzi zależy pakiet.",
+          "s2Title": "Dopasowany pakiet",
+          "s2Body": "Trwałe wykończenia i łatwe utrzymanie przy najmie długoterminowym; pełne wyposażenie i fotogeniczna stylizacja przy krótkoterminowym.",
+          "s3Title": "Dostawa przed sezonem",
+          "s3Body": "W terminie dopasowanym do odbioru mieszkania lub do początku sezonu.",
+          "s4Title": "Gotowe do ogłoszenia",
+          "s4Body": "Zdjęcia, klucze i lokal, który może przyjąć pierwszego gościa."
+        },
+        "pricing": "Studio od 10 000 £, 1+1 od 12 000 £, 2+1 od 14 000 £. Ta sama struktura co w pakietach standardowych.",
+        "pricingNote": "Elementy specyficzne dla wynajmu do potwierdzenia przez właściciela.",
+        "faqs": {
+          "q1": "Co dodaje pakiet pod wynajem krótkoterminowy?",
+          "a1": "Wszystko, czego gość oczekuje po przyjeździe: naczynia, pościel, ręczniki i drobiazgi, a do tego stylizację, która dobrze wygląda na zdjęciach.",
+          "q2": "Co jest inne dla najemców długoterminowych?",
+          "a2": "Neutralne kolory, trwałe tkaniny i powierzchnie oraz meble, które łatwo wyczyścić i wymienić."
+        },
+        "photos": {
+          "p1Alt": "Wyposażona kuchnia z barem śniadaniowym",
+          "p2Alt": "Łazienka z ręcznikami i akcesoriami"
+        },
+        "prefill": "Dzień dobry, mam pytanie o wyposażenie mieszkania pod wynajem na Cyprze Północnym."
+      },
+      "custom": {
+        "title": "Projekty indywidualne",
+        "lead": "Projekty indywidualne to projekty wnętrz wykraczające poza standardowe pakiety: większe domy, nietypowe układy albo założenia, które nie mieszczą się w Studio, 1+1 czy 2+1. Ten sam proces, wycena pod projekt.",
+        "audience": "Właściciele większych domów lub z konkretnymi założeniami",
+        "steps": {
+          "s1Title": "Założenia",
+          "s1Body": "Co masz, czego potrzebujesz, jak będziesz z tego korzystać.",
+          "s2Title": "Koncepcja",
+          "s2Body": "Układ, materiały i lista mebli do każdego pokoju.",
+          "s3Title": "Wybór",
+          "s3Body": "Zatwierdzasz meble, osobiście lub zdalnie.",
+          "s4Title": "Dostawa i montaż",
+          "s4Body": "Wszystko przyjeżdża razem i jest montowane przez nasz zespół."
+        },
+        "pricing": "Wycena indywidualna po ustaleniu założeń.",
+        "faqs": {
+          "q1": "Czy pracujecie z deweloperami?",
+          "a1": "Tak. Wyposażenie pod klucz mieszkań pokazowych i całych inwestycji realizujemy jako projekt indywidualny.",
+          "q2": "Czy mogę połączyć pakiet z meblami na zamówienie?",
+          "a2": "Tak. Zacznij od najbliższego pakietu i zmień to, czego potrzebujesz."
+        },
+        "photos": {
+          "p1Alt": "Zestaw jadalniany na tarasie przy basenie",
+          "p2Alt": "Bar śniadaniowy, łóżko i sofa w studiu"
+        },
+        "prefill": "Dzień dobry, mam pytanie o indywidualny projekt wyposażenia wnętrz na Cyprze Północnym."
+      }
+    },
+    "projects": {
+      "studioPoolside": {
+        "title": "Studio, osiedle z basenem",
+        "summary": "Studio na osiedlu z basenem, umeblowane jako kompletny pakiet: strefa dzienna i sypialna, bar śniadaniowy, kuchnia, łazienka i taras, dostarczone i zamontowane za jednym razem.",
+        "scope": {
+          "s1": "Strefa dzienna i sypialna",
+          "s2": "Bar śniadaniowy i kuchnia",
+          "s3": "Łazienka",
+          "s4": "Taras",
+          "s5": "Zasłony i tekstylia",
+          "s6": "Dostawa i montaż"
+        },
+        "beforeAlt": "Puste studio z przesuwnymi drzwiami na basen, przed umeblowaniem",
+        "afterAlt": "To samo studio po umeblowaniu: bar śniadaniowy, łóżko, sofa i zasłony",
+        "gallery": {
+          "g1": "Bar śniadaniowy ze stołkami w kolorze terakoty, łóżko i sofa",
+          "g2": "Od baru śniadaniowego w stronę łóżka",
+          "g3": "Sofa, lustro toaletkowe i lodówka",
+          "g4": "Kuchnia z białymi frontami w połysku i czarnymi lampami szynowymi",
+          "g5": "Łazienka ze szklaną kabiną i ryflowaną szafką umywalkową",
+          "g6": "Czarny rattanowy zestaw jadalniany na tarasie przy basenie",
+          "g7": "Puste studio przed umeblowaniem"
+        },
+        "visualisationNote": "Szerokie zdjęcie „po” jest wizualizacją na podstawie zrealizowanego projektu; pozostałe zdjęcia to ujęcia telefonem z gotowego mieszkania."
+      }
+    },
+    "furniture": {
+      "terracottaBarStool": {
+        "name": "Stołek barowy, terakota",
+        "materials": "Tapicerka o wyglądzie weluru, czarna stalowa rama",
+        "description": "Wygięte oparcie, niski profil; w projekcie studia stoi przy białym kwarcowym barze.",
+        "alt": "Stołki barowe w kolorze terakoty przy białym kwarcowym barze śniadaniowym"
+      },
+      "linenSofa": {
+        "name": "Sofa trzyosobowa, len",
+        "materials": "Tkanina o wyglądzie lnu, czarne metalowe nogi",
+        "description": "Luźne poduszki z tej samej tkaniny, w projekcie studia z poduszkami dekoracyjnymi w kolorze terakoty.",
+        "alt": "Beżowa lniana sofa z poduszkami w kolorze terakoty"
+      },
+      "roundCoffeeTable": {
+        "name": "Okrągły stolik kawowy, drewno",
+        "materials": "Blat i podstawa z jasnego drewna",
+        "description": "Zajmuje mało miejsca, idealny do studia; w projekcie studia stoi na dywanie z juty.",
+        "alt": "Okrągły drewniany stolik kawowy na dywanie z juty"
+      },
+      "juteRug": {
+        "name": "Dywan z juty",
+        "materials": "Tkane włókno naturalne",
+        "description": "Spaja strefę wypoczynkową i ukrywa odbicia na błyszczącej podłodze.",
+        "alt": "Dywan z juty pod sofą i stolikiem kawowym"
+      },
+      "upholsteredBed": {
+        "name": "Łóżko tapicerowane",
+        "materials": "Tapicerowany zagłówek, czarne metalowe nogi",
+        "description": "W projekcie studia zaścielone rdzawym pledem, ze złożonymi ręcznikami.",
+        "alt": "Łóżko tapicerowane z rdzawym pledem"
+      },
+      "roundLedMirror": {
+        "name": "Okrągłe lustro LED z toaletką",
+        "materials": "Podświetlane lustro, biurko montowane do ściany, krzesło w kolorze terakoty",
+        "description": "Kącik toaletkowy, który służy też jako biurko.",
+        "alt": "Okrągłe podświetlane lustro nad toaletką"
+      },
+      "walnutSlatTvPanel": {
+        "name": "Orzechowy panel lamelowy pod TV",
+        "materials": "Drewniane lamele na ciemnym tle",
+        "description": "W projekcie studia biegnie od podłogi do sufitu za telewizorem.",
+        "alt": "Orzechowy panel lamelowy z telewizorem na ścianie"
+      },
+      "blackTrackLights": {
+        "name": "Czarne oświetlenie szynowe",
+        "materials": "Metal malowany proszkowo, regulowane reflektory",
+        "description": "Trzy reflektory nad kuchnią w projekcie studia.",
+        "alt": "Czarne lampy szynowe nad kuchnią"
+      },
+      "flutedVanity": {
+        "name": "Ryflowana szafka umywalkowa",
+        "materials": "Ryflowany front, zintegrowana umywalka",
+        "description": "Wisząca, z lustrem nad nią i ręcznikami obok.",
+        "alt": "Biała ryflowana szafka z umywalką"
+      },
+      "rattanDiningSet": {
+        "name": "Zestaw jadalniany ogrodowy, czarny rattan",
+        "materials": "Czarny splot rattanowy, blat ze szkła hartowanego",
+        "description": "Stół i cztery krzesła na tarasie przy basenie.",
+        "alt": "Czarny rattanowy zestaw jadalniany na tarasie przy basenie"
+      }
+    },
+    "guides": {
+      "furnishingFromAbroad": {
+        "title": "Urządzanie mieszkania na Cyprze Północnym z zagranicy",
+        "lead": "Wielu kupujących nie ma na Cyprze w dniu odbioru kluczy. Tak działa pakiet meblowy, gdy jesteś gdzie indziej.",
+        "coverAlt": "Umeblowane studio z barem śniadaniowym, łóżkiem i sofą, przez przesuwne drzwi widać basen",
+        "sections": {
+          "s1": {
+            "heading": "Zacznij od trzech rzeczy",
+            "p1": "Rzut mieszkania, termin odbioru i to, jak będziesz korzystać z mieszkania: mieszkać w nim, wynajmować długoterminowo czy przyjmować gości na krótko. Te trzy odpowiedzi decydują o wersji pakietu i terminie.",
+            "p2": "Prześlij je na WhatsApp, a otrzymasz pierwszą propozycję bez wizyty. Krótkie wideo z pustego mieszkania pomaga, ale na początek wystarczy rzut od dewelopera."
+          },
+          "s2": {
+            "heading": "Koncepcja i wybór odbywają się online",
+            "p1": "Koncepcja to układ i krótka lista propozycji do każdego pokoju, wycenione jako jeden pakiet. Przeglądasz ją na rysunkach i zdjęciach, prosisz o zmiany i zatwierdzasz meble na piśmie na WhatsApp.",
+            "p2": "Ponieważ pakiet jest określony przez typ mieszkania, lista obejmuje już każdy pokój. Twoje odpowiedzi zmieniają charakter mebli, a nie listę pokoi."
+          },
+          "s3": {
+            "heading": "Dostawa i montaż w terminie odbioru",
+            "p1": "Dostawa i montaż są częścią każdego pakietu. Wszystko przyjeżdża razem, w terminie dopasowanym do odbioru, i jest składane, ustawiane i stylizowane przez nasz zespół.",
+            "p2": "Nie musisz być na miejscu. Jeśli klucze przekazuje deweloper lub Twój pełnomocnik, montaż może się odbyć, zanim przylecisz."
+          },
+          "s4": {
+            "heading": "Przekazanie ze zdjęciami",
+            "p1": "Po zakończeniu montażu tego samego dnia otrzymujesz zdjęcia każdego pokoju. Jeśli przyjeżdżasz później, mieszkanie czeka umeblowane. Jeśli trafia na rynek wynajmu, te zdjęcia są początkiem ogłoszenia."
+          },
+          "s5": {
+            "heading": "Co ustalić wcześnie",
+            "p1": "Czy mieszkanie jest dla Ciebie, dla najemców długoterminowych czy dla gości na krótko. Pokoje są te same, różnią się wybory: własne kolory, wygoda i schowki, jeśli się wprowadzasz; trwałe i neutralne, łatwe w utrzymaniu między najemcami, przy wynajmie długoterminowym; gotowe na gości aż po naczynia i pościel przy wynajmie krótkoterminowym.",
+            "p2": "Wyszukiwarka pakietów na stronie pakietów zamienia te odpowiedzi w pakiet i wiadomość na WhatsApp w trzech dotknięciach."
+          }
+        }
+      },
+      "studio1Plus12Plus1WhatIsIncluded": {
+        "title": "Studio, 1+1 czy 2+1: co zawiera pakiet meblowy",
+        "lead": "Pakiety zależą od typu mieszkania, nie od poziomu jakości. Oto co obejmuje każdy z nich i od jakiej kwoty zaczynają się ceny.",
+        "coverAlt": "Bar śniadaniowy ze stołkami w kolorze terakoty, łóżko i sofa w jednym umeblowanym studiu",
+        "sections": {
+          "s1": {
+            "heading": "Jedna cena za całe mieszkanie",
+            "p1": "Pakiet wyposaża każdy pokój danego typu mieszkania i zawiera dostawę i montaż. Ceny są w funtach szterlingach i są cenami wyjściowymi: ostateczna wycena zależy od mebli, które zatwierdzisz."
+          },
+          "s2": {
+            "heading": "Studio, od 10 000 £",
+            "p1": "Strefa dzienna i sypialna, kuchnia i jadalnia, łazienka, dostawa i montaż. W studiu strefa dzienna i sypialna to jeden pokój, więc pracę wykonuje układ: łóżko, sofa, miejsce do jedzenia i schowki, które nie zagracają przestrzeni."
+          },
+          "s3": {
+            "heading": "1+1, od 12 000 £",
+            "p1": "Salon, jedna sypialnia, kuchnia i jadalnia, łazienka, dostawa i montaż. Sypialnia jest urządzona jako pełny pokój: łóżko, szafa lub schowki, szafki nocne i tekstylia."
+          },
+          "s4": {
+            "heading": "2+1, od 14 000 £",
+            "p1": "Salon, dwie sypialnie, kuchnia i jadalnia, łazienka, dostawa i montaż. Drugą sypialnię można urządzić dla rodziny, dla gości albo jako domowe biuro; decyzja zapada na etapie koncepcji."
+          },
+          "s5": {
+            "heading": "Wersja pod wynajem",
+            "p1": "Każdy pakiet istnieje też w wersji pod wynajem, z tą samą strukturą pokoi. Dla najemców długoterminowych meble są trwałe i neutralne, łatwe w utrzymaniu między najmami. Przy wynajmie krótkoterminowym mieszkanie jest gotowe na gości aż po naczynia i pościel oraz fotogeniczne do ogłoszeń."
+          },
+          "s6": {
+            "heading": "Jeszcze do potwierdzenia",
+            "p1": "Meble na taras i czas realizacji dostawy są w tabeli porównawczej oznaczone jako do potwierdzenia, dopóki właściciel ich nie potwierdzi. Zapytaj na WhatsApp, a otrzymasz aktualną odpowiedź dla swojego terminu odbioru."
+          }
+        }
+      }
+    }
+  },
+  "seo": {
+    "home": "Strona główna",
+    "ogAlt": "Umeblowane studio na Cyprze Północnym od Design Package"
   }
 }

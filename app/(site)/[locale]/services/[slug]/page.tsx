@@ -11,6 +11,11 @@ import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { WhatsAppGlyph } from "@/components/ui/WhatsAppGlyph";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { areas } from "@/lib/content/areas";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { buildServices, serviceSlugs } from "@/lib/content/services";
 import { whatsappHref } from "@/lib/site";
 
@@ -25,7 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!hasLocale(routing.locales, locale)) return {};
   const service = buildServices((await getMessages({ locale })).content).find((s) => s.slug === slug);
   if (!service) return {};
-  return { title: `${service.title} in Northern Cyprus — Design Package`, description: service.lead };
+  const t = await getTranslations({ locale });
+  return pageMetadata({ locale, href: { pathname: "/services/[slug]", params: { slug: service.slug } }, title: t("pages.service.metaTitle", { name: service.title }), description: service.lead, image: service.photos[0].src, imageAlt: service.photos[0].alt });
 }
 
 /** Service detail (PLAN.md §6): the answer, who it is for, how it works, pricing, questions. */
@@ -40,8 +46,10 @@ export default async function ServicePage({ params }: Props) {
   const wa = whatsappHref(service.prefill);
   const others = services.filter((s) => s.slug !== service.slug);
 
+  const cities = areas.map((a) => t(`areas.${a.key}`));
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.services"), href: "/services" }, { name: service.title, href: { pathname: "/services/[slug]", params: { slug: service.slug } } }]), ld.service({ name: service.title, description: service.lead, url: localizedPath(locale, { pathname: "/services/[slug]", params: { slug: service.slug } }), areaServed: cities, image: service.photos[0].src }), ld.faqPage(service.faqs)]} />
       <PageIntro
         eyebrow={t("pages.service.eyebrow")}
         title={service.title}

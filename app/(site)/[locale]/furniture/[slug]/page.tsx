@@ -12,6 +12,10 @@ import { ProjectCard } from "@/components/ui/ProjectCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import * as ld from "@/lib/seo/jsonld";
+import { localizedPath, pageMetadata } from "@/lib/seo/metadata";
 import { getFurniture, getFurnitureItem, getProject } from "@/lib/cms/loaders";
 import { categories, furnitureSlugs, type CategoryKey } from "@/lib/content/furniture";
 
@@ -27,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const piece = await getFurnitureItem(locale, slug);
   if (!piece) return {};
   const t = await getTranslations({ locale, namespace: "pages.furnitureItem" });
-  return { title: t("metaTitle", { name: piece.name }), description: piece.description };
+  return pageMetadata({ locale, href: { pathname: "/furniture/[slug]", params: { slug: piece.slug } }, title: t("metaTitle", { name: piece.name }), description: piece.description, image: piece.image.src, imageAlt: piece.image.alt });
 }
 
 /** One piece: photo, materials, price or "on request", inquiry toggle, the project it was seen in, related pieces. */
@@ -52,6 +56,7 @@ export default async function FurnitureItemPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={[breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.furniture"), href: "/furniture" }, { name: piece.name, href: { pathname: "/furniture/[slug]", params: { slug: piece.slug } } }]), ld.product({ name: piece.name, description: piece.description, url: localizedPath(locale, { pathname: "/furniture/[slug]", params: { slug: piece.slug } }), image: piece.image.src, material: piece.materials, priceGBP: piece.priceGBP, category: categoryLabel })]} />
       <PageIntro
         eyebrow={t("pages.furnitureItem.eyebrow")}
         title={piece.name}

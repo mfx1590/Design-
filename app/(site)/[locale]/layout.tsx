@@ -10,6 +10,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { localeMeta } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
 import { fontVariables } from "@/lib/fonts";
+import { siteUrl } from "@/lib/seo/site-url";
 import "@/app/globals.css";
 
 type Props = { children: ReactNode; params: Promise<{ locale: string }> };
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Omit<Props, "children">): Pro
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "meta" });
-  return { title: t("title"), description: t("description") };
+  return { metadataBase: new URL(siteUrl), title: t("title"), description: t("description") };
 }
 
 export default async function LocaleLayout({ children, params }: Props) {

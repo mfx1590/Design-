@@ -9,6 +9,9 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbsFor } from "@/lib/seo/crumbs";
+import { pageMetadata } from "@/lib/seo/metadata";
 import { getFurniture } from "@/lib/cms/loaders";
 import { categories, type CategoryKey } from "@/lib/content/furniture";
 
@@ -18,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "pages.furniture" });
-  return { title: t("metaTitle"), description: t("metaDescription") };
+  return pageMetadata({ locale, href: "/furniture", title: t("metaTitle"), description: t("metaDescription") });
 }
 
 /** Furniture catalogue (PLAN.md §6): filter by category, save pieces to the inquiry list. */
@@ -40,6 +43,7 @@ export default async function FurniturePage({ params }: Props) {
 
   return (
     <>
+      <JsonLd data={breadcrumbsFor(locale, t("seo.home"), [{ name: t("nav.furniture"), href: "/furniture" }])} />
       <PageIntro eyebrow={t("pages.furniture.eyebrow")} title={t("pages.furniture.title")} lead={t("pages.furniture.lead")}>
         <p className="text-small text-ink-soft">
           <Link href="/inquiry" className="link">
