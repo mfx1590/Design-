@@ -60,8 +60,8 @@ export async function GET(request: Request) {
     (
       <div style={{ width: "100%", height: "100%", display: "flex", position: "relative", background: "#14110d", direction: rtl ? "rtl" : "ltr" }}>
         {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse renders plain elements */}
-        <img src={photoSrc} alt="" width={1200} height={630} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(20,17,13,0) 22%, rgba(20,17,13,0.78) 58%, rgba(20,17,13,0.97) 100%)" }} />
+        <img src={photoSrc} alt="" width={1200} height={630} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(180deg, rgba(20,17,13,0) 22%, rgba(20,17,13,0.78) 58%, rgba(20,17,13,0.97) 100%)" }} />
         <div style={{ position: "absolute", left: 64, right: 64, bottom: 56, display: "flex", flexDirection: "column", gap: 14, color: "#f3ead9" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <div style={{ width: 44, height: 2, background: "#c9a45c" }} />

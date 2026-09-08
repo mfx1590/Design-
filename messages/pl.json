@@ -218,7 +218,7 @@
     "eyebrow": "Faza 0 · fundamenty",
     "title": "Ściany już masz.",
     "lead": "Urządzamy mieszkania na Cyprze Północnym — od pustych ścian po gotowy dom.",
-    "direction": "Ta strona wyświetla się {dir, select, rtl {right-to-left (od prawej do lewej)} other {left-to-right (od lewej do prawej)}} dla języka {locale}.",
+    "direction": "Ta strona wyświetla się {dir, select, rtl {od prawej do lewej} other {od lewej do prawej}} dla języka {locale}.",
     "scriptCheck": "Test znaków: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
     "next": "Dalej"
   },

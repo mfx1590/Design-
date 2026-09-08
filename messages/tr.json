@@ -218,7 +218,7 @@
     "eyebrow": "Aşama 0 · temeller",
     "title": "Duvarlar sizde.",
     "lead": "Kuzey Kıbrıs'taki daireleri boş duvarlardan hazır bir eve dönüştürüyoruz.",
-    "direction": "Bu sayfa {locale} için {dir, select, rtl {right-to-left (sağdan sola)} other {left-to-right (soldan sağa)}} olarak görüntülenir.",
+    "direction": "Bu sayfa {locale} için {dir, select, rtl {sağdan sola} other {soldan sağa}} olarak görüntülenir.",
     "scriptCheck": "Karakter testi: Ąą Ćć Ęę Łł Ńń Óó Śś Źź Żż · Ğğ İı Şş Çç · Ää Öö Üü ß · Ёё Жж Ыы Щщ Ъъ · پ چ ژ گ ک ی می‌کنیم",
     "next": "İleri"
   },
