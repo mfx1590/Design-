@@ -221,7 +221,7 @@ const FloorPlan = forwardRef<SVGSVGElement, { labels: PlanLabels }>(function Flo
     <svg
       ref={ref}
       viewBox="0 0 600 420"
-      className="w-full"
+      className="w-full [direction:ltr]"
       role="img"
       aria-label="Floor plan growing from studio to two bedrooms"
       style={{ "--draw-0": 1, "--draw-1": 0, "--draw-2": 0 } as CSSProperties}

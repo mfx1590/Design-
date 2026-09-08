@@ -364,3 +364,10 @@ Dominant colours (median-cut sample, for §4 palette work in Phase 1; precise ma
 - Higgsfield via MCP: three models compared on the matched studio pair; MiniMax H3 (2K) chosen for end-frame fidelity. Credits used: 99 of the 300 allowed.
 - Not done: real iOS Safari test (no device available), Vercel deploy (needs the owner account), git repository (owner has not asked for commits).
 - Still `[FILL IN]`: everything in the §15 status table except the photos; the working wordmark "Design Package" is a placeholder.
+
+**2026-09-08 — Phase 2 approved; UI rejected and redesigned (v3); homepage built as the mockup.**
+
+- Owner approved Phase 0–2 functionally but disliked the v2 look. Git initialised on `main`; first commit covers Phase 0–2, second commit the v3 redesign. GitHub push deferred until the owner asks.
+- New direction "warm luxury, dark" in `docs/design-plan-v3.md`: Night / Espresso / Umber / Ivory / Sand / Brass / Terracotta, Cormorant Garamond headlines with lining numerals, Jost body, Vazirmatn for Farsi, 1 px frames that warm to brass, gradient scrims instead of boxes.
+- Homepage built in full (English; other locales fall back to English until English is approved): hero scene, trust strip, pinned floor-plan packages scene with price count-up, featured project, how it works, service tiles, areas, FAQ, contact form UI. Reviews omitted until real ones arrive. No facts invented; placeholders say so.
+- Awaiting owner approval of the look before the remaining Phase 3 pages and Sanity schemas.
