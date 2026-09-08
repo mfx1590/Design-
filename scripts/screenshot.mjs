@@ -6,7 +6,7 @@
 // Writes <out-dir>/<path>-desktop.png (1440x900) and <path>-mobile.png (390x844 @2x, touch).
 // Chrome's plain --screenshot flag clamps small windows on Windows, so this emulates a device instead.
 import { spawn } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import http from "node:http";
 import { join } from "node:path";
 
@@ -35,7 +35,7 @@ const SCROLLS = (process.env.SCROLL || "0").split(",").map(Number);
 const FULL = Boolean(process.env.FULL);
 
 const port = 9300 + Math.floor(Math.random() * 500);
-const profile = join(process.env.TEMP || "/tmp", "chrome-shots-profile");
+const profile = mkdtempSync(join(process.env.TEMP || "/tmp", "chrome-shots-")); // unique per run so captures can run in parallel
 const chrome = spawn(
   CHROME,
   [
