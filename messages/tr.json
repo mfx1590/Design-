@@ -736,5 +736,10 @@
   "seo": {
     "home": "Ana sayfa",
     "ogAlt": "Design Package tarafından döşenmiş, Kuzey Kıbrıs'ta bir stüdyo daire"
+  },
+  "cookieNote": {
+    "note": "Bu site yalnızca dilinizi hatırlamak için tek bir çerez kullanır. İzleme yok.",
+    "more": "Çerez politikası",
+    "dismiss": "Tamam"
   }
 }

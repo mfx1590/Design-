@@ -736,5 +736,10 @@
   "seo": {
     "home": "Strona główna",
     "ogAlt": "Umeblowane studio na Cyprze Północnym od Design Package"
+  },
+  "cookieNote": {
+    "note": "Ta strona zapisuje jeden plik cookie, aby zapamiętać Twój język. Bez śledzenia.",
+    "more": "Polityka cookies",
+    "dismiss": "OK"
   }
 }

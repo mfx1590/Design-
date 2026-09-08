@@ -3,6 +3,7 @@
 //         FULL=1 ...            captures the full page height instead of the viewport.
 //         SCROLL=0,300,900 ...  captures once per scroll offset (px), suffixing files with -y<offset>.
 //         EVAL_FILE=<file.js>    evaluates the expression in the page for each viewport and prints the result instead of capturing.
+//         VIEWPORTS=360x780,768x1024,1280x800,1920x1080   replaces the default desktop/mobile pair (files suffixed -w360 etc.).
 // Writes <out-dir>/<path>-desktop.png (1440x900) and <path>-mobile.png (390x844 @2x, touch).
 // Chrome's plain --screenshot flag clamps small windows on Windows, so this emulates a device instead.
 import { spawn } from "node:child_process";
@@ -31,6 +32,13 @@ const VIEWPORTS = {
   desktop: { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false },
   mobile: { width: 390, height: 844, deviceScaleFactor: 2, mobile: true },
 };
+if (process.env.VIEWPORTS) {
+  for (const key of Object.keys(VIEWPORTS)) delete VIEWPORTS[key];
+  for (const spec of process.env.VIEWPORTS.split(",")) {
+    const [w, h] = spec.split("x").map(Number);
+    VIEWPORTS[`w${w}`] = { width: w, height: h || 900, deviceScaleFactor: w < 768 ? 2 : 1, mobile: w < 768 };
+  }
+}
 const SCROLLS = (process.env.SCROLL || "0").split(",").map(Number);
 const FULL = Boolean(process.env.FULL);
 

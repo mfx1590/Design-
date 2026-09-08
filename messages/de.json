@@ -736,5 +736,10 @@
   "seo": {
     "home": "Startseite",
     "ogAlt": "Eingerichtete Studio-Wohnung in Nordzypern von Design Package"
+  },
+  "cookieNote": {
+    "note": "Diese Seite setzt nur ein Cookie, um Ihre Sprache zu merken. Kein Tracking.",
+    "more": "Cookie-Richtlinie",
+    "dismiss": "OK"
   }
 }

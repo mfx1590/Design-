@@ -3,9 +3,11 @@ import type { ReactNode } from "react";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Analytics } from "@/components/Analytics";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { CookieNote } from "@/components/ui/CookieNote";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { localeMeta } from "@/i18n/locales";
 import { routing } from "@/i18n/routing";
@@ -32,6 +34,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
   const { dir, script } = localeMeta[locale];
   const t = await getTranslations("nav");
+  const tc = await getTranslations("cookieNote");
 
   return (
     <html lang={locale} dir={dir} data-script={script} className={fontVariables}>
@@ -49,7 +52,9 @@ export default async function LocaleLayout({ children, params }: Props) {
           </main>
           <SiteFooter />
           <WhatsAppButton />
+          <CookieNote text={tc("note")} more={tc("more")} dismiss={tc("dismiss")} />
           <SmoothScroll />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

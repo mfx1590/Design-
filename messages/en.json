@@ -736,5 +736,10 @@
   "seo": {
     "home": "Home",
     "ogAlt": "Furnished studio apartment in Northern Cyprus by Design Package"
+  },
+  "cookieNote": {
+    "note": "This site sets one cookie, to remember your language. No tracking.",
+    "more": "Cookie policy",
+    "dismiss": "OK"
   }
 }
