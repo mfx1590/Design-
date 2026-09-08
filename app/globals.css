@@ -150,7 +150,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    box-shadow: inset 0 0 90px rgb(0 0 0 / 0.3);
+    box-shadow: inset 0 0 48px rgb(0 0 0 / 0.14);
   }
   &:hover {
     border-color: var(--brass);
@@ -167,15 +167,47 @@
   }
 }
 
-/* Bottom gradient over photography for text legibility. Follows the day/dusk surface. */
+/* Light bottom gradient over photography. Follows the day/dusk surface. */
 @utility scrim-bottom {
   background: linear-gradient(
     to top,
-    var(--surface) 0%,
-    color-mix(in oklab, var(--surface) 82%, transparent) 30%,
-    color-mix(in oklab, var(--surface) 45%, transparent) 65%,
+    color-mix(in oklab, var(--surface) 70%, transparent) 0%,
+    color-mix(in oklab, var(--surface) 35%, transparent) 45%,
     transparent 100%
   );
+}
+
+/* Corner scrim: sits only behind the text block at the inline-start, fades out sideways so the photo stays visible. */
+@utility scrim-corner {
+  /* Phones: the text spans the width and crosses the window, so the gradient is a little stronger. */
+  background: linear-gradient(
+    to top,
+    color-mix(in oklab, var(--surface) 92%, transparent) 0%,
+    color-mix(in oklab, var(--surface) 82%, transparent) 35%,
+    color-mix(in oklab, var(--surface) 62%, transparent) 65%,
+    color-mix(in oklab, var(--surface) 20%, transparent) 88%,
+    transparent 100%
+  );
+  /* Tablet and up: lighter, and faded out sideways so the photo stays visible. */
+  @media (min-width: 768px) {
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--surface) 78%, transparent) 0%,
+      color-mix(in oklab, var(--surface) 55%, transparent) 40%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(to right, black 35%, transparent 100%);
+    mask-image: linear-gradient(to right, black 35%, transparent 100%);
+    &:dir(rtl) {
+      -webkit-mask-image: linear-gradient(to left, black 35%, transparent 100%);
+      mask-image: linear-gradient(to left, black 35%, transparent 100%);
+    }
+  }
+}
+
+/* Faint halo so text over photography reads without a heavy scrim. */
+@utility text-legible {
+  text-shadow: 0 1px 2px color-mix(in oklab, var(--surface) 70%, transparent), 0 0 28px color-mix(in oklab, var(--surface) 55%, transparent);
 }
 
 /* Text link: soft ink, brass underline; full ink on hover. */

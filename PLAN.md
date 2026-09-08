@@ -371,3 +371,9 @@ Dominant colours (median-cut sample, for §4 palette work in Phase 1; precise ma
 - New direction "warm luxury, dark" in `docs/design-plan-v3.md`: Night / Espresso / Umber / Ivory / Sand / Brass / Terracotta, Cormorant Garamond headlines with lining numerals, Jost body, Vazirmatn for Farsi, 1 px frames that warm to brass, gradient scrims instead of boxes.
 - Homepage built in full (English; other locales fall back to English until English is approved): hero scene, trust strip, pinned floor-plan packages scene with price count-up, featured project, how it works, service tiles, areas, FAQ, contact form UI. Reviews omitted until real ones arrive. No facts invented; placeholders say so.
 - Awaiting owner approval of the look before the remaining Phase 3 pages and Sanity schemas.
+
+**2026-09-08 (later) — v3 rejected as "usual"; v4 built: the apartment furnishes itself.**
+
+- Concept: the site loads as the empty apartment in daylight (plaster). As the hero fills the room with furniture, one token (`--dusk`) blends the whole interface to dusk. Below, a floor plan is pinned beside the rooms; the visitor picks Studio / 1+1 / 2+1 and walks living → kitchen → bedroom → bathroom → terrace while furniture is drawn into the plan. Room lists are indicative and say so.
+- Files: `styles/tokens.css` (day and dusk palettes, blended semantics), `components/scene/TransformationScene.tsx` (`duskSync`), `components/home/ApartmentWalk.tsx` + `ApartmentSection.tsx`, `ServicesRows.tsx`. Homepage: hero, walk, front door, three more doors, questions, handover.
+- Commit "Redesign v4". Awaiting owner reaction before the remaining Phase 3 pages.

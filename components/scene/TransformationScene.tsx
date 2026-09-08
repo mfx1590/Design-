@@ -286,9 +286,9 @@ export function TransformationScene(props: TransformationSceneProps) {
           </span>
         </Heading>
       ) : null}
-      {lead ? <p className="mt-6 max-w-(--measure) text-lead text-ink-soft">{lead}</p> : null}
-      {actions ? <div className="mt-8 flex flex-wrap gap-3">{actions}</div> : null}
-      <div className="mt-8 h-px w-full max-w-md bg-ink/20" aria-hidden="true">
+      {lead ? <p className="mt-5 max-w-(--measure) text-body text-ink-soft sm:mt-6 sm:text-lead">{lead}</p> : null}
+      {actions ? <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">{actions}</div> : null}
+      <div className="mt-7 h-px w-full max-w-md bg-ink/20" aria-hidden="true">
         <div ref={railRef} className="h-full origin-left bg-brass rtl:origin-right" style={{ transform: "scaleX(0)" }} />
       </div>
     </div>
@@ -354,11 +354,11 @@ export function TransformationScene(props: TransformationSceneProps) {
           </div>
         ) : null}
 
-        {/* Legibility: a gradient from the bottom in the current surface colour, never a box. */}
-        <div className="scrim-bottom pointer-events-none absolute inset-x-0 bottom-0 h-[88%]" aria-hidden="true" />
+        {/* Legibility: a soft corner behind the text only, so the furniture stays visible. */}
+        <div className="scrim-corner pointer-events-none absolute inset-x-0 bottom-0 h-[78%] md:h-[64%] md:w-[72%]" aria-hidden="true" />
 
         <div className="absolute inset-x-0 bottom-0 px-(--gutter) pb-10 md:pb-14">
-          <div className="mx-auto w-full max-w-(--content-max)">{textBlock}</div>
+          <div className="text-legible mx-auto w-full max-w-(--content-max)">{textBlock}</div>
         </div>
         {note ? (
           <p className="absolute end-(--gutter) top-5 bg-surface/60 px-2.5 py-1 text-micro text-ink-soft backdrop-blur-sm">{note}</p>
