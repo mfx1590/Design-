@@ -11,11 +11,16 @@ export const navItems: Array<{ href: AppPathname; key: NavKey }> = [
   { href: "/contact", key: "contact" },
 ];
 
-/** Digits only, international format. Empty until the owner provides it. */
-export const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
+/** Business WhatsApp number, digits only, international format. Supplied by the owner on 2026-09-08. */
+export const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "905488618449";
 
-/** wa.me deep link with a prefilled, localised message, or null when the number is not configured. */
-export function whatsappHref(message: string): string | null {
-  if (!whatsappNumber) return null;
+/** The same number formatted for display. */
+export const whatsappDisplay = "+90 548 861 84 49";
+
+/** tel: link for the same number. */
+export const telHref = `tel:+${whatsappNumber}`;
+
+/** wa.me deep link with a prefilled, localised message. */
+export function whatsappHref(message: string): string {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

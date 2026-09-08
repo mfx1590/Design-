@@ -3,7 +3,10 @@
     "title": "Furniture packages in Northern Cyprus — Design Package",
     "description": "Interior design packages and furniture in Northern Cyprus: Studio from £10,000, 1+1 from £12,000, 2+1 from £14,000. Delivered and installed."
   },
-  "brand": { "name": "Design Package", "placeholder": "Brand name to be confirmed" },
+  "brand": {
+    "name": "Design Package",
+    "placeholder": "Brand name to be confirmed"
+  },
   "nav": {
     "language": "Language",
     "skip": "Skip to content",
@@ -17,7 +20,7 @@
     "whatsapp": "Chat on WhatsApp"
   },
   "cta": {
-    "quote": "Request a quote",
+    "quote": "Request a quote on WhatsApp",
     "package": "See the full package",
     "packages": "See packages",
     "project": "See the project",
@@ -202,7 +205,11 @@
     "serviceCustom": "Custom project",
     "message": "Message",
     "consent": "I agree to be contacted about my request.",
-    "areasLine": "We work in {cities}."
+    "areasLine": "We work in {cities}.",
+    "whatsappLead": "Write to us on WhatsApp with your floor plan and handover date. We answer with a first proposal and a price.",
+    "openWhatsApp": "Open WhatsApp",
+    "orCall": "or call",
+    "hoursNote": "Opening hours to be confirmed by the owner."
   },
   "phase0": {
     "eyebrow": "Phase 0 · foundations",

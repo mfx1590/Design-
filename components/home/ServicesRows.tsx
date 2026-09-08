@@ -13,7 +13,7 @@ export async function ServicesRows() {
 
   return (
     <Section surface="espresso" labelledBy="services-title">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
+      <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <SectionHeader
           id="services-title"
           eyebrow={t("home.servicesEyebrow")}

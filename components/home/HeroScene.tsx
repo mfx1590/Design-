@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { TransformationScene } from "@/components/scene/TransformationScene";
 import { Button } from "@/components/ui/Button";
+import { whatsappHref } from "@/lib/site";
 import manifest from "@/public/sequences/project-01-studio/manifest.json";
 
 const PROJECT_IMAGES = "/images/projects/project-01-studio";
@@ -11,6 +12,7 @@ const PROJECT_IMAGES = "/images/projects/project-01-studio";
  */
 export async function HeroScene() {
   const t = await getTranslations();
+  const wa = whatsappHref(t("whatsapp.prefill"));
 
   return (
     <TransformationScene
@@ -26,7 +28,9 @@ export async function HeroScene() {
       lead={t("hero.lead")}
       actions={
         <>
-          <Button href="/contact">{t("cta.quote")}</Button>
+          <Button href={wa} external>
+            {t("cta.quote")}
+          </Button>
           <Button href="/packages" variant="secondary">
             {t("cta.packages")}
           </Button>

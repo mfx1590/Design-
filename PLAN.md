@@ -333,7 +333,7 @@ Dominant colours (median-cut sample, for §4 palette work in Phase 1; precise ma
 |---|---|---|
 | 1 | Rental package inclusions vs standard | **open** |
 | 1 | Legal/brand name, logo files, tagline | **open** |
-| 1 | Address, phone, WhatsApp number, email, opening hours | **open** |
+| 1 | Address, phone, WhatsApp number, email, opening hours | **partial** — WhatsApp +90 548 861 84 49 received 2026-09-08 (owner wants WhatsApp instead of a contact form); address, email, hours still open |
 | 1 | Cities served | **open** |
 | 1 | What each package includes room by room; timeline; warranty | **open** |
 | 1 | Years in business, completed projects, warranty / delivery times | **open** |

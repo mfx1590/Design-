@@ -8,7 +8,7 @@ export async function Faq() {
 
   return (
     <Section surface="espresso" labelledBy="faq-title">
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
+      <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.6fr] lg:gap-20">
         <SectionHeader id="faq-title" eyebrow={t("home.faqEyebrow")} title={t("home.faqTitle")} />
         <div className="divide-y divide-rule border-y border-rule">
           {items.map((item) => (
