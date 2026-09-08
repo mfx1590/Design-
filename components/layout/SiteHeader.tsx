@@ -13,7 +13,7 @@ export async function SiteHeader() {
   const items = navItems.map((item) => ({ href: item.href, label: t(`nav.${item.key}`) }));
 
   return (
-    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule-soft bg-surface/70 backdrop-blur-md">
+    <header className="sticky top-0 z-40 h-(--header-height) border-b border-rule-soft bg-surface/95 lg:bg-surface/70 lg:backdrop-blur-md">
       <Container className="flex h-full items-center justify-between gap-6">
         <Link href="/" className="type-display text-[1.65rem] tracking-[0.02em] text-ink">
           {t("brand.name")}

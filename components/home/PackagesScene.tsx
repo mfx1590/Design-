@@ -127,8 +127,8 @@ export function PackagesScene({ packages, labels, cta, className }: PackagesScen
   const priceNode = <span className="type-display tabular text-display leading-none text-brass">{formatGBP(price, locale)}</span>;
 
   return (
-    <section ref={sectionRef} className={cx("relative", className)} style={{ height: "300dvh" }}>
-      <div className="sticky top-(--header-height) flex h-[calc(100dvh-var(--header-height))] items-center">
+    <section ref={sectionRef} className={cx("relative", className)} style={{ height: "300svh" }}>
+      <div className="sticky top-(--header-height) flex h-[calc(100svh-var(--header-height))] items-center">
         <div className="mx-auto grid w-full max-w-(--content-max) grid-cols-[1.15fr_1fr] items-center gap-16 px-(--gutter)">
           <FloorPlan ref={planRef} labels={labels} />
 

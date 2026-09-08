@@ -27,7 +27,7 @@ interface ProjectCardProps {
 
 const ratioClass = { "3/2": "aspect-[3/2]", "16/9": "aspect-video", "21/9": "aspect-[21/9]", "4/3": "aspect-[4/3]" };
 
-const chip = "pointer-events-none absolute bg-surface/75 px-2.5 py-1 text-micro font-medium uppercase tracking-[0.12em] text-ink backdrop-blur-sm";
+const chip = "pointer-events-none absolute bg-surface/85 px-2.5 py-1 text-micro font-medium uppercase tracking-[0.12em] text-ink";
 
 /**
  * Aperture with the finished room; hover or tap wipes the empty room in from the inline-start edge

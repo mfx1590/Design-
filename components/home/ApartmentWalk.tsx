@@ -105,7 +105,7 @@ export function ApartmentWalk({ types, rooms, labels }: ApartmentWalkProps) {
   return (
     <div className="mx-auto grid w-full max-w-(--content-max) gap-x-14 px-(--gutter) lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
       {/* The plan instrument: sticky bar on small screens, pinned column on large ones. */}
-      <aside className="sticky top-(--header-height) z-20 -mx-(--gutter) border-b border-rule bg-surface/90 px-(--gutter) py-3 backdrop-blur-md lg:static lg:mx-0 lg:border-0 lg:bg-transparent lg:px-0 lg:py-0 lg:backdrop-blur-none">
+      <aside className="sticky top-(--header-height) z-20 -mx-(--gutter) border-b border-rule bg-surface px-(--gutter) py-3 lg:static lg:mx-0 lg:border-0 lg:bg-transparent lg:px-0 lg:py-0">
         <div className="lg:sticky lg:top-(--header-height) lg:flex lg:h-[calc(100dvh-var(--header-height))] lg:flex-col lg:justify-center lg:py-10">
           <div role="tablist" aria-label={labels.choose} className="flex gap-6 border-b border-rule">
             {types.map((x) => (

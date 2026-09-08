@@ -82,7 +82,8 @@ function loadOrder(count: number): number[] {
 function duskFor(progress: number) {
   const t = Math.min(1, Math.max(0, (progress - 0.12) / 0.5));
   const eased = t * t * (3 - 2 * t); // smoothstep: less time spent in the muddy middle
-  return `${Math.round(eased * 100)}%`;
+  // Quantised to 4% steps: every change recolours the whole page, so phones get at most 25 of them.
+  return `${Math.round(eased * 25) * 4}%`;
 }
 
 function setDusk(value: string | null) {
@@ -339,10 +340,10 @@ export function TransformationScene(props: TransformationSceneProps) {
     <section
       ref={sectionRef}
       className={cx("relative bg-surface", className)}
-      style={{ height: `${pinHeights * 100}dvh` }}
+      style={{ height: `${pinHeights * 100}svh` }}
       data-dusk-scene={duskSync ? "" : undefined}
     >
-      <div className="sticky top-(--header-height) h-[calc(100dvh-var(--header-height))] w-full overflow-hidden" data-ready={ready}>
+      <div className="sticky top-(--header-height) h-[calc(100svh-var(--header-height))] w-full overflow-hidden" data-ready={ready}>
         {/* Poster: the empty room, shown until the tier is ready. Also the LCP image. */}
         <div className={cx("absolute inset-0 transition-opacity duration-500 ease-soft", ready && tier !== "wipe" && "opacity-0")}>
           <Image src={before.src} alt={before.alt} fill sizes="100vw" priority={priority} fetchPriority={priority ? "high" : undefined} className="object-cover" />
@@ -372,7 +373,7 @@ export function TransformationScene(props: TransformationSceneProps) {
           <div className="text-legible mx-auto w-full max-w-(--content-max)">{textBlock}</div>
         </div>
         {note ? (
-          <p className="absolute end-(--gutter) top-5 bg-surface/60 px-2.5 py-1 text-micro text-ink-soft backdrop-blur-sm">{note}</p>
+          <p className="absolute end-(--gutter) top-5 bg-surface/80 px-2.5 py-1 text-micro text-ink-soft">{note}</p>
         ) : null}
       </div>
     </section>

@@ -9,6 +9,8 @@ let registered = false;
 export function getGsap() {
   if (!registered) {
     gsap.registerPlugin(ScrollTrigger);
+    // Phones resize the viewport when the address bar hides; recalculating every trigger then causes jumps.
+    ScrollTrigger.config({ ignoreMobileResize: true });
     registered = true;
   }
   return { gsap, ScrollTrigger };
